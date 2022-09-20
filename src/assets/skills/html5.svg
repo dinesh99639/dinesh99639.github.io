@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="512" height="512" x="0" y="0" viewBox="0 0 512 512"
+  style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+  <g>
+    <polygon xmlns="http://www.w3.org/2000/svg" style="" points="32,0 72.8,460.8 256,512 439.136,460.832 480,0 "
+      fill="#ff5722" data-original="#ff5722" class=""></polygon>
+    <polygon xmlns="http://www.w3.org/2000/svg" style=""
+      points="391.52,150.688 256,150.688 176.8,150.688 181.92,208.576 256,208.576 386.4,208.576   371.008,382.144 256,414.24 255.904,414.272 140.96,382.144 132.928,291.36 189.248,291.36 193.44,338.464 255.936,355.456   256,355.424 256,355.424 318.56,338.432 325.088,265.12 256,265.12 256,265.12 130.624,265.12 115.456,94.208 256,94.208   396.512,94.208 "
+      fill="#fafafa" data-original="#fafafa" class=""></polygon>
+  </g>
+</svg>
