@@ -6,14 +6,7 @@ import "prismjs";
 import "prismjs/components/prism-jsx.min";
 import "prismjs/themes/prism-okaidia.css";
 
-import {
-  Grid,
-  Box,
-  Typography,
-  Paper,
-  Tooltip,
-  IconButton,
-} from "@mui/material";
+import { Grid, Box, Typography, Paper, Tooltip, IconButton } from "@mui/material";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -53,6 +46,26 @@ const skills = [
 const BasicDetails = (props) => {
   const theme = props.theme;
 
+  const color = theme === "dark" ? "rgba(255, 255, 255, 0.76)" : "rgb(109, 131, 242)";
+
+  const links = [
+    {
+      title: "Github",
+      icon: <GitHubIcon sx={{ color }} />,
+      link: "https://github.com/dinesh99639/"
+    },
+    {
+      title: "Linkedin",
+      icon: <LinkedInIcon sx={{ color }} />,
+      link: "https://www.linkedin.com/in/dinesh-somaraju/"
+    },
+    {
+      title: "Resume",
+      icon: <ArticleIcon sx={{ color }} />,
+      link: ""
+    }
+  ]
+
   return (<>
     <Box
       sx={{
@@ -67,15 +80,9 @@ const BasicDetails = (props) => {
           fontFamily: "Montserrat, sans-serif",
           fontSize: "27px",
         }}
-      >
-        DINESH SOMARAJU
-        {/* Dinesh Somaraju */}
-      </Typography>
+      >DINESH SOMARAJU</Typography>
       <Typography
-        sx={{
-          fontSize: "13px",
-          opacity: 0.76,
-        }}
+        sx={{ fontSize: "13px", opacity: 0.76 }}
       >
         Digital Specialist Engineer, Infosys
       </Typography>
@@ -91,42 +98,13 @@ const BasicDetails = (props) => {
       </Typography>
 
       <Box sx={{ marginLeft: "-8px" }}>
-        <Tooltip title="Github" arrow>
-          <IconButton
-            href="https://github.com/dinesh99639/GSecureLock"
-            target="_blank"
-          >
-            <GitHubIcon
-              sx={{
-                color:
-                  theme === "dark" ? "rgba(255, 255, 255, 0.76)" : "rgb(109, 131, 242)",
-              }}
-            />
-          </IconButton>
-        </Tooltip>
-        <Tooltip title="Linkedin" arrow>
-          <IconButton
-            href="https://www.linkedin.com/in/dinesh-somaraju/"
-            target="_blank"
-          >
-            <LinkedInIcon
-              sx={{
-                color:
-                  theme === "dark" ? "rgba(255, 255, 255, 0.76)" : "rgb(109, 131, 242)",
-              }}
-            />
-          </IconButton>
-        </Tooltip>
-        <Tooltip title="Resume" arrow>
-          <IconButton href="#" target="_blank">
-            <ArticleIcon
-              sx={{
-                color:
-                  theme === "dark" ? "rgba(255, 255, 255, 0.76)" : "rgb(109, 131, 242)",
-              }}
-            />
-          </IconButton>
-        </Tooltip>
+        {links.map((item, idx) => (
+          <Tooltip key={"intro-link-" + idx} title={item.title} arrow>
+            <IconButton href={item.link} target="_blank">
+              {item.icon}
+            </IconButton>
+          </Tooltip>
+        ))}
       </Box>
     </Box>
   </>)
