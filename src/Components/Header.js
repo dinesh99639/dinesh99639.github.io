@@ -8,10 +8,18 @@ const Header = (props) => {
   return (
     <Box>
       <AppBar position="static" className="main-header" >
-        <Toolbar style={{ height: "7vh", minHeight: "7vh" }} >
-          <Box style={{ margin: "auto", marginLeft: "4vw", display: "flex" }}>
+        <Toolbar 
+          style={{ 
+            height: "6vh", 
+            minHeight: "6vh", 
+            display: "flex", 
+            justifyContent: "space-between",
+            padding: "0 4vw"
+          }} 
+        >
+          <Box>
             <Typography
-              variant="h6"
+              sx={{ fontSize: "17.6px" }}
               component="div"
             >Portfolio</Typography>
           </Box>

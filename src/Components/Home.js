@@ -35,15 +35,19 @@ const skills = [
   { label: "JavaScript", img: require("../assets/skills/javascript.svg").default },
   { label: "jQuery", img: require("../assets/skills/jquery.svg").default },
   { label: "BootStrap", img: require("../assets/skills/bootstrap.svg").default },
-  { label: "php", img: require("../assets/skills/php.svg").default },
+  { label: "Material UI", img: require("../assets/skills/material-ui.svg").default },
+  { label: "php", img: require("../assets/skills/php.svg").default, invert: true },
   { label: "MySQL", img: require("../assets/skills/mysql.svg").default },
   { label: "NodeJS", img: require("../assets/skills/nodejs.svg").default },
   { label: "React", img: require("../assets/skills/react.svg").default },
-  { label: "ExpressJS", img: require("../assets/skills/expressjs.svg").default },
+  { label: "Redux", img: require("../assets/skills/redux.svg").default },
+  { label: "ExpressJS", img: require("../assets/skills/expressjs.svg").default, invert: true },
+  { label: "GraphQL", img: require("../assets/skills/graphql.svg").default },
   { label: "MongoDB", img: require("../assets/skills/mongodb.svg").default },
-  { label: "Java", img: require("../assets/skills/java.svg").default },
   { label: "Python", img: require("../assets/skills/python.svg").default },
   { label: "Git", img: require("../assets/skills/git.svg").default },
+  { label: "VS Code", img: require("../assets/skills/vscode.svg").default },
+  { label: "Postman", img: require("../assets/skills/postman.svg").default },
 ];
 
 const BasicDetails = (props) => {
@@ -60,11 +64,12 @@ const BasicDetails = (props) => {
     >
       <Typography
         sx={{
-          fontSize: "25px",
-          color: "rgb(109, 131, 242)"
+          fontFamily: "Montserrat, sans-serif",
+          fontSize: "27px",
         }}
       >
-        Dinesh Somaraju
+        DINESH SOMARAJU
+        {/* Dinesh Somaraju */}
       </Typography>
       <Typography
         sx={{
@@ -132,7 +137,7 @@ const Terminal = () => {
     <Box sx={{
       position: "relative",
       display: "flex",
-      justifyContent: "center",
+      justifyContent: "right",
       alignItems: "center",
       boxSizing: "border-box",
       width: "50%",
@@ -176,7 +181,7 @@ const Intro = ({ theme }) => {
           <Terminal />
         </Grid>
       </Grid> */}
-      <Box style={{ paddingLeft: "60px", boxSizing: "border-box", display: "flex", flexWrap: "wrap" }} >
+      <Box style={{ boxSizing: "border-box", display: "flex", flexWrap: "wrap" }} >
         <BasicDetails theme={theme} />
         <Terminal />
       </Box>
@@ -188,18 +193,19 @@ const Skills = ({ theme }) => {
   return (
     <>
       <Typography
-        sx={{ textAlign: "center", fontSize: "18px", margin: "15px 0 0 0" }}
+        sx={{ textAlign: "center", fontSize: "18px", margin: "30px 0 0 0" }}
       >
         Skills
       </Typography>
       <Grid
         container
         sx={{
-          padding: "0",
+          padding: "30px 0",
           margin: "0",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          gap: "60px"
         }}
       >
         {skills.map((skill, index) => {
@@ -211,12 +217,10 @@ const Skills = ({ theme }) => {
               style={{
                 width: "15%",
                 maxWidth: "60px",
-                margin: "10px 30px",
-                // filter:
-                //   theme === "dark"
-                //     ? "brightness(0%) invert(100%)"
-                //     : "grayscale(100%)",
-                opacity: "0.76",
+                filter:
+                  skill.invert && theme === "dark"
+                    ? "brightness(100%) invert(100%)"
+                    : "",
               }}
             />
           );
@@ -230,7 +234,7 @@ const Projects = ({ theme }) => {
   return (
     <>
       <Typography
-        sx={{ textAlign: "center", fontSize: "18px", margin: "15px 0 0 0" }}
+        sx={{ textAlign: "center", fontSize: "18px", margin: "30px 0 0 0" }}
       >
         Projects
       </Typography>
@@ -301,12 +305,12 @@ function Home(props) {
     <>
       {isDesktop ? (
         <>
-          <Box sx={{ padding: "5vw" }}>
+          <Box sx={{ padding: "3vw 8vw" }}>
             <Intro theme={theme} />
             <Skills theme={theme} />
             <Projects theme={theme} />
 
-            <Box sx={{ padding: "20px 0" }}></Box>
+            {/* <Box sx={{ padding: "20px 0" }}></Box> */}
           </Box>
         </>
       ) : (
