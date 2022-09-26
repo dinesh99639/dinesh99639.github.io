@@ -68,30 +68,22 @@ const BasicDetails = (props) => {
 
   return (<>
     <Box
+      className="basicDetails"
       sx={{
         padding: "40px 0 0 0",
-        boxSizing: "border-box",
         minWidth: "350px",
         width: "50%"
       }}
     >
-      <Typography
-        sx={{
-          fontFamily: "Montserrat, sans-serif",
-          fontSize: "27px",
-        }}
-      >DINESH SOMARAJU</Typography>
-      <Typography
-        sx={{ fontSize: "13px", opacity: 0.76 }}
-      >
+      <Typography sx={{ fontFamily: "Montserrat, sans-serif", fontSize: "27px" }} >
+        DINESH SOMARAJU
+      </Typography>
+      <Typography sx={{ fontSize: "13px", opacity: 0.76 }} >
         Digital Specialist Engineer, Infosys
       </Typography>
-      <Typography
-        sx={{
-          fontSize: "13px",
-          margin: "10px 0",
-          textAlign: "justify",
-        }}
+      <Typography 
+        className="about" 
+        sx={{ fontSize: "13px", margin: "10px 0", textAlign: "justify" }} 
       >
         Hi, I'm Dinesh Somaraju, a Full Stack Developer from India. I'm
         currently working at Infosys. I love development.
@@ -112,22 +104,16 @@ const BasicDetails = (props) => {
 
 const Terminal = () => {
   return (<>
-    <Box sx={{
-      position: "relative",
-      display: "flex",
-      justifyContent: "right",
-      alignItems: "center",
-      boxSizing: "border-box",
-      width: "50%",
-    }}
-    >
+    <Box className="terminal" sx={{ width: "50%", maxWidth: "1000px" }} >
       <Paper
         elevation={3}
+        className="terminal"
         sx={{
+          marginLeft: "auto",
           backgroundColor: "#282828",
           color: "white",
           height: "220px",
-          width: "70%",
+          width: "100%",
           minWidth: "340px",
           maxWidth: "400px",
           borderRadius: "7px",
@@ -151,14 +137,6 @@ const Terminal = () => {
 const Intro = ({ theme }) => {
   return (
     <>
-      {/* <Grid container>
-        <Grid item xs={12} sm={8} md={6}>
-          <BasicDetails theme={theme} />
-        </Grid>
-        <Grid item xs={0} sm={4} md={6}>
-          <Terminal />
-        </Grid>
-      </Grid> */}
       <Box style={{ boxSizing: "border-box", display: "flex", flexWrap: "wrap" }} >
         <BasicDetails theme={theme} />
         <Terminal />
@@ -276,24 +254,19 @@ const Projects = ({ theme }) => {
 };
 
 function Home(props) {
-  const isDesktop = true || window.innerWidth > 760;
   const { theme } = props;
 
   return (
     <>
-      {isDesktop ? (
-        <>
-          <Box sx={{ padding: "3vw 8vw" }}>
-            <Intro theme={theme} />
-            <Skills theme={theme} />
-            <Projects theme={theme} />
+      <>
+        <Box sx={{ padding: "3vw 8vw" }}>
+          <Intro theme={theme} />
+          <Skills theme={theme} />
+          <Projects theme={theme} />
 
-            {/* <Box sx={{ padding: "20px 0" }}></Box> */}
-          </Box>
-        </>
-      ) : (
-        <>Mobile version of the app will be launched soon</>
-      )}
+          {/* <Box sx={{ padding: "20px 0" }}></Box> */}
+        </Box>
+      </>
     </>
   );
 }

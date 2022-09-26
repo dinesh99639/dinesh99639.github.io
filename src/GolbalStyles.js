@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${({ theme }) => theme.backgroundColor};
         color: ${({ theme }) => theme.color};
         transition: all 0.3s ease-in-out;
+        overflow-y: overlay;
     }
 
     .noOverflow {
@@ -22,6 +23,23 @@ export const GlobalStyles = createGlobalStyle`
     .main-header {
         background-color: ${({ theme }) => theme.header.backgroundColor};
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px 0px !important;
+    }
+
+    @media only screen and (max-width: 833.3px) {
+        .basicDetails {
+            width: 100%;
+            text-align: center;
+        }
+
+        .basicDetails .about {
+            text-align: center;
+        }
+        
+        .terminal {
+            width: 100%;
+            text-align: center;
+            margin: 10px auto;
+        }
     }
 
     /* width */
