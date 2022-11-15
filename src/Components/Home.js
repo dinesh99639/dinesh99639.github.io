@@ -6,11 +6,15 @@ import "prismjs";
 import "prismjs/components/prism-jsx.min";
 import "prismjs/themes/prism-okaidia.css";
 
-import { Grid, Box, Typography, Paper, Tooltip, IconButton } from "@mui/material";
+import Tilt from 'react-vanilla-tilt';
+import { Grid, Box, Button, Typography, Paper, Tooltip, IconButton, ClickAwayListener } from "@mui/material";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import ArticleIcon from "@mui/icons-material/Article";
+
+import GSecureLockIcon from "../assets/projects/GSecureLockIcon";
+import { useState } from "react";
 
 const terminalDefaultValue = `1   const props = {
 2       name: "Dinesh Somaraju",
@@ -81,9 +85,9 @@ const BasicDetails = (props) => {
       <Typography sx={{ fontSize: "13px", opacity: 0.76 }} >
         Digital Specialist Engineer, Infosys
       </Typography>
-      <Typography 
-        className="about" 
-        sx={{ fontSize: "13px", margin: "10px 0", textAlign: "justify" }} 
+      <Typography
+        className="about"
+        sx={{ fontSize: "13px", margin: "10px 0", textAlign: "justify" }}
       >
         Hi, I'm Dinesh Somaraju, a Full Stack Developer from India. I'm
         currently working at Infosys. I love development.
@@ -186,6 +190,92 @@ const Skills = ({ theme }) => {
   );
 };
 
+const Project = (props) => {
+  const { project } = props;
+
+  const [isTechnologiesOpen, setIsTechnologiesOpen] = useState(false);
+
+  return (<Tilt
+    options={{ max: 25, speed: 400, glare: true, "max-glare": 1 }}
+    style={{ background: "inherit" }}
+  >
+    <Paper
+      elevation={3}
+      sx={{
+        borderRadius: "7px",
+        height: "350px",
+        width: "350px",
+        // backgroundColor:
+        //   theme === "dark" ? "#404040" : lightTheme.backgroundColor,
+        color: "inherit",
+        background: "rgba(255, 255, 255, 0.1)",
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "150px"
+        }}
+      >
+        {/* <img
+          src="/assets/projects/GSecureLock.svg"
+          alt={project.name}
+          style={{
+            width: "100%",
+            borderRadius: "7px 7px 0 0"
+          }} 
+        /> */}
+        <GSecureLockIcon
+          style={{
+            width: "100px",
+          }}
+        />
+      </Box>
+      <Box
+        sx={{
+          textAlign: "center",
+          padding: "7px 15px",
+          textOverflow: "ellipsis",
+          overflow: "hidden",
+        }}
+      >
+        <Typography sx={{ margin: "8px 0" }}>{project.name}</Typography>
+        <Typography
+          sx={{
+            fontSize: "13px",
+            wordWrap: "break-word",
+            height: "50px",
+            opacity: "85%"
+          }}
+        >{project.description}</Typography>
+      </Box>
+
+      {/* <ClickAwayListener onClickAway={() => setIsTechnologiesOpen(false)}>
+          <Tooltip
+            PopperProps={{
+              disablePortal: true,
+            }}
+            onClose={() => setIsTechnologiesOpen(false)}
+            open={isTechnologiesOpen}
+            disableFocusListener
+            disableHoverListener
+            disableTouchListener
+            // style={{ backgroundColor: "white" }}
+            title={<>
+              <button>sdad</button>
+            </>}
+          >
+            <Button variant="contained" onClick={() => setIsTechnologiesOpen(true)}>Click</Button>
+          </Tooltip>
+      </ClickAwayListener> */}
+    </Paper>
+  </Tilt>)
+}
+
 const Projects = ({ theme }) => {
   return (
     <>
@@ -204,48 +294,10 @@ const Projects = ({ theme }) => {
       >
         {projects.map((project, index) => {
           return (
-            <Box key={"project" + index}>
-              <Paper
-                elevation={3}
-                sx={{
-                  height: "350px",
-                  width: "300px",
-                  backgroundColor:
-                    theme === "dark" ? "#404040" : lightTheme.backgroundColor,
-                  color: "inherit",
-                  margin: "10px",
-                }}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img
-                    src={require("../assets/DefaultProject.svg").default}
-                    alt={"Default"}
-                    style={{
-                      width: "40%",
-                      // filter:
-                      //   theme === "dark"
-                      //     ? "brightness(0%) invert(100%)"
-                      //     : "grayscale(100%)",
-                      opacity: "0.76",
-                    }}
-                  />
-                </Box>
-                <Box
-                  sx={{
-                    textAlign: "center",
-                    padding: "7px 10px"
-                  }}
-                >
-                  <Typography sx={{ margin: "8px 0", fontWeight: "bold" }}>{project.name}</Typography>
-                  <Typography sx={{ fontSize: "13px" }}>{project.desc}</Typography>
-                </Box>
-              </Paper>
-            </Box>
+            <Project
+              key={"project" + index}
+              project={project}
+            />
           );
         })}
       </Grid>

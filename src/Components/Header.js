@@ -7,7 +7,8 @@ const Header = (props) => {
   const { theme, setTheme } = props;
   return (
     <Box>
-      <AppBar position="static" className="main-header" >
+      <Box style={{ height: "6vh" }}></Box>
+      <AppBar position="fixed" className="main-header" >
         <Toolbar 
           style={{
             height: "6vh", 
