@@ -36,24 +36,98 @@ const terminalDefaultValue = `1   const props = {
 `;
 
 const skills = [
-  { label: "HTML", img: "/src/assets/skills/html5.svg" },
-  { label: "CSS", img: "/src/assets/skills/css3.svg" },
-  { label: "JavaScript", img: "/src/assets/skills/javascript.svg" },
-  { label: "jQuery", img: "/src/assets/skills/jquery.svg" },
-  { label: "BootStrap", img: "/src/assets/skills/bootstrap.svg" },
-  { label: "Material UI", img: "/src/assets/skills/material-ui.svg" },
-  { label: "php", img: "/src/assets/skills/php.svg", invert: true },
-  { label: "MySQL", img: "/src/assets/skills/mysql.svg" },
-  { label: "NodeJS", img: "/src/assets/skills/nodejs.svg" },
-  { label: "React", img: "/src/assets/skills/react.svg" },
-  { label: "Redux", img: "/src/assets/skills/redux.svg" },
-  { label: "ExpressJS", img: "/src/assets/skills/expressjs.svg", invert: true },
-  { label: "GraphQL", img: "/src/assets/skills/graphql.svg" },
-  { label: "MongoDB", img: "/src/assets/skills/mongodb.svg" },
-  { label: "Python", img: "/src/assets/skills/python.svg" },
-  { label: "Git", img: "/src/assets/skills/git.svg" },
-  { label: "VS Code", img: "/src/assets/skills/vscode.svg" },
-  { label: "Postman", img: "/src/assets/skills/postman.svg" },
+  {
+    label: "HTML",
+    img: "/src/assets/skills/html5.svg",
+    link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  },
+  {
+    label: "CSS",
+    img: "/src/assets/skills/css3.svg",
+    link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  },
+  {
+    label: "JavaScript",
+    img: "/src/assets/skills/javascript.svg",
+    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
+    label: "jQuery",
+    img: "/src/assets/skills/jquery.svg",
+    link: "https://jquery.com/",
+  },
+  {
+    label: "BootStrap",
+    img: "/src/assets/skills/bootstrap.svg",
+    link: "https://getbootstrap.com/",
+  },
+  {
+    label: "Material UI",
+    img: "/src/assets/skills/material-ui.svg",
+    link: "https://mui.com/",
+  },
+  {
+    label: "php",
+    img: "/src/assets/skills/php.svg",
+    link: "https://www.php.net/",
+    invert: true,
+  },
+  {
+    label: "MySQL",
+    img: "/src/assets/skills/mysql.svg",
+    link: "https://www.mysql.com/",
+  },
+  {
+    label: "NodeJS",
+    img: "/src/assets/skills/nodejs.svg",
+    link: "https://nodejs.org/",
+  },
+  {
+    label: "React",
+    img: "/src/assets/skills/react.svg",
+    link: "https://reactjs.org/",
+  },
+  {
+    label: "Redux",
+    img: "/src/assets/skills/redux.svg",
+    link: "https://redux.js.org/",
+  },
+  {
+    label: "ExpressJS",
+    img: "/src/assets/skills/expressjs.svg",
+    link: "https://expressjs.com/",
+    invert: true,
+  },
+  {
+    label: "GraphQL",
+    img: "/src/assets/skills/graphql.svg",
+    link: "https://graphql.org/",
+  },
+  {
+    label: "MongoDB",
+    img: "/src/assets/skills/mongodb.svg",
+    link: "https://www.mongodb.com/",
+  },
+  {
+    label: "Python",
+    img: "/src/assets/skills/python.svg",
+    link: "https://www.python.org/",
+  },
+  {
+    label: "Git",
+    img: "/src/assets/skills/git.svg",
+    link: "https://git-scm.com/",
+  },
+  {
+    label: "VS Code",
+    img: "/src/assets/skills/vscode.svg",
+    link: "https://code.visualstudio.com/",
+  },
+  {
+    label: "Postman",
+    img: "/src/assets/skills/postman.svg",
+    link: "https://www.postman.com/",
+  },
 ];
 
 const BasicDetails = (props) => {
@@ -112,15 +186,6 @@ const BasicDetails = (props) => {
               <IconButton href={item.link} target="_blank">
                 {item.icon}
               </IconButton>
-              {/* <img 
-              src="/src/assets/icons/linkedin.svg"
-              style={{
-                cursor: "pointer",
-                backgroundColor: "white",
-                width: "25px",
-                margin: "7px"
-              }} 
-            /> */}
             </Tooltip>
           ))}
         </Box>
@@ -237,6 +302,7 @@ const Skills = ({ theme }) => {
               alt={skill.label}
               src={skill.img}
               style={{
+                cursor: "pointer",
                 width: "15%",
                 maxWidth: "60px",
                 filter:
@@ -244,6 +310,7 @@ const Skills = ({ theme }) => {
                     ? "brightness(100%) invert(100%)"
                     : "",
               }}
+              onClick={() => window.open(skill.link)}
             />
           );
         })}
@@ -284,14 +351,6 @@ const Project = (props) => {
             height: "150px",
           }}
         >
-          {/* <img
-          src="/assets/projects/GSecureLock.svg"
-          alt={project.name}
-          style={{
-            width: "100%",
-            borderRadius: "7px 7px 0 0"
-          }} 
-        /> */}
           <GSecureLockIcon
             style={{
               width: "100px",
