@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import { lightTheme } from "../Theme";
+
+import user from "../data/user.json";
 import projects from "../data/projects.json";
 
 import PrismCode from "react-prism";
@@ -15,7 +18,7 @@ import {
   Paper,
   Tooltip,
   IconButton,
-  ClickAwayListener,
+  Chip,
 } from "@mui/material";
 
 import GitHubIcon from "../assets/icons/github";
@@ -23,10 +26,9 @@ import LinkedInIcon from "../assets/icons/linkedin";
 import DocumentIcon from "../assets/icons/document";
 
 import GSecureLockIcon from "../assets/projects/GSecureLockIcon";
-import { useState } from "react";
 
 const terminalDefaultValue = `1   const props = {
-2       name: "Dinesh Somaraju",
+2       name: "${user.name}",
 3       hobbies: [
 4           "Competitve Programming",
 5           "Listening Songs",
@@ -167,17 +169,16 @@ const BasicDetails = (props) => {
         <Typography
           sx={{ fontFamily: "Montserrat, sans-serif", fontSize: "27px" }}
         >
-          DINESH SOMARAJU
+          {user.name.toUpperCase()}
         </Typography>
         <Typography sx={{ fontSize: "13px", opacity: 0.76 }}>
-          Digital Specialist Engineer, Infosys
+          {user.position}
         </Typography>
         <Typography
           className="about"
           sx={{ fontSize: "13px", margin: "10px 0", textAlign: "justify" }}
         >
-          Hi, I'm Dinesh Somaraju, a Full Stack Developer from India. I'm
-          currently working at Infosys. I love development.
+          {user.description}
         </Typography>
 
         <Box sx={{ marginLeft: "-8px" }}>
@@ -322,12 +323,10 @@ const Skills = ({ theme }) => {
 const Project = (props) => {
   const { project } = props;
 
-  const [isTechnologiesOpen, setIsTechnologiesOpen] = useState(false);
-
   return (
     <Tilt
       options={{ max: 25, speed: 400, glare: true, "max-glare": 1 }}
-      style={{ background: "inherit" }}
+      style={{ background: "inherit", margin: "10px 0" }}
     >
       <Paper
         elevation={3}
@@ -378,24 +377,47 @@ const Project = (props) => {
           </Typography>
         </Box>
 
-        {/* <ClickAwayListener onClickAway={() => setIsTechnologiesOpen(false)}>
-          <Tooltip
-            PopperProps={{
-              disablePortal: true,
+        <Box
+          style={{
+            height: "90px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <Button
+            variant="outlined"
+            color="inherit"
+            component="a"
+            href={project.github}
+            target="_blank"
+            sx={{
+              borderRadius: "50px",
+              padding: "3px",
+              width: "40%",
+              textTransform: "none",
+              fontSize: "13px",
             }}
-            onClose={() => setIsTechnologiesOpen(false)}
-            open={isTechnologiesOpen}
-            disableFocusListener
-            disableHoverListener
-            disableTouchListener
-            // style={{ backgroundColor: "white" }}
-            title={<>
-              <button>sdad</button>
-            </>}
           >
-            <Button variant="contained" onClick={() => setIsTechnologiesOpen(true)}>Click</Button>
-          </Tooltip>
-      </ClickAwayListener> */}
+            Github
+          </Button>
+          <Button
+            variant="outlined"
+            color="inherit"
+            component="a"
+            href={project.live || null}
+            target="_blank"
+            sx={{
+              borderRadius: "50px",
+              padding: "3px",
+              width: "40%",
+              textTransform: "none",
+              fontSize: "13px",
+            }}
+          >
+            Live App
+          </Button>
+        </Box>
       </Paper>
     </Tilt>
   );
@@ -421,6 +443,20 @@ const Projects = ({ theme }) => {
           return <Project key={"project" + index} project={project} />;
         })}
       </Grid>
+      <div style={{ textAlign: "center" }}>
+        <Chip
+          label="View more projects"
+          color="primary"
+          size="medium"
+          component="a"
+          href={`${user.github}/?tab=repositories`}
+          target="_blank"
+          style={{
+            margin: "5px 0",
+            cursor: "pointer",
+          }}
+        />
+      </div>
     </>
   );
 };
@@ -428,18 +464,22 @@ const Projects = ({ theme }) => {
 function Home(props) {
   const { theme } = props;
 
-  return (
-    <>
-      <>
-        <Box sx={{ padding: "3vw 8vw" }}>
-          <Intro theme={theme} />
-          <Skills theme={theme} />
-          <Projects theme={theme} />
+  useEffect(() => {
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    }
+    link.href = user.githubProfileImage;
+  }, []);
 
-          {/* <Box sx={{ padding: "20px 0" }}></Box> */}
-        </Box>
-      </>
-    </>
+  return (
+    <Box sx={{ padding: "3vw 8vw" }}>
+      <Intro theme={theme} />
+      <Skills theme={theme} />
+      <Projects theme={theme} />
+    </Box>
   );
 }
 
