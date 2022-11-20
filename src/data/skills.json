@@ -1,0 +1,94 @@
+[
+    {
+      "label": "HTML",
+      "img": "html5.svg",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    },
+    {
+      "label": "CSS",
+      "img": "css3.svg",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    },
+    {
+      "label": "JavaScript",
+      "img": "javascript.svg",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    },
+    {
+      "label": "jQuery",
+      "img": "jquery.svg",
+      "link": "https://jquery.com/"
+    },
+    {
+      "label": "BootStrap",
+      "img": "bootstrap.svg",
+      "link": "https://getbootstrap.com/"
+    },
+    {
+      "label": "Material UI",
+      "img": "material-ui.svg",
+      "link": "https://mui.com/"
+    },
+    {
+      "label": "php",
+      "img": "php.svg",
+      "link": "https://www.php.net/",
+      "invert": true
+    },
+    {
+      "label": "MySQL",
+      "img": "mysql.svg",
+      "link": "https://www.mysql.com/"
+    },
+    {
+      "label": "NodeJS",
+      "img": "nodejs.svg",
+      "link": "https://nodejs.org/"
+    },
+    {
+      "label": "React",
+      "img": "react.svg",
+      "link": "https://reactjs.org/"
+    },
+    {
+      "label": "Redux",
+      "img": "redux.svg",
+      "link": "https://redux.js.org/"
+    },
+    {
+      "label": "ExpressJS",
+      "img": "expressjs.svg",
+      "link": "https://expressjs.com/",
+      "invert": true
+    },
+    {
+      "label": "GraphQL",
+      "img": "graphql.svg",
+      "link": "https://graphql.org/"
+    },
+    {
+      "label": "MongoDB",
+      "img": "mongodb.svg",
+      "link": "https://www.mongodb.com/"
+    },
+    {
+      "label": "Python",
+      "img": "python.svg",
+      "link": "https://www.python.org/"
+    },
+    {
+      "label": "Git",
+      "img": "git.svg",
+      "link": "https://git-scm.com/"
+    },
+    {
+      "label": "VS Code",
+      "img": "vscode.svg",
+      "link": "https://code.visualstudio.com/"
+    },
+    {
+      "label": "Postman",
+      "img": "postman.svg",
+      "link": "https://www.postman.com/"
+    }
+  ]

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { lightTheme } from "../Theme";
 
 import user from "../data/user.json";
+import skills from "../data/skills.json";
 import projects from "../data/projects.json";
 
 import PrismCode from "react-prism";
@@ -37,101 +38,6 @@ const terminalDefaultValue = `1   const props = {
 8   }
 `;
 
-const skills = [
-  {
-    label: "HTML",
-    img: "/src/assets/skills/html5.svg",
-    link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-  },
-  {
-    label: "CSS",
-    img: "/src/assets/skills/css3.svg",
-    link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-  },
-  {
-    label: "JavaScript",
-    img: "/src/assets/skills/javascript.svg",
-    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-  },
-  {
-    label: "jQuery",
-    img: "/src/assets/skills/jquery.svg",
-    link: "https://jquery.com/",
-  },
-  {
-    label: "BootStrap",
-    img: "/src/assets/skills/bootstrap.svg",
-    link: "https://getbootstrap.com/",
-  },
-  {
-    label: "Material UI",
-    img: "/src/assets/skills/material-ui.svg",
-    link: "https://mui.com/",
-  },
-  {
-    label: "php",
-    img: "/src/assets/skills/php.svg",
-    link: "https://www.php.net/",
-    invert: true,
-  },
-  {
-    label: "MySQL",
-    img: "/src/assets/skills/mysql.svg",
-    link: "https://www.mysql.com/",
-  },
-  {
-    label: "NodeJS",
-    img: "/src/assets/skills/nodejs.svg",
-    link: "https://nodejs.org/",
-  },
-  {
-    label: "React",
-    img: "/src/assets/skills/react.svg",
-    link: "https://reactjs.org/",
-  },
-  {
-    label: "Redux",
-    img: "/src/assets/skills/redux.svg",
-    link: "https://redux.js.org/",
-  },
-  {
-    label: "ExpressJS",
-    img: "/src/assets/skills/expressjs.svg",
-    link: "https://expressjs.com/",
-    invert: true,
-  },
-  {
-    label: "GraphQL",
-    img: "/src/assets/skills/graphql.svg",
-    link: "https://graphql.org/",
-  },
-  {
-    label: "MongoDB",
-    img: "/src/assets/skills/mongodb.svg",
-    link: "https://www.mongodb.com/",
-  },
-  {
-    label: "Python",
-    img: "/src/assets/skills/python.svg",
-    link: "https://www.python.org/",
-  },
-  {
-    label: "Git",
-    img: "/src/assets/skills/git.svg",
-    link: "https://git-scm.com/",
-  },
-  {
-    label: "VS Code",
-    img: "/src/assets/skills/vscode.svg",
-    link: "https://code.visualstudio.com/",
-  },
-  {
-    label: "Postman",
-    img: "/src/assets/skills/postman.svg",
-    link: "https://www.postman.com/",
-  },
-];
-
 const BasicDetails = (props) => {
   const theme = props.theme;
 
@@ -142,12 +48,12 @@ const BasicDetails = (props) => {
     {
       title: "Github",
       icon: <GitHubIcon color={color} />,
-      link: "https://github.com/dinesh99639/",
+      link: user.github,
     },
     {
       title: "Linkedin",
       icon: <LinkedInIcon color={color} />,
-      link: "https://www.linkedin.com/in/dinesh-somaraju/",
+      link: user.linkedin,
     },
     {
       title: "Resume",
@@ -301,7 +207,7 @@ const Skills = ({ theme }) => {
             <img
               key={"skill" + index}
               alt={skill.label}
-              src={skill.img}
+              src={`/src/assets/skills/${skill.img}`}
               style={{
                 cursor: "pointer",
                 width: "15%",
