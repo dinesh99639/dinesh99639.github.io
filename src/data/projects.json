@@ -2,7 +2,7 @@
   {
     "name": "Security Pass",
     "icon": "",
-    "image": "GSecureLock.jsx",
+    "image": "",
     "description": "A secure system to access an application without revealing your original password.",
     "technologies": ["HTML", "CSS", "JavaScript", "php"],
     "github": "https://github.com/dinesh99639/securitypass",
@@ -10,8 +10,8 @@
   },
   {
     "name": "GSecureLock",
-    "icon": "",
-    "image": "GSecureLock.jsx",
+    "icon": "GSecureLock.svg",
+    "image": "",
     "description": "An open source application for managing your Passwords, Cards, Coupons, API Keys at one place. Your entries will be saved in your own Google Drive.",
     "technologies": ["React"],
     "github": "https://github.com/dinesh99639/GSecureLock",
@@ -20,7 +20,7 @@
   {
     "name": "Stock Price Prediction",
     "icon": "",
-    "image": "GSecureLock.jsx",
+    "image": "",
     "description": "Built with LSTM model and frontend which predicts the stock prices above 90% accuracy.",
     "technologies": ["Python", "HTML", "CSS", "JavaScript"],
     "github": "https://github.com/dinesh99639/Stock-Price-Prediction",

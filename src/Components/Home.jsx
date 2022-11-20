@@ -27,8 +27,6 @@ import GitHubIcon from "../assets/icons/github";
 import LinkedInIcon from "../assets/icons/linkedin";
 import DocumentIcon from "../assets/icons/document";
 
-import GSecureLockIcon from "../assets/projects/GSecureLockIcon";
-
 const terminalDefaultValue = `1   const props = {
 2       name: "${user.name}",
 3       hobbies: [
@@ -257,9 +255,11 @@ const Project = (props) => {
             height: "150px",
           }}
         >
-          <GSecureLockIcon
+          <img
+            src={`/src/assets/projects/${project.icon || "DefaultProject.svg"}`}
             style={{
               width: "100px",
+              // filter: "invert(20%)",
             }}
           />
         </Box>
