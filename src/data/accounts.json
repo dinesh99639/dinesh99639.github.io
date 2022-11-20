@@ -1,0 +1,43 @@
+{
+  "linkedin": {
+    "name": "Linkedin",
+    "link": "https://www.linkedin.com/in/dinesh-somaraju/",
+    "image": "linkedin.png"
+  },
+  "twitter": {
+    "name": "Twitter",
+    "link": "https://twitter.com/DineshSomaraju",
+    "image": "twitter.png"
+  },
+  "instagram": {
+    "name": "Instagram",
+    "link": "https://www.instagram.com/dinesh99639/",
+    "image": "instagram.png"
+  },
+  "facebook": {
+    "name": "Facebook",
+    "link": "https://www.facebook.com/dinesh.somaraju.7",
+    "image": "facebook.png"
+  },
+  "email": {
+    "name": "Email",
+    "link": "mailto:dinesh99639@gmail.com",
+    "image": "gmail.png"
+  },
+  "github": {
+    "name": "Github",
+    "link": "https://github.com/dinesh99639",
+    "image": "github.png",
+    "invert": true
+  },
+  "stackoverflow": {
+    "name": "StackOverflow",
+    "link": "https://stackoverflow.com/users/13885192/dinesh",
+    "image": "stackoverflow.png"
+  },
+  "whatsapp": {
+    "name": "WhatsApp",
+    "link": "http://wa.me/918106313275",
+    "image": "whatsapp.png"
+  }
+}
