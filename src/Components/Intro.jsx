@@ -42,7 +42,7 @@ const BasicDetails = (props) => {
     {
       title: "Resume",
       icon: <DocumentIcon color={color} />,
-      link: "",
+      link: new URL(user.resume, import.meta.url).href,
     },
   ];
 
