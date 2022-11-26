@@ -13,14 +13,14 @@ import LinkedInIcon from "../assets/icons/linkedin";
 import DocumentIcon from "../assets/icons/document";
 
 const terminalDefaultValue = `1   const props = {
-    2       name: "${user.name}",
-    3       hobbies: [
-    4           "Competitve Programming",
-    5           "Listening Songs",
-    6           "Development"
-    7       ]
-    8   }
-    `;
+2       name: "${user.name}",
+3       interests: [
+4           "Competitve Programming",
+5           "Optimizing Code",
+6           "Development"
+7       ]
+8   }
+`;
 
 const BasicDetails = (props) => {
   const theme = props.theme;

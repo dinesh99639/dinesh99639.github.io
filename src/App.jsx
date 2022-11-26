@@ -1,27 +1,25 @@
+import { useState } from "react";
+import { ThemeProvider } from "styled-components";
 
-import { useState } from 'react';
-import { ThemeProvider } from 'styled-components';
-
-import { lightTheme, darkTheme } from './Theme';
-import { GlobalStyles } from './GolbalStyles';
+import { lightTheme, darkTheme } from "./Theme";
+import { GlobalStyles } from "./GolbalStyles";
 
 import Header from "./Components/Header";
-import Home from './Components/Home';
+import Home from "./Components/Home";
 
 const App = () => {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "dark");
 
-  return (<>
-    <ThemeProvider theme={(theme === "light") ? lightTheme : darkTheme}>
-      <GlobalStyles />
+  return (
+    <>
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <GlobalStyles />
 
-      <Header 
-        theme={theme} 
-        setTheme={setTheme}
-      />
-      <Home theme={theme} />
-    </ThemeProvider>
-  </>);
-}
+        <Header theme={theme} setTheme={setTheme} />
+        <Home theme={theme} />
+      </ThemeProvider>
+    </>
+  );
+};
 
 export default App;

@@ -5,6 +5,12 @@ import LightModeIcon from "../assets/icons/lightmode";
 
 const Header = (props) => {
   const { theme, setTheme } = props;
+
+  const changeTheme = (theme) => {
+    setTheme(theme);
+    localStorage.setItem("theme", theme);
+  };
+
   return (
     <Box>
       <Box style={{ height: "6vh" }}></Box>
@@ -27,7 +33,7 @@ const Header = (props) => {
           <Box style={{ display: "flex", alignItems: "center" }}>
             <IconButton
               size="medium"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() => changeTheme(theme === "dark" ? "light" : "dark")}
             >
               {theme === "light" ? (
                 <DarkModeIcon color="white" />

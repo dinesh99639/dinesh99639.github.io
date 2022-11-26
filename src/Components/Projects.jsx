@@ -132,7 +132,7 @@ const Projects = ({ theme }) => {
           color="primary"
           size="medium"
           component="a"
-          href={`${user.github}/?tab=repositories`}
+          href={`https://github.com/${user.githubUsername}/?tab=repositories`}
           target="_blank"
           style={{
             margin: "5px 0",
