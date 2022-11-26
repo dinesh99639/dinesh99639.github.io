@@ -33,7 +33,12 @@ const Project = (props) => {
           }}
         >
           <img
-            src={`/src/assets/projects/${project.icon || "DefaultProject.svg"}`}
+            src={
+              new URL(
+                `../assets/projects/${project.icon || "DefaultProject.svg"}`,
+                import.meta.url
+              ).href
+            }
             style={{
               width: "100px",
             }}

@@ -37,7 +37,12 @@ const ConnectWithMe = ({ theme }) => {
                 height="40"
                 width="40"
                 alt={account.name}
-                src={`/src/assets/accounts/${account.image}`}
+                src={
+                  new URL(
+                    `../assets/accounts/${account.image}`,
+                    import.meta.url
+                  ).href
+                }
                 style={{
                   filter:
                     account.invert && theme === "dark"

@@ -26,7 +26,9 @@ const Skills = ({ theme }) => {
             <img
               key={"skill" + index}
               alt={skill.label}
-              src={`/src/assets/skills/${skill.img}`}
+              src={
+                new URL(`../assets/skills/${skill.img}`, import.meta.url).href
+              }
               style={{
                 cursor: "pointer",
                 width: "15%",
