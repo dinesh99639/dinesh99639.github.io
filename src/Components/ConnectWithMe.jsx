@@ -27,6 +27,7 @@ const ConnectWithMe = ({ theme }) => {
           justifyContent: "center",
           gap: "20px",
           margin: "20px 0",
+          flexWrap: "wrap",
         }}
       >
         {accountsList.map((item, idx) => {
