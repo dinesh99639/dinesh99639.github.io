@@ -4,6 +4,8 @@ import projects from "../data/projects.json";
 import Tilt from "react-vanilla-tilt";
 import { Grid, Box, Button, Typography, Paper, Chip } from "@mui/material";
 
+import FadeInScroll from "../Animations/FadeInScroll";
+
 const Project = (props) => {
   const { project } = props;
 
@@ -112,6 +114,8 @@ const Project = (props) => {
 };
 
 const Projects = ({ theme }) => {
+  const isDesktop = window.innerWidth > 833.3;
+
   return (
     <>
       <Typography
@@ -128,7 +132,15 @@ const Projects = ({ theme }) => {
         }}
       >
         {projects.map((project, index) => {
-          return <Project key={"project" + index} project={project} />;
+          return (
+            <FadeInScroll
+              key={"project" + index}
+              threshold={0.4}
+              delay={isDesktop && index % 2 === 0 ? 300 : 0}
+            >
+              <Project project={project} />
+            </FadeInScroll>
+          );
         })}
       </Grid>
       <div style={{ textAlign: "center" }}>
