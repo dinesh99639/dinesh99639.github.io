@@ -7,10 +7,10 @@ const ConnectWithMe = ({ theme }) => {
     "linkedin",
     "github",
     "stackoverflow",
+    "email",
     "twitter",
     "instagram",
     "facebook",
-    "email",
     "whatsapp",
   ];
 
