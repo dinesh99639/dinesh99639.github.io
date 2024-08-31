@@ -19,7 +19,7 @@ const Project = (props) => {
         sx={{
           borderRadius: "7px",
           height: "350px",
-          width: "350px",
+          width: ["auto", "350px"],
           color: "inherit",
           background: "rgba(255, 255, 255, 0.1)",
         }}
