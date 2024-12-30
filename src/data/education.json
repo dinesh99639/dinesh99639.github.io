@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Anil Neerukonda Institute of Technology and Sciences (UG)",
+    "description": "Bachelor of Technology - Computer Science; GPA: 8.68",
+    "place": "Visakhapatnam, India",
+    "timePeriod": "July 2017 - June 2021"
+  },
+  {
+    "name": "Narayana Junior College (Board of Intermediate AP)",
+    "description": "Intermediate - MPC; Percentage: 97.4 ",
+    "place": "Srikakulam, India",
+    "timePeriod": "June 2015 - March 2017"
+  },
+  {
+    "name": "Ravindra Bharathi School (Board of SSC)",
+    "description": "10th Class; GPA: 9.3",
+    "place": "Amadalavalasa, India",
+    "timePeriod": "June 2014 - March 2015"
+  }
+]

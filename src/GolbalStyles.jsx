@@ -57,4 +57,10 @@ export const GlobalStyles = createGlobalStyle`
     ::-webkit-scrollbar-thumb:hover {
         background: #555; 
     }
+
+    .resume {
+        background-color: ${({ theme }) => theme.backgroundColor};
+        transition: all 0.3s ease-in-out;
+        opacity: 0.95;
+    }
 `;

@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Specialist Programmer",
+    "company": "Infosys",
+    "place": "Hyderabad, India",
+    "timePeriod": "May 2024 - December 2024",
+    "description": [
+      "Built a full-stack movie booking application using Spring Boot and Angular, enhancing the user experience and reducing the time to purchase tickets at movie theatres by 40%.",
+      "Integrated a real-time chat application, enabling users to communicate with customer support agents, resulting in a 30% increase in user engagement.",
+      "Led a team of 4 members, successfully overseeing project deliverables and ensuring timely completion.",
+      "Identified and mitigated 2 critical security vulnerabilities, improving the overall system's security posture.",
+      "Created an Android application using React Native, reaching the finals of a hackathon with over 100 participants.",
+      "Authored 4 technical articles on emerging technologies, contributing to the tech community."
+    ]
+  },
+  {
+    "title": "Digital Specialist Engineer",
+    "company": "Infosys",
+    "place": "Hyderabad, India",
+    "timePeriod": "August 2021 - April 2024",
+    "description": [
+      "Increased React application efficiency by 70% through strategic rendering optimizations.",
+      "Engineered a robust Python framework with reusable modules for CommerceTools REST and GraphQL APIs, automating manual processes and achieving a remarkable 90% reduction in data setup tasks.",
+      "Accelerated AWS Lambda performance by optimizing operations, leveraging consolidated GraphQL requests to achieve a remarkable 3x speed enhancement.",
+      "Created React unit test cases, boosting coverage from 20% to 60%.",
+      "Mitigated 20+ vulnerabilities identified in Sonar and Checkmarx scans, improving application security and reliability."
+    ]
+  }
+]
