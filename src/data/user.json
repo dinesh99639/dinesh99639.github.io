@@ -1,14 +1,16 @@
 {
-	"githubUsername": "dinesh99639",
+  "githubUsername": "dinesh99639",
 
-	"name": "Dinesh Somaraju",
-	"position": "Specialist Programmer, Infosys",
-	"description": "Hi, I'm Dinesh Somaraju, a Full Stack Developer from India. I'm currently working at Infosys. I love development.",
-	"DOB": "10/01/2000",
-	"githubProfileImage": "https://avatars2.githubusercontent.com/u/48937982?v=4",
+  "name": "Dinesh Somaraju",
+  "position": "Specialist Programmer, Infosys",
+  "description": "Hi, I'm Dinesh Somaraju, a Full Stack Developer from India. I'm currently working at Infosys. I love development.",
+  "DOB": "10/01/2000",
+  "githubProfileImage": "https://avatars2.githubusercontent.com/u/48937982?v=4",
 
-	"email": "dinesh99639@gmail.com",
-	"phone": "+918106313275",
+  "email": "dinesh99639@gmail.com",
+  "phone": "+918106313275",
 
-	"resume": "Dinesh Somaraju Resume.pdf"
+  "resume": "Dinesh Somaraju Resume.pdf",
+  "profileInfo": "Results-driven software developer skilled in building scalable applications, solving complex problems, and delivering user-focused solutions with modern tools and technologies.",
+  "summaryInfo": "A passionate Full Stack Developer from India. I'm currently working at Infosys. I love development."
 }

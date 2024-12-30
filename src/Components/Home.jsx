@@ -7,6 +7,7 @@ import { Box } from "@mui/material";
 import Intro from "./Intro";
 import Skills from "./Skills";
 import Projects from "./Projects";
+import EducationExperience from "./EducationExperience/EducationExperience";
 import ConnectWithMe from "./ConnectWithMe";
 
 function Home(props) {
@@ -27,6 +28,7 @@ function Home(props) {
       <Intro theme={theme} />
       <Skills theme={theme} />
       <Projects theme={theme} />
+      <EducationExperience theme={theme} />
       <ConnectWithMe theme={theme} />
     </Box>
   );
