@@ -28,7 +28,7 @@ function Home(props) {
       <Intro theme={theme} />
       <Skills theme={theme} />
       <Projects theme={theme} />
-      <EducationExperience theme={theme} />
+      {/* <EducationExperience theme={theme} /> */}
       <ConnectWithMe theme={theme} />
     </Box>
   );
