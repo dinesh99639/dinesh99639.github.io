@@ -1,3 +1,5 @@
+import { alpha } from "@mui/material/styles";
+
 import user from "../data/user.json";
 import projects from "../data/projects.json";
 
@@ -7,7 +9,7 @@ import { Grid, Box, Button, Typography, Paper, Chip } from "@mui/material";
 import FadeInScroll from "../Animations/FadeInScroll";
 
 const Project = (props) => {
-  const { project } = props;
+  const { project, theme } = props;
 
   return (
     <Tilt
@@ -21,7 +23,7 @@ const Project = (props) => {
           height: "350px",
           width: ["auto", "350px"],
           color: "inherit",
-          background: "rgba(255, 255, 255, 0.1)",
+          backgroundColor: theme === "dark" ? "#333" : "#f0f0f0",
         }}
       >
         <Box
@@ -87,6 +89,13 @@ const Project = (props) => {
               width: "40%",
               textTransform: "none",
               fontSize: "13px",
+              transition: "background-color 0.3s ease",
+              "&:hover": {
+                backgroundColor: alpha("#2196f3", 0.2),
+                borderColor: "#2196f3",
+                color: theme === "dark" ? "white" : ""
+              },
+              borderColor: "#2196f3",
             }}
           >
             Github
@@ -103,6 +112,13 @@ const Project = (props) => {
               width: "40%",
               textTransform: "none",
               fontSize: "13px",
+              transition: "background-color 0.3s ease",
+              "&:hover": {
+                backgroundColor: alpha("#2196f3", 0.2),
+                borderColor: "#2196f3",
+                color: theme === "dark" ? "white" : ""
+              },
+              borderColor: "#2196f3",
             }}
           >
             Live App
@@ -138,24 +154,35 @@ const Projects = ({ theme }) => {
               threshold={0.4}
               delay={isDesktop && index % 2 === 0 ? 300 : 0}
             >
-              <Project project={project} />
+              <Project project={project} theme={theme} />
             </FadeInScroll>
           );
         })}
       </Grid>
       <div style={{ textAlign: "center" }}>
-        <Chip
-          label="View more projects"
-          color="primary"
-          size="medium"
+        <Button
+          variant="outlined"
+          color="inherit"
           component="a"
           href={`https://github.com/${user.githubUsername}/?tab=repositories`}
           target="_blank"
-          style={{
+          sx={{
+            borderRadius: "50px",
             margin: "5px 0",
-            cursor: "pointer",
+            padding: "3px 10px",
+            textTransform: "none",
+            fontSize: "13px",
+            transition: "background-color 0.3s ease",
+            "&:hover": {
+              backgroundColor: alpha("#2196f3", 0.2),
+              borderColor: "#2196f3",
+              color: theme === "dark" ? "white" : ""
+            },
+            borderColor: "#2196f3",
           }}
-        />
+        >
+          View more projects
+        </Button>
       </div>
     </>
   );
