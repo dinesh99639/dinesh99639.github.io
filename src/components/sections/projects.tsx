@@ -123,7 +123,7 @@ export function Projects() {
                                     key={project.id}
                                     onClick={() => setActiveId(project.id)}
                                     className={cn(
-                                        "w-full text-left px-4 py-2.5 flex items-center gap-3 group transition-all duration-200 border-l-2",
+                                        "w-full text-left px-4 py-2.5 flex items-center gap-3 group transition-colors duration-200 border-l-2",
                                         activeId === project.id
                                             ? "bg-secondary border-primary"
                                             : "bg-transparent border-transparent hover:bg-secondary/40"

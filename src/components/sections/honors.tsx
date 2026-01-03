@@ -91,21 +91,28 @@ export function Honors() {
                             initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            whileHover={{ scale: 1.02 }}
+                            whileHover={{
+                                scale: 1.02,
+                                transition: { type: "spring", stiffness: 400, damping: 25, delay: 0 }
+                            }}
+                            transition={{
+                                duration: 0.4,
+                                delay: index * 0.1,
+                                ease: "easeOut"
+                            }}
                             className="group relative"
                         >
                             {/* Card Background with inner glow */}
-                            <div className={`absolute inset-0 bg-gradient-to-br ${honor.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl`} />
+                            <div className={`absolute inset-0 bg-gradient-to-br ${honor.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl blur-xl`} />
 
-                            <div className="relative bg-card/50 backdrop-blur-xl border border-border/50 p-8 rounded-3xl overflow-hidden group-hover:border-primary/50 transition-colors duration-500">
+                            <div className="relative bg-card/50 backdrop-blur-xl border border-border/50 p-8 rounded-3xl overflow-hidden group-hover:border-primary/50 transition-colors duration-200">
                                 {/* Spotlight effect */}
                                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
                                     <honor.icon size={120} className={honor.color} />
                                 </div>
 
                                 <div className="flex items-start gap-6">
-                                    <div className={`shrink-0 p-4 rounded-2xl bg-background/80 border border-border/50 ${honor.color} shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+                                    <div className={`shrink-0 p-4 rounded-2xl bg-background/80 border border-border/50 ${honor.color} shadow-lg group-hover:scale-110 transition-transform duration-200`}>
                                         <honor.icon size={28} />
                                     </div>
 
