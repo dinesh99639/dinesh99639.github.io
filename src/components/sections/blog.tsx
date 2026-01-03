@@ -88,7 +88,7 @@ export function Blog() {
                     >
                         <button
                             onClick={() => window.open(featuredPost.link, "_blank")}
-                            className="w-full text-left relative bg-card/40 border border-border/50 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 transition-all duration-500 overflow-hidden flex flex-col min-h-[500px] justify-between group"
+                            className="w-full text-left relative bg-card/40 border border-border/50 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 transition-colors duration-300 overflow-hidden flex flex-col min-h-[500px] justify-between group"
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
@@ -116,7 +116,7 @@ export function Blog() {
                                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">
                                     Published on <span className="text-foreground">{featuredPost.platform}</span>
                                 </div>
-                                <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-500">
+                                <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition duration-300">
                                     <ExternalLink size={24} />
                                 </div>
                             </div>
@@ -147,7 +147,7 @@ export function Blog() {
                                                     {post.readTime}
                                                 </span>
                                             </div>
-                                            <h4 className="text-lg font-bold leading-snug group-hover:text-primary transition-colors line-clamp-2 mb-2">
+                                            <h4 className="text-lg font-bold leading-snug transition-colors line-clamp-2 mb-2">
                                                 {post.title}
                                             </h4>
                                             <div className="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 duration-300">
@@ -171,12 +171,13 @@ export function Blog() {
                         href="https://dev.to/dinesh_somaraju"
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-full bg-secondary/80 border border-border/50 backdrop-blur-md text-sm font-black uppercase tracking-[0.2em] flex items-center gap-3 hover:bg-primary hover:text-white transition-all duration-300"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                        className="px-6 py-3.5 rounded-full bg-secondary/80 border border-border/50 backdrop-blur-md text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2 hover:bg-primary hover:text-white transition-colors duration-300"
                     >
                         Explore Complete Archive
-                        <ArrowUpRight size={20} />
+                        <ArrowUpRight size={18} />
                     </motion.a>
                     <p className="mt-6 text-[10px] font-bold text-muted-foreground/50 uppercase tracking-[0.4em]">
                         Documenting the Future of Web
