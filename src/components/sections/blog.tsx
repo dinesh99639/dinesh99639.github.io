@@ -174,7 +174,7 @@ export function Blog() {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                        className="px-6 py-3.5 rounded-full bg-secondary/80 border border-border/50 backdrop-blur-md text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2 hover:bg-primary hover:text-white transition-colors duration-300"
+                        className="px-6 py-3.5 rounded-full bg-secondary/80 border border-border/50 backdrop-blur-md text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2 hover:bg-primary/10 hover:border-primary/50 transition-colors duration-300"
                     >
                         Explore Complete Archive
                         <ArrowUpRight size={18} />
