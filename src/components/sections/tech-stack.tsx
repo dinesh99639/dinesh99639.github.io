@@ -1,33 +1,33 @@
 import { motion } from "framer-motion"
-import { Battery, Boxes, Cpu, Globe, Layers, Layout, Palette, Server, Smartphone, Terminal } from "lucide-react"
+import { Database, Globe, Layout, Server, Settings, Smartphone } from "lucide-react"
 
 const bentoItems = [
     {
-        title: "Frontend Powerhouse",
-        description: "Building responsive, accessible interfaces.",
+        title: "Frontend & Mobile",
+        description: "Responsive web & native apps.",
         icon: <Layout className="h-6 w-6 text-blue-500" />,
-        tags: ["React", "TypeScript", "Tailwind", "Framer Motion"],
+        tags: ["React.js", "React Native", "Angular", "TypeScript", "HTML/CSS", "Bootstrap", "Material UI"],
         className: "col-span-1 md:col-span-2 lg:col-span-2 row-span-2",
     },
     {
-        title: "Backend Systems",
-        description: "Scalable APIs & DBs.",
+        title: "Backend Core",
+        description: "Robust server-side logic.",
         icon: <Server className="h-6 w-6 text-green-500" />,
-        tags: ["Node.js", "PostgreSQL", "Redis"],
+        tags: ["Node.js", "Express.js", "Java", "Spring Boot", "Python", "PHP"],
         className: "col-span-1 md:col-span-1 lg:col-span-1",
     },
     {
-        title: "Design Engineering",
-        description: "Bridging code & design.",
-        icon: <Palette className="h-6 w-6 text-pink-500" />,
-        tags: ["Figma", "UI/UX", "System Design"],
+        title: "Database",
+        description: "Efficient data storage.",
+        icon: <Database className="h-6 w-6 text-pink-500" />,
+        tags: ["MySQL", "MongoDB"],
         className: "col-span-1 md:col-span-1 lg:col-span-1",
     },
     {
-        title: "DevOps & Cloud",
-        description: "CI/CD, Docker, and seamless deployment.",
+        title: "Cloud & DevOps",
+        description: "Deployment & infrastructure.",
         icon: <Globe className="h-6 w-6 text-orange-500" />,
-        tags: ["Docker", "AWS", "Vercel", "Git"],
+        tags: ["AWS", "Git", "Docker", "VS Code"],
         className: "col-span-1 md:col-span-2 lg:col-span-2",
     },
 ]
@@ -45,10 +45,10 @@ export function TechStack() {
                 >
                     <span className="text-sm font-medium text-primary tracking-wider uppercase mb-3 block">Expertise</span>
                     <h2 className="text-4xl font-bold tracking-tight mb-4">
-                        A Full-Stack <span className="text-gradient">Arsenal</span>
+                        Technical <span className="text-gradient">Proficiency</span>
                     </h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
-                        My technical proficiency organized by domain. I pick the right tool for the job.
+                        A comprehensive toolset for building end-to-end solutions.
                     </p>
                 </motion.div>
 
