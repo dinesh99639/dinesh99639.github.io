@@ -82,16 +82,27 @@ export function TechStack() {
     return (
         <section id="tech" className="py-24 bg-background border-t border-border/50">
             <div className="container px-4 mx-auto max-w-6xl">
-                <div className="mb-16 text-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-16 text-center"
+                >
                     <span className="text-sm font-medium text-primary tracking-wider uppercase mb-3 block">Expertise</span>
                     <h2 className="text-4xl font-bold tracking-tight mb-4">
                         Technical <span className="text-gradient">Proficiency</span>
                     </h2>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                     {/* Left Column: Navigation */}
-                    <div className="lg:col-span-4 space-y-2">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="lg:col-span-4 space-y-2"
+                    >
                         {categories.map((cat) => (
                             <button
                                 key={cat.id}
@@ -124,10 +135,16 @@ export function TechStack() {
                                 )}
                             </button>
                         ))}
-                    </div>
+                    </motion.div>
 
                     {/* Right Column: Content */}
-                    <div className="lg:col-span-8">
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="lg:col-span-8"
+                    >
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={activeTab}
@@ -170,7 +187,7 @@ export function TechStack() {
                                 </div>
                             </motion.div>
                         </AnimatePresence>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

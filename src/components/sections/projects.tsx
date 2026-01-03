@@ -93,17 +93,30 @@ export function Projects() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-4"
                     >
                         <Terminal size={14} />
                         Source Explorer
                     </motion.div>
-                    <h2 className="text-4xl font-bold tracking-tight mb-4">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl font-bold tracking-tight mb-4"
+                    >
                         Project <span className="text-gradient">Repository</span>
-                    </h2>
+                    </motion.h2>
                 </div>
 
-                <div className="bg-card border border-border/50 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[700px] max-h-[85vh]">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="bg-card border border-border/50 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[700px] max-h-[85vh]"
+                >
                     {/* Left Sidebar: Explorer */}
                     <div className="w-full md:w-64 lg:w-72 bg-secondary/20 border-r border-border/50 flex flex-col">
                         <div className="p-4 border-b border-border/50 bg-secondary/30 flex items-center justify-between">
@@ -293,7 +306,7 @@ export function Projects() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     )
