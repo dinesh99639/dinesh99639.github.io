@@ -209,10 +209,10 @@ export function Projects() {
                                             <div className="grid grid-cols-2 gap-3 mb-6">
                                                 <div className="p-3 rounded-xl bg-secondary/20 border border-border/50">
                                                     <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1">Status</p>
-                                                    <p className="text-xs font-mono text-primary flex items-center gap-2">
+                                                    <div className="text-xs font-mono text-primary flex items-center gap-2">
                                                         <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                                                         DEPLOYED
-                                                    </p>
+                                                    </div>
                                                 </div>
                                                 <div className="p-3 rounded-xl bg-secondary/20 border border-border/50">
                                                     <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1">Version</p>

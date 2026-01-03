@@ -1,31 +1,131 @@
 import { motion } from "framer-motion"
+import type { Variants } from "framer-motion"
+import { Zap, Shield, Award, History, TrendingUp } from "lucide-react"
 
 const metrics = [
-    { value: "4+", label: "Years Experience" },
-    { value: "40%", label: "Perf. Improvement" },
-    { value: "20+", label: "Security Fixes" },
-    { value: "5", label: "Certifications" },
+    {
+        value: "4+",
+        label: "Years Experience",
+        icon: History,
+        color: "text-blue-500",
+        description: "Professional software engineering"
+    },
+    {
+        value: "40%",
+        label: "Perf. Improvement",
+        icon: Zap,
+        color: "text-amber-500",
+        description: "In critical system modules"
+    },
+    {
+        value: "20+",
+        label: "Security Fixes",
+        icon: Shield,
+        color: "text-emerald-500",
+        description: "Vulnerability remediation"
+    },
+    {
+        value: "5",
+        label: "Certifications",
+        icon: Award,
+        color: "text-purple-500",
+        description: "Industry standard validated"
+    },
 ]
+
+const cardVariants: Variants = {
+    initial: { opacity: 0, scale: 0.9 },
+    animate: (i: number) => ({
+        opacity: 1,
+        scale: 1,
+        transition: {
+            duration: 0.5,
+            delay: i * 0.1,
+            ease: "easeOut"
+        }
+    }),
+    hover: {
+        y: -12,
+        scale: 1.03,
+        transition: {
+            type: "spring",
+            stiffness: 100,
+            damping: 15,
+            delay: 0.05 // Subtle delay before lift starts
+        }
+    }
+}
 
 export function Metrics() {
     return (
-        <section className="py-20 border-y bg-muted/20">
-            <div className="container px-4 mx-auto">
-                <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border/50">
+        <section className="py-24 bg-background relative overflow-hidden">
+            {/* Background Decor */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+
+            <div className="container px-4 mx-auto max-w-6xl relative z-10">
+                <div className="text-center mb-16">
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-4"
+                    >
+                        Statistics
+                    </motion.div>
+                    <h2 className="text-4xl font-bold tracking-tight mb-4 text-foreground">
+                        Key Milestones & <span className="text-gradient">Achievements</span>
+                    </h2>
+                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                        A quantifiable summary of my professional journey, technical impact, and continuous learning.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {metrics.map((metric, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            custom={index}
+                            variants={cardVariants}
+                            initial="initial"
+                            whileInView="animate"
+                            whileHover="hover"
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="text-center px-4 py-8 group hover:bg-background/50 transition-colors cursor-default"
+                            className="bg-card/40 backdrop-blur-md border border-border/50 rounded-2xl p-6 hover:border-primary/50 transition-colors duration-700 ease-in-out group"
                         >
-                            <div className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-foreground to-foreground/50 mb-2 group-hover:scale-110 transition-transform duration-300">
-                                {metric.value}
+                            <div className="flex items-start justify-between mb-4">
+                                <div className={`p-3 rounded-xl bg-background/80 border border-border/50 ${metric.color} shadow-sm group-hover:scale-110 transition-all duration-500`}>
+                                    <metric.icon size={24} />
+                                </div>
+                                <div className="text-secondary-foreground/20 group-hover:text-primary/20 transition-colors">
+                                    <TrendingUp size={40} />
+                                </div>
                             </div>
-                            <div className="text-sm font-medium tracking-widest uppercase text-muted-foreground">
-                                {metric.label}
+
+                            <div className="space-y-1">
+                                <h3 className="text-4xl font-bold tracking-tight">
+                                    {metric.value}
+                                </h3>
+                                <p className="text-sm font-bold uppercase tracking-wider text-foreground">
+                                    {metric.label}
+                                </p>
+                                <p className="text-xs text-muted-foreground leading-relaxed">
+                                    {metric.description}
+                                </p>
+                            </div>
+
+                            {/* Decorative Line */}
+                            <div className="mt-6 h-1 w-full bg-secondary/50 rounded-full overflow-hidden">
+                                <motion.div
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: "100%" }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1, delay: 0.5 + (index * 0.1) }}
+                                    className={`h-full bg-gradient-to-r ${index === 0 ? "from-blue-500 to-blue-300" :
+                                        index === 1 ? "from-amber-500 to-amber-300" :
+                                            index === 2 ? "from-emerald-500 to-emerald-300" :
+                                                "from-purple-500 to-purple-300"
+                                        }`}
+                                />
                             </div>
                         </motion.div>
                     ))}
