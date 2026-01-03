@@ -111,6 +111,7 @@ export function Hero() {
                                 href={social.href}
                                 target="_blank"
                                 rel="noreferrer"
+                                aria-label={`Visit my ${social.label}`}
                                 whileHover={{ y: -5, scale: 1.1 }}
                                 className={`group relative p-3 rounded-2xl bg-secondary/30 backdrop-blur-md border border-border/70 text-muted-foreground transition-colors duration-300 shadow-sm ${social.color}`}
                                 title={social.label}

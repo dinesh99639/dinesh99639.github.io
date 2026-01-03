@@ -60,7 +60,26 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .bg-card,
+  .bg-card\/40,
+  .bg-card\/20 {
+    will-change: transform, opacity;
+  }
+
+  /* Performance: Rendering optimization for below-the-fold content */
+  #about,
+  #tech,
+  #projects,
+  #metrics,
+  #honors,
+  #blog,
+  #contact {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
   }
 
   /* Custom Scrollbar */
