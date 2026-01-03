@@ -52,7 +52,7 @@ function LazySection({ children, minHeight = "200px" }: { children: React.ReactN
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <div className="min-h-screen bg-background font-sans antialiased text-foreground flex flex-col">
         <Navbar />
         <main className="flex-grow">
