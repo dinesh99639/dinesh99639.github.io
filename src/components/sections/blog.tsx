@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { ArrowUpRight, BookOpen, Clock, Tag, ExternalLink } from "lucide-react"
+import { ArrowUpRight, BookOpen, Clock, ExternalLink } from "lucide-react"
 
 const posts = [
     {
@@ -60,7 +60,7 @@ export function Blog() {
             <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="container px-4 mx-auto max-w-6xl relative z-10">
-                <div className="text-center md:text-left mb-16">
+                <div className="text-center mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -70,10 +70,10 @@ export function Blog() {
                         <BookOpen size={14} />
                         Writing & Research
                     </motion.div>
-                    <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-4">
+                    <h2 className="text-4xl font-bold tracking-tight mb-4 text-foreground">
                         Technical <span className="text-gradient">Insights</span>
                     </h2>
-                    <p className="text-muted-foreground text-lg max-w-2xl italic leading-relaxed">
+                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto italic leading-relaxed">
                         Documenting the intersection of complex architecture and human-centric design.
                     </p>
                 </div>
