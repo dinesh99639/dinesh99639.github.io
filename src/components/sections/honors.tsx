@@ -144,6 +144,11 @@ export function Honors() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
+                        whileHover={{
+                            scale: 1.02,
+                            transition: { type: "spring", stiffness: 400, damping: 25, delay: 0 }
+                        }}
+                        transition={{ duration: 0.4, delay: 0.4 }}
                         className="bg-primary/5 border border-dashed border-primary/30 rounded-3xl p-8 flex flex-col items-center justify-center text-center group hover:bg-primary/10 transition-colors"
                     >
                         <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4 text-primary animate-pulse">
