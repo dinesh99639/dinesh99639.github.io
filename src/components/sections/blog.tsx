@@ -88,7 +88,8 @@ export function Blog() {
                     >
                         <button
                             onClick={() => window.open(featuredPost.link, "_blank")}
-                            className="w-full text-left relative bg-card/40 border border-border/70 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 transition-colors duration-300 overflow-hidden flex flex-col min-h-[500px] justify-between group"
+                            aria-label={`Read featured article: ${featuredPost.title}`}
+                            className="w-full text-left relative bg-card/40 border border-border/70 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 transition-colors duration-500 overflow-hidden flex flex-col min-h-[500px] justify-between group"
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
@@ -135,7 +136,8 @@ export function Blog() {
                             >
                                 <button
                                     onClick={() => window.open(post.link, "_blank")}
-                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/70 hover:border-primary/40 rounded-3xl p-6 transition-colors duration-300 group"
+                                    aria-label={`Read article: ${post.title}`}
+                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/70 hover:border-primary/40 rounded-3xl p-6 transition-colors duration-500 group"
                                 >
                                     <div className="flex items-start justify-between gap-4">
                                         <div className="flex-1">

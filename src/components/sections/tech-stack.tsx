@@ -107,6 +107,7 @@ export function TechStack() {
                             <button
                                 key={cat.id}
                                 onClick={() => setActiveTab(cat.id)}
+                                aria-label={`View ${cat.title} skills`}
                                 className={cn(
                                     "w-full text-left px-6 py-4 rounded-xl transition-all duration-300 flex items-center justify-between group border",
                                     activeTab === cat.id

@@ -135,6 +135,7 @@ export function Projects() {
                                 <button
                                     key={project.id}
                                     onClick={() => setActiveId(project.id)}
+                                    aria-label={`View ${project.title} project details`}
                                     className={cn(
                                         "w-full text-left px-4 py-2.5 flex items-center gap-3 group transition-colors duration-200 border-l-2",
                                         activeId === project.id
@@ -205,8 +206,9 @@ export function Projects() {
                                         <div className="lg:w-1/2 space-y-6">
                                             <div className="relative group rounded-2xl overflow-hidden border border-border/70 bg-secondary/30 shadow-xl">
                                                 <img
-                                                    src={activeProject.image}
+                                                    src={`${activeProject.image}&w=1200&q=80`}
                                                     alt={activeProject.title}
+                                                    loading="lazy"
                                                     className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
