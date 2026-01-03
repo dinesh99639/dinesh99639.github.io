@@ -110,8 +110,8 @@ export function Contact() {
                                         {relay.value}
                                     </p>
 
-                                    <div className="mt-8 flex items-center justify-center h-6 overflow-hidden">
-                                        <div className="px-4 py-2 rounded-full bg-primary text-[10px] font-black uppercase tracking-widest text-white transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                                    <div className="mt-8 flex items-center justify-center h-10 overflow-hidden">
+                                        <div className="px-5 py-2.5 rounded-full bg-primary text-[10px] font-black uppercase tracking-widest text-white transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                                             Establish Link
                                         </div>
                                     </div>
