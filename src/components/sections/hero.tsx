@@ -98,23 +98,28 @@ export function Hero() {
                     {/* Social Links */}
                     <motion.div
                         variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-                        className="flex items-center justify-center gap-6 pt-10"
+                        className="flex items-center justify-center gap-5 pt-8"
                     >
                         {[
-                            { icon: Github, href: "https://github.com/dinesh99639" },
-                            { icon: Linkedin, href: "https://linkedin.com/in/dinesh-somaraju" },
-                            { icon: Mail, href: "mailto:dinesh99639@gmail.com" },
-                            { icon: FileText, href: "https://dinesh99639.github.io" }
+                            { icon: Github, href: "https://github.com/dinesh99639", label: "Github", color: "hover:text-white hover:bg-[#333] hover:border-[#333]" },
+                            { icon: Linkedin, href: "https://linkedin.com/in/dinesh-somaraju", label: "LinkedIn", color: "hover:text-white hover:bg-[#0077b5] hover:border-[#0077b5]" },
+                            { icon: Mail, href: "mailto:dinesh99639@gmail.com", label: "Email", color: "hover:text-white hover:bg-primary hover:border-primary" },
+                            { icon: FileText, href: "https://dinesh-resume.vercel.app", label: "Resume", color: "hover:text-white hover:bg-emerald-600 hover:border-emerald-600" }
                         ].map((social, i) => (
-                            <a
+                            <motion.a
                                 key={i}
                                 href={social.href}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="p-2.5 rounded-full bg-secondary/50 backdrop-blur-sm border border-border/50 text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-sm transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                                whileHover={{ y: -5, scale: 1.1 }}
+                                className={`group relative p-3 rounded-2xl bg-secondary/30 backdrop-blur-md border border-border/50 text-muted-foreground transition-colors duration-300 shadow-sm ${social.color}`}
+                                title={social.label}
                             >
                                 <social.icon className="h-5 w-5" />
-                            </a>
+                                <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-popover text-popover-foreground text-[10px] font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap border border-border">
+                                    {social.label}
+                                </span>
+                            </motion.a>
                         ))}
                     </motion.div>
                 </motion.div>

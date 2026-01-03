@@ -45,13 +45,12 @@ const cardVariants: Variants = {
         }
     }),
     hover: {
-        y: -12,
-        scale: 1.03,
+        y: -6,
+        scale: 1.01,
         transition: {
             type: "spring",
             stiffness: 100,
-            damping: 15,
-            delay: 0.05 // Subtle delay before lift starts
+            damping: 15
         }
     }
 }
@@ -93,7 +92,7 @@ export function Metrics() {
                             className="bg-card/40 backdrop-blur-md border border-border/50 rounded-2xl p-6 hover:border-primary/50 transition-colors duration-700 ease-in-out group"
                         >
                             <div className="flex items-start justify-between mb-4">
-                                <div className={`p-3 rounded-xl bg-background/80 border border-border/50 ${metric.color} shadow-sm group-hover:scale-110 transition-all duration-500`}>
+                                <div className={`p-3 rounded-xl bg-background/80 border border-border/50 ${metric.color} shadow-sm group-hover:scale-110 transition-all duration-400`}>
                                     <metric.icon size={24} />
                                 </div>
                                 <div className="text-secondary-foreground/20 group-hover:text-primary/20 transition-colors">

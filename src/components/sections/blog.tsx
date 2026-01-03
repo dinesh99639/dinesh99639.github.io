@@ -135,7 +135,7 @@ export function Blog() {
                             >
                                 <button
                                     onClick={() => window.open(post.link, "_blank")}
-                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/50 hover:border-primary/40 rounded-3xl p-6 transition-all duration-300 group"
+                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/50 hover:border-primary/40 rounded-3xl p-6 transition-colors duration-300 group"
                                 >
                                     <div className="flex items-start justify-between gap-4">
                                         <div className="flex-1">
@@ -150,7 +150,7 @@ export function Blog() {
                                             <h4 className="text-lg font-bold leading-snug group-hover:text-primary transition-colors line-clamp-2 mb-2">
                                                 {post.title}
                                             </h4>
-                                            <div className="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                                            <div className="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 duration-300">
                                                 <span className="text-xs font-bold uppercase tracking-widest">Read Article</span>
                                                 <ArrowUpRight size={14} />
                                             </div>
@@ -173,7 +173,7 @@ export function Blog() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-full bg-secondary/80 border border-border/50 backdrop-blur-md text-sm font-black uppercase tracking-[0.2em] flex items-center gap-3 hover:bg-primary hover:text-white transition-all duration-500"
+                        className="px-8 py-4 rounded-full bg-secondary/80 border border-border/50 backdrop-blur-md text-sm font-black uppercase tracking-[0.2em] flex items-center gap-3 hover:bg-primary hover:text-white transition-all duration-300"
                     >
                         Explore Complete Archive
                         <ArrowUpRight size={20} />
