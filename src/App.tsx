@@ -6,7 +6,7 @@ import { About } from "@/components/sections/about"
 import { TechStack } from "@/components/sections/tech-stack"
 import { Projects } from "@/components/sections/projects"
 import { Metrics } from "@/components/sections/metrics"
-import { Awards } from "@/components/sections/testimonials"
+import { Honors } from "@/components/sections/honors"
 import { Blog } from "@/components/sections/blog"
 import { Contact } from "@/components/sections/contact"
 
@@ -21,7 +21,7 @@ function App() {
           <TechStack />
           <Projects />
           <Metrics />
-          <Awards />
+          <Honors />
           <Blog />
           <Contact />
         </main>
