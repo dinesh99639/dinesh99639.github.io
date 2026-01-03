@@ -80,7 +80,7 @@ export function TechStack() {
     const activeContent = categories.find(c => c.id === activeTab)
 
     return (
-        <section id="tech" className="py-24 bg-background border-t border-border/50">
+        <section id="tech" className="py-24 bg-background border-t border-border/70">
             <div className="container px-4 mx-auto max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -111,7 +111,7 @@ export function TechStack() {
                                     "w-full text-left px-6 py-4 rounded-xl transition-all duration-300 flex items-center justify-between group border",
                                     activeTab === cat.id
                                         ? "bg-secondary border-primary/20 shadow-sm"
-                                        : "bg-transparent border-transparent hover:bg-secondary/50 hover:border-border/50"
+                                        : "bg-transparent border-transparent hover:bg-secondary/50 hover:border-border/70"
                                 )}
                             >
                                 <div className="flex items-center gap-4">
@@ -152,7 +152,7 @@ export function TechStack() {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -20 }}
                                 transition={{ duration: 0.3 }}
-                                className="bg-card border border-border/50 rounded-3xl p-8 md:p-10 shadow-sm relative overflow-hidden"
+                                className="bg-card border border-border/70 rounded-3xl p-8 md:p-10 shadow-sm relative overflow-hidden"
                             >
                                 {/* Background Decoration */}
                                 <div className="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none">
@@ -172,7 +172,7 @@ export function TechStack() {
                                                 initial={{ opacity: 0, y: 10 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ delay: i * 0.05 }}
-                                                className="flex items-center justify-between p-4 bg-background/50 border border-border/50 rounded-xl hover:border-primary/30 hover:bg-background transition-colors"
+                                                className="flex items-center justify-between p-4 bg-background/50 border border-border/70 rounded-xl hover:border-primary/30 hover:bg-background transition-colors"
                                             >
                                                 <div className="flex items-center gap-3">
                                                     <div className="w-2 h-2 rounded-full bg-primary/50" />

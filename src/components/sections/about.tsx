@@ -85,7 +85,7 @@ export function About() {
                                                 exit={{ height: 0, opacity: 0 }}
                                                 transition={{ duration: 0.2 }}
                                             >
-                                                <div className="border-t border-border/50 bg-muted/30">
+                                                <div className="border-t border-border/70 bg-muted/30">
                                                     <div className="px-6 py-4">
                                                         <div className="mt-1 text-sm sm:hidden text-muted-foreground mb-2">{exp.period}</div>
                                                         <p className="text-muted-foreground leading-relaxed text-sm">
@@ -133,7 +133,7 @@ export function About() {
                             <h3 className="text-2xl font-bold flex items-center gap-3 mb-4">
                                 <Award className="h-6 w-6 text-primary" /> Certifications
                             </h3>
-                            <div className="bg-secondary/20 rounded-2xl p-6 border border-border/50">
+                            <div className="bg-secondary/20 rounded-2xl p-6 border border-border/70">
                                 <ul className="space-y-3">
                                     {[
                                         "Infosys Certified Front End Web Developer",

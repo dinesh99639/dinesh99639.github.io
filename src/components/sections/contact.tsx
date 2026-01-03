@@ -44,7 +44,7 @@ export function Contact() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="flex items-center gap-3 px-4 py-2 rounded-full bg-card border border-border/50 mb-12 shadow-2xl backdrop-blur-xl"
+                        className="flex items-center gap-3 px-4 py-2 rounded-full bg-card border border-border/70 mb-12 shadow-2xl backdrop-blur-xl"
                     >
                         <div className="relative flex items-center justify-center">
                             <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping absolute" />
@@ -96,10 +96,10 @@ export function Contact() {
                             >
                                 <div className={`absolute inset-0 bg-primary/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full`} />
 
-                                <div className="relative bg-card/40 backdrop-blur-2xl border border-border/50 hover:border-primary/50 p-8 rounded-[2rem] transition-colors duration-500 flex flex-col items-center group overflow-hidden">
+                                <div className="relative bg-card/40 backdrop-blur-2xl border border-border/70 hover:border-primary/50 p-8 rounded-[2rem] transition-colors duration-500 flex flex-col items-center group overflow-hidden">
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                                    <div className={`p-4 rounded-2xl bg-background/80 border border-border/50 ${relay.color} mb-6 group-hover:scale-110 group-hover:rotate-12 transition-transform shadow-xl ${relay.glow}`}>
+                                    <div className={`p-4 rounded-2xl bg-background/80 border border-border/70 ${relay.color} mb-6 group-hover:scale-110 group-hover:rotate-12 transition-transform shadow-xl ${relay.glow}`}>
                                         <relay.icon size={28} />
                                     </div>
 
