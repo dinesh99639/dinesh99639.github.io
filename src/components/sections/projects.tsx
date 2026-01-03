@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { ExternalLink, Github } from "lucide-react"
+import { Github } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 

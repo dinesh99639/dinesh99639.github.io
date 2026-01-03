@@ -34,7 +34,7 @@ export function About() {
 
                         <div className="relative pl-8 border-l border-border space-y-12">
                             <div className="relative">
-                                <span className="absolute -left-[41px] p-2 bg-background border rounded-full">
+                                <span className="absolute -left-[50px] p-2 bg-background border rounded-full">
                                     <Briefcase className="h-4 w-4 text-primary" />
                                 </span>
                                 <h4 className="font-semibold text-lg">Consultant</h4>
@@ -45,7 +45,7 @@ export function About() {
                             </div>
 
                             <div className="relative">
-                                <span className="absolute -left-[41px] p-2 bg-background border rounded-full">
+                                <span className="absolute -left-[50px] p-2 bg-background border rounded-full">
                                     <Briefcase className="h-4 w-4 text-primary" />
                                 </span>
                                 <h4 className="font-semibold text-lg">Specialist Programmer</h4>
@@ -56,7 +56,7 @@ export function About() {
                             </div>
 
                             <div className="relative">
-                                <span className="absolute -left-[41px] p-2 bg-background border rounded-full">
+                                <span className="absolute -left-[50px] p-2 bg-background border rounded-full">
                                     <Briefcase className="h-4 w-4 text-primary" />
                                 </span>
                                 <h4 className="font-semibold text-lg">Digital Specialist Engineer</h4>
@@ -82,7 +82,7 @@ export function About() {
                             </h3>
                             <div className="relative pl-8 border-l border-border">
                                 <div className="relative">
-                                    <span className="absolute -left-[41px] p-2 bg-background border rounded-full">
+                                    <span className="absolute -left-[50px] p-2 bg-background border rounded-full">
                                         <GraduationCap className="h-4 w-4 text-primary" />
                                     </span>
                                     <h4 className="font-semibold text-lg">B.Tech - Computer Science</h4>
