@@ -14,7 +14,7 @@ export function About() {
                 >
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">About Me</h2>
                     <p className="text-muted-foreground max-w-3xl mx-auto">
-                        Full Stack Developer with 3+ years of experience designing, developing, and deploying scalable web and mobile applications.
+                        Full Stack Developer with 4+ years of experience designing, developing, and deploying scalable web and mobile applications.
                         Hands-on experience delivering software solutions in Agile environments and contributing to technical knowledge sharing.
                     </p>
                 </motion.div>
@@ -32,7 +32,7 @@ export function About() {
                             <Briefcase className="h-6 w-6 text-primary" /> Experience
                         </h3>
 
-                        <div className="relative pl-8 border-l border-border space-y-12">
+                        <div className="relative pl-8 border-l border-border space-y-12 ml-3">
                             <div className="relative">
                                 <span className="absolute -left-[50px] p-2 bg-background border rounded-full">
                                     <Briefcase className="h-4 w-4 text-primary" />
@@ -80,7 +80,7 @@ export function About() {
                             <h3 className="text-2xl font-bold flex items-center gap-2">
                                 <GraduationCap className="h-6 w-6 text-primary" /> Education
                             </h3>
-                            <div className="relative pl-8 border-l border-border">
+                            <div className="relative pl-8 border-l border-border ml-3">
                                 <div className="relative">
                                     <span className="absolute -left-[50px] p-2 bg-background border rounded-full">
                                         <GraduationCap className="h-4 w-4 text-primary" />
@@ -96,7 +96,7 @@ export function About() {
                             <h3 className="text-2xl font-bold flex items-center gap-2">
                                 <Award className="h-6 w-6 text-primary" /> Certifications
                             </h3>
-                            <ul className="space-y-3">
+                            <ul className="space-y-3 ml-3">
                                 {["Infosys Certified Front End Web Developer", "Infosys Certified React Professional", "Infosys Certified NodeJS Professional", "Infosys Certified Mongo Developer", "Infosys Certified Python Programmer"].map((cert, i) => (
                                     <li key={i} className="flex items-center gap-3 text-muted-foreground">
                                         <div className="h-2 w-2 rounded-full bg-primary" />
