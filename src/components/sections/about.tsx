@@ -40,7 +40,7 @@ export function About() {
                 >
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">About Me</h2>
                     <p className="text-muted-foreground max-w-3xl mx-auto">
-                        Full Stack Developer with 3+ years of experience designing, developing, and deploying scalable web and mobile applications.
+                        Full Stack Developer with 4+ years of experience designing, developing, and deploying scalable web and mobile applications.
                     </p>
                 </motion.div>
 
@@ -118,7 +118,7 @@ export function About() {
                                 <div className="flex items-start justify-between mb-4">
                                     <div>
                                         <h4 className="font-bold text-lg">B.Tech - Computer Science</h4>
-                                        <p className="text-primary text-sm font-medium">Anil Neerukonda Inst. of Tech</p>
+                                        <p className="text-primary text-sm font-medium">Anil Neerukonda Institute of Technology and Sciences</p>
                                     </div>
                                     <div className="text-right">
                                         <div className="text-sm font-bold">2017 - 2021</div>
