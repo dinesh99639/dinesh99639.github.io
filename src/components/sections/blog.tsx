@@ -88,7 +88,7 @@ export function Blog() {
                     >
                         <button
                             onClick={() => window.open(featuredPost.link, "_blank")}
-                            className="w-full text-left relative bg-card/40 border border-border/50 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 transition-colors duration-300 overflow-hidden flex flex-col min-h-[500px] justify-between group"
+                            className="w-full text-left relative bg-card/40 border border-border/70 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 transition-colors duration-300 overflow-hidden flex flex-col min-h-[500px] justify-between group"
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
@@ -135,7 +135,7 @@ export function Blog() {
                             >
                                 <button
                                     onClick={() => window.open(post.link, "_blank")}
-                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/50 hover:border-primary/40 rounded-3xl p-6 transition-colors duration-300 group"
+                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/70 hover:border-primary/40 rounded-3xl p-6 transition-colors duration-300 group"
                                 >
                                     <div className="flex items-start justify-between gap-4">
                                         <div className="flex-1">
@@ -155,7 +155,7 @@ export function Blog() {
                                                 <ArrowUpRight size={14} />
                                             </div>
                                         </div>
-                                        <div className="shrink-0 w-10 h-10 rounded-xl bg-secondary/50 flex items-center justify-center text-muted-foreground border border-border/50 group-hover:border-primary/30 group-hover:text-primary transition-colors">
+                                        <div className="shrink-0 w-10 h-10 rounded-xl bg-secondary/50 flex items-center justify-center text-muted-foreground border border-border/70 group-hover:border-primary/30 group-hover:text-primary transition-colors">
                                             <ExternalLink size={18} />
                                         </div>
                                     </div>
@@ -174,7 +174,7 @@ export function Blog() {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                        className="px-6 py-3.5 rounded-full bg-secondary/80 border border-border/50 backdrop-blur-md text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2 hover:bg-primary/10 hover:border-primary/50 transition-colors duration-300"
+                        className="px-6 py-3.5 rounded-full bg-secondary/80 border border-border/70 backdrop-blur-md text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2 hover:bg-primary/10 hover:border-primary/50 transition-colors duration-300"
                     >
                         Explore Complete Archive
                         <ArrowUpRight size={18} />

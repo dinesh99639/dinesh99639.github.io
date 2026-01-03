@@ -112,7 +112,7 @@ export function Hero() {
                                 target="_blank"
                                 rel="noreferrer"
                                 whileHover={{ y: -5, scale: 1.1 }}
-                                className={`group relative p-3 rounded-2xl bg-secondary/30 backdrop-blur-md border border-border/50 text-muted-foreground transition-colors duration-300 shadow-sm ${social.color}`}
+                                className={`group relative p-3 rounded-2xl bg-secondary/30 backdrop-blur-md border border-border/70 text-muted-foreground transition-colors duration-300 shadow-sm ${social.color}`}
                                 title={social.label}
                             >
                                 <social.icon className="h-5 w-5" />

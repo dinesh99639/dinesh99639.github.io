@@ -115,11 +115,11 @@ export function Projects() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="bg-card border border-border/50 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[700px] max-h-[85vh]"
+                    className="bg-card border border-border/70 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[700px] max-h-[85vh]"
                 >
                     {/* Left Sidebar: Explorer */}
-                    <div className="w-full md:w-64 lg:w-72 bg-secondary/20 border-r border-border/50 flex flex-col">
-                        <div className="p-4 border-b border-border/50 bg-secondary/30 flex items-center justify-between">
+                    <div className="w-full md:w-64 lg:w-72 bg-secondary/20 border-r border-border/70 flex flex-col">
+                        <div className="p-4 border-b border-border/70 bg-secondary/30 flex items-center justify-between">
                             <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
                                 <FolderOpen size={14} className="text-primary" />
                                 explorer
@@ -162,12 +162,12 @@ export function Projects() {
                     {/* Main Stage: Editor Content */}
                     <div className="flex-1 flex flex-col bg-card/50">
                         {/* Editor Tabs (Mockup) */}
-                        <div className="h-10 bg-secondary/30 border-b border-border/50 flex items-center overflow-x-auto">
+                        <div className="h-10 bg-secondary/30 border-b border-border/70 flex items-center overflow-x-auto">
                             <div className="flex h-full">
                                 {projects.filter(p => p.id === activeId).map(p => (
                                     <div
                                         key={p.id}
-                                        className="h-full bg-card border-r border-border/50 px-4 flex items-center gap-2 text-xs font-medium border-t-2 border-t-primary"
+                                        className="h-full bg-card border-r border-border/70 px-4 flex items-center gap-2 text-xs font-medium border-t-2 border-t-primary"
                                     >
                                         <p.icon size={12} className={p.color} />
                                         {p.title}{p.extension}
@@ -203,7 +203,7 @@ export function Projects() {
                                     <div className="flex flex-col lg:flex-row gap-10">
                                         {/* Visual Preview */}
                                         <div className="lg:w-1/2 space-y-6">
-                                            <div className="relative group rounded-2xl overflow-hidden border border-border/50 bg-secondary/30 shadow-xl">
+                                            <div className="relative group rounded-2xl overflow-hidden border border-border/70 bg-secondary/30 shadow-xl">
                                                 <img
                                                     src={activeProject.image}
                                                     alt={activeProject.title}
@@ -220,14 +220,14 @@ export function Projects() {
 
                                             {/* Technical Specs Table */}
                                             <div className="grid grid-cols-2 gap-3 mb-6">
-                                                <div className="p-3 rounded-xl bg-secondary/20 border border-border/50">
+                                                <div className="p-3 rounded-xl bg-secondary/20 border border-border/70">
                                                     <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1">Status</p>
                                                     <div className="text-xs font-mono text-primary flex items-center gap-2">
                                                         <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                                                         DEPLOYED
                                                     </div>
                                                 </div>
-                                                <div className="p-3 rounded-xl bg-secondary/20 border border-border/50">
+                                                <div className="p-3 rounded-xl bg-secondary/20 border border-border/70">
                                                     <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1">Version</p>
                                                     <p className="text-xs font-mono">{activeProject.stats.split(' • ')[0]}</p>
                                                 </div>
