@@ -1,10 +1,10 @@
 import { motion } from "framer-motion"
 
 const metrics = [
-    { value: "05", label: "Years Experience" },
-    { value: "50", label: "Projects Shipped" },
-    { value: "20", label: "Happy Clients" },
-    { value: "1k", label: "Git Commits" },
+    { value: "4+", label: "Years Experience" },
+    { value: "40%", label: "Perf. Improvement" },
+    { value: "20+", label: "Security Fixes" },
+    { value: "5", label: "Certifications" },
 ]
 
 export function Metrics() {
