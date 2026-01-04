@@ -78,7 +78,7 @@ const projects = [
         tagline: "Offline Payment Solution for Android Devices",
         description: "A native Android payment application enabling secure transactions without internet connectivity. Built with Kotlin and modern Android architecture, OffPay allows users to make payments offline. Perfect for areas with limited connectivity or users who need reliable payment options on the go.",
         tags: ["Kotlin", "Android", "Jetpack Compose", "Material Design", "Gradle"],
-        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2670&auto=format&fit=crop",
+        image: "https://raw.githubusercontent.com/dinesh99639/static-assets/refs/heads/main/portfolio/projects/Offpay/Offpay.cover.jpeg",
         sourceLink: "https://github.com/dinesh99639/OffPay",
         liveLink: "",
         year: "2024",
