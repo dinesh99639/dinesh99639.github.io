@@ -1,4 +1,5 @@
-import { lazy, Suspense } from "react"
+import { lazy, Suspense, useEffect } from "react"
+import Lenis from "lenis"
 import { ThemeProvider } from "@/components/theme/theme-provider"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
@@ -20,6 +21,29 @@ const SectionFallback = ({ id }: { id: string }) => (
 )
 
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+    })
+
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy()
+    }
+  }, [])
+
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <div className="min-h-screen bg-background font-sans antialiased text-foreground flex flex-col overflow-x-hidden">
