@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Layout, Server, Database, Cloud, ChevronRight, Code2 } from "lucide-react"
+import { Layout, Server, Database, Cloud, ChevronRight, Code2, Layers } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 export function TechStack() {
@@ -87,7 +87,10 @@ export function TechStack() {
                     viewport={{ once: true }}
                     className="mb-16 text-center"
                 >
-                    <span className="text-sm font-medium text-primary tracking-wider uppercase mb-3 block">Expertise</span>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-4">
+                        <Layers size={14} />
+                        Expertise
+                    </div>
                     <h2 className="text-4xl font-bold tracking-tight mb-4">
                         Technical <span className="text-gradient">Proficiency</span>
                     </h2>
