@@ -1,8 +1,6 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {
-    FileCode2,
-    FileJson,
     FileText,
     FolderOpen,
     ChevronRight,
