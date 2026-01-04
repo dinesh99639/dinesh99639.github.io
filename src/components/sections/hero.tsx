@@ -80,7 +80,7 @@ export function Hero() {
                     >
                         <Button
                             size="lg"
-                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm font-semibold bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all hover:scale-105 group"
+                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm font-semibold bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 group"
                             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                         >
                             View Work <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -88,7 +88,7 @@ export function Hero() {
                         <Button
                             variant="outline"
                             size="lg"
-                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm border-2 border-primary/20 bg-background/50 backdrop-blur-sm hover:bg-primary/10 hover:border-primary/50 transition-all hover:scale-105"
+                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm border-2 border-primary/20 bg-background/50 backdrop-blur-sm hover:bg-primary/10 hover:border-primary/50 hover:scale-105"
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                         >
                             Contact Me
@@ -113,7 +113,7 @@ export function Hero() {
                                 rel="noreferrer"
                                 aria-label={`Visit my ${social.label}`}
                                 whileHover={{ y: -5, scale: 1.1 }}
-                                className={`group relative p-3 rounded-2xl bg-secondary/30 backdrop-blur-md border border-border/70 text-muted-foreground transition-colors duration-300 shadow-sm ${social.color}`}
+                                className={`group relative p-3 rounded-2xl bg-secondary/30 backdrop-blur-md border border-border/70 text-muted-foreground shadow-sm ${social.color}`}
                                 title={social.label}
                             >
                                 <social.icon className="h-5 w-5" />

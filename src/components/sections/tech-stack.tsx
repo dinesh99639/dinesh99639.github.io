@@ -111,7 +111,7 @@ export function TechStack() {
                                 onClick={() => setActiveTab(cat.id)}
                                 aria-label={`View ${cat.title} skills`}
                                 className={cn(
-                                    "w-full text-left px-6 py-4 rounded-xl transition-all duration-300 flex items-center justify-between group border",
+                                    "w-full text-left px-6 py-4 rounded-xl transition-shadow flex items-center justify-between group border",
                                     activeTab === cat.id
                                         ? "bg-secondary border-primary/20 shadow-sm"
                                         : "bg-transparent border-transparent hover:bg-secondary/50 hover:border-border/70"
@@ -119,13 +119,13 @@ export function TechStack() {
                             >
                                 <div className="flex items-center gap-4">
                                     <div className={cn(
-                                        "p-2 rounded-lg transition-colors",
+                                        "p-2 rounded-lg",
                                         activeTab === cat.id ? "bg-background text-primary" : "bg-secondary/50 text-muted-foreground group-hover:text-foreground"
                                     )}>
                                         <cat.icon size={20} />
                                     </div>
                                     <span className={cn(
-                                        "font-medium transition-colors",
+                                        "font-medium",
                                         activeTab === cat.id ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
                                     )}>
                                         {cat.title}
@@ -175,7 +175,7 @@ export function TechStack() {
                                                 initial={{ opacity: 0, y: 10 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ delay: i * 0.05 }}
-                                                className="flex items-center justify-between p-4 bg-background/50 border border-border/70 rounded-xl hover:border-primary/30 hover:bg-background transition-colors"
+                                                className="flex items-center justify-between p-4 bg-background/50 border border-border/70 rounded-xl hover:border-primary/30 hover:bg-background transition-shadow"
                                             >
                                                 <div className="flex items-center gap-3">
                                                     <div className="w-2 h-2 rounded-full bg-primary/50" />

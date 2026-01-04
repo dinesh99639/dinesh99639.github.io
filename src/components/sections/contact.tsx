@@ -96,7 +96,7 @@ export function Contact() {
                             >
                                 <div className={`absolute inset-0 bg-primary/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full`} />
 
-                                <div className="relative bg-card/40 backdrop-blur-2xl border border-border/70 hover:border-primary/50 p-8 rounded-[2rem] transition-colors duration-500 flex flex-col items-center group overflow-hidden">
+                                <div className="relative bg-card/40 backdrop-blur-2xl border border-border/70 hover:border-primary/50 p-8 rounded-[2rem] flex flex-col items-center group overflow-hidden">
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
                                     <div className={`p-4 rounded-2xl bg-background/80 border border-border/70 ${relay.color} mb-6 group-hover:scale-110 group-hover:rotate-12 transition-transform shadow-xl ${relay.glow}`}>
@@ -106,12 +106,12 @@ export function Contact() {
                                     <h3 className="font-black text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">
                                         {relay.label}
                                     </h3>
-                                    <p className="text-sm font-bold group-hover:text-primary transition-colors">
+                                    <p className="text-sm font-bold group-hover:text-primary">
                                         {relay.value}
                                     </p>
 
                                     <div className="mt-8 flex items-center justify-center h-10 overflow-hidden">
-                                        <div className="px-5 py-2.5 rounded-full bg-primary text-[10px] font-black uppercase tracking-widest text-white transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                                        <div className="px-5 py-2.5 rounded-full bg-primary text-[10px] font-black uppercase tracking-widest text-white transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-[transform,opacity] duration-500 ease-out">
                                             Establish Link
                                         </div>
                                     </div>

@@ -139,19 +139,18 @@ export function Projects() {
                                     onClick={() => setActiveId(project.id)}
                                     aria-label={`View ${project.title} project details`}
                                     className={cn(
-                                        "w-full text-left px-4 py-2.5 flex items-center gap-3 group transition-colors duration-200 border-l-2",
+                                        "w-full text-left px-4 py-2.5 flex items-center gap-3 group transition-shadow border-l-2",
                                         activeId === project.id
                                             ? "bg-secondary border-primary"
                                             : "bg-transparent border-transparent hover:bg-secondary/40"
                                     )}
                                 >
                                     <project.icon size={16} className={cn(
-                                        "transition-colors",
                                         activeId === project.id ? project.color : "text-muted-foreground group-hover:text-foreground"
                                     )} />
                                     <div className="flex flex-col">
                                         <span className={cn(
-                                            "text-sm font-medium transition-colors",
+                                            "text-sm font-medium",
                                             activeId === project.id ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
                                         )}>
                                             {project.title}{project.extension}
@@ -196,9 +195,9 @@ export function Projects() {
                                 >
                                     {/* Breadcrumbs */}
                                     <div className="flex items-center gap-2 text-[11px] font-mono text-muted-foreground mb-8 pb-4 border-b border-border/30">
-                                        <span className="hover:text-primary transition-colors cursor-pointer">src</span>
+                                        <span className="hover:text-primary cursor-pointer">src</span>
                                         <ChevronRight size={10} />
-                                        <span className="hover:text-primary transition-colors cursor-pointer">components</span>
+                                        <span className="hover:text-primary cursor-pointer">components</span>
                                         <ChevronRight size={10} />
                                         <span className="text-foreground font-bold">{activeProject.title}{activeProject.extension}</span>
                                     </div>
