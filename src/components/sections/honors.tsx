@@ -15,7 +15,7 @@ interface Honor {
 const honors: Honor[] = [
     {
         title: "1st Place - Dual-a-thon",
-        organization: "ANITS / Visakhapatnam",
+        organization: "Visakhapatnam",
         date: "2019",
         description: "Won first prize in the regional App Development Competition for building an innovative healthcare solution.",
         icon: Trophy,
@@ -41,10 +41,10 @@ const honors: Honor[] = [
         gradient: "from-purple-500/20 to-pink-500/20"
     },
     {
-        title: "Finalist - Smart India Hackathon",
-        organization: "Government of India",
-        date: "2020",
-        description: "Developed a feature-rich mobile application for rural education outreach among thousands of competitors.",
+        title: "Ranked 4187th - Google Hashcode 2020",
+        organization: "Google",
+        date: "Feb 2020",
+        description: "Ranked 4187th out of 10,716 participants in the global programming competition.",
         icon: AwardIcon,
         color: "text-emerald-500",
         gradient: "from-emerald-500/20 to-teal-500/20"
