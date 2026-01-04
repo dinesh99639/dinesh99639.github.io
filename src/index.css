@@ -59,12 +59,15 @@
   }
 
   body {
+
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-display: swap;
     font-feature-settings: "rlig" 1, "calt" 1;
     text-rendering: optimizeSpeed;
   }
+
+
 
   .bg-card,
   .bg-card\/40,

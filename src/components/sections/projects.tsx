@@ -139,10 +139,10 @@ export const Projects = memo(function Projects() {
                                     onClick={() => setActiveId(project.id)}
                                     aria-label={`View ${project.title} project details`}
                                     className={cn(
-                                        "whitespace-nowrap md:whitespace-normal md:w-full text-left px-4 py-2.5 flex items-center gap-3 group transition-all border-b-2 md:border-b-0 md:border-l-2 shrink-0 md:shrink",
+                                        "whitespace-nowrap md:whitespace-normal md:w-full text-left px-4 py-2.5 flex items-center gap-3 group border-b-2 md:border-b-0 md:border-l-2 shrink-0 md:shrink",
                                         activeId === project.id
                                             ? "bg-secondary border-primary"
-                                            : "bg-transparent border-transparent hover:bg-secondary/40"
+                                            : "bg-transparent border-transparent hover:bg-secondary/40 transition-colors"
                                     )}
                                 >
                                     <project.icon size={16} className={cn(
