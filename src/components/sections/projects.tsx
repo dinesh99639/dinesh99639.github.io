@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, memo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {
     FileText,
@@ -84,7 +84,7 @@ const projects = [
     }
 ]
 
-export function Projects() {
+export const Projects = memo(function Projects() {
     const [activeId, setActiveId] = useState("gsecure")
     const activeProject = projects.find(p => p.id === activeId) || projects[0]
 
@@ -117,7 +117,7 @@ export function Projects() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="bg-card border border-border/70 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[700px] max-h-[85vh]"
+                    className="bg-card border border-border/70 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[700px] max-h-[85vh] gpu"
                 >
                     {/* Left Sidebar: Explorer */}
                     <div className="w-full md:w-64 lg:w-72 bg-secondary/20 border-r border-border/70 flex flex-col">
@@ -326,4 +326,4 @@ export function Projects() {
             </div>
         </section>
     )
-}
+})

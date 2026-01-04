@@ -1,3 +1,4 @@
+import { memo } from "react"
 import { motion } from "framer-motion"
 import type { Variants } from "framer-motion"
 import { Zap, Shield, Award, History, TrendingUp } from "lucide-react"
@@ -55,7 +56,7 @@ const cardVariants: Variants = {
     }
 }
 
-export function Metrics() {
+export const Metrics = memo(function Metrics() {
     return (
         <section className="py-24 bg-background relative overflow-hidden">
             {/* Background Decor */}
@@ -133,4 +134,4 @@ export function Metrics() {
             </div>
         </section>
     )
-}
+})

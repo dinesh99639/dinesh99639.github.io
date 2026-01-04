@@ -1,10 +1,10 @@
-import { useState } from "react"
+import { useState, memo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Briefcase, GraduationCap, Award, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 
-export function About() {
+export const About = memo(function About() {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(0)
 
     const experiences = [
@@ -155,4 +155,4 @@ export function About() {
             </div>
         </section>
     )
-}
+})

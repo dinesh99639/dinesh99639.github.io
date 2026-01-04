@@ -1,3 +1,4 @@
+import { memo } from "react"
 import { motion } from "framer-motion"
 import { ArrowUpRight, BookOpen, Clock, ExternalLink } from "lucide-react"
 
@@ -52,7 +53,7 @@ const posts = [
 const featuredPost = posts[0];
 const otherPosts = posts.slice(1);
 
-export function Blog() {
+export const Blog = memo(function Blog() {
     return (
         <section id="blog" className="py-24 bg-background relative overflow-hidden">
             {/* Background Accents */}
@@ -188,4 +189,4 @@ export function Blog() {
             </div>
         </section>
     )
-}
+})

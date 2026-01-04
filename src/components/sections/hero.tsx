@@ -1,8 +1,9 @@
+import { memo } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export function Hero() {
+export const Hero = memo(function Hero() {
     return (
         <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-16">
             {/* Background Grid & Effects */}
@@ -127,4 +128,4 @@ export function Hero() {
             </div>
         </section>
     )
-}
+})

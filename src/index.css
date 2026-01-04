@@ -67,7 +67,10 @@
 
   .bg-card,
   .bg-card\/40,
-  .bg-card\/20 {
+  .bg-card\/20,
+  .gpu {
+    backface-visibility: hidden;
+    transform: translateZ(0);
     will-change: transform, opacity;
   }
 
@@ -80,7 +83,8 @@
   #blog,
   #contact {
     content-visibility: auto;
-    contain-intrinsic-size: auto 500px;
+    contain-intrinsic-size: auto 800px;
+    contain: content;
   }
 
   /* Custom Scrollbar */
