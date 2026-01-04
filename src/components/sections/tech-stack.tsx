@@ -14,10 +14,12 @@ export function TechStack() {
             description: "I build accessible, pixel-perfect web experiences.",
             skills: [
                 { name: "React.js", level: "Expert" },
-                { name: "Tailwind CSS", level: "Expert" },
-                { name: "Angular", level: "Proficient" },
+                { name: "Angular", level: "Intermediate" },
+                { name: "Bootstrap", level: "Expert" },
+                { name: "Material UI", level: "Expert" },
                 { name: "Redux", level: "Advanced" },
-                { name: "HTML5 & CSS3", level: "Expert" }
+                // { name: "HTML5 & CSS3", level: "Expert" },
+                { name: "React Native", level: "Beginner" },
             ]
         },
         {
@@ -44,8 +46,6 @@ export function TechStack() {
                 { name: "MongoDB", level: "Advanced" },
                 { name: "Redis", level: "Intermediate" },
                 { name: "MySQL", level: "Advanced" },
-                { name: "Prisma ORM", level: "Advanced" },
-                { name: "Elasticsearch", level: "Intermediate" }
             ]
         },
         {
@@ -54,12 +54,10 @@ export function TechStack() {
             icon: Cloud,
             description: "Deployment, CI/CD, and infrastructure management.",
             skills: [
-                { name: "AWS (EC2, S3, Lambda)", level: "Advanced" },
+                { name: "AWS", level: "Intermediate" },
                 { name: "Docker", level: "Advanced" },
                 { name: "Kubernetes", level: "Intermediate" },
                 { name: "Git & GitHub", level: "Expert" },
-                { name: "CI/CD Pipelines", level: "Advanced" },
-                { name: "Linux Administration", level: "Intermediate" }
             ]
         },
         {
@@ -72,7 +70,8 @@ export function TechStack() {
                 { name: "TypeScript", level: "Expert" },
                 { name: "Java", level: "Proficient" },
                 { name: "Python", level: "Intermediate" },
-                { name: "SQL", level: "Advanced" },
+                { name: "php", level: "Advanced" },
+                { name: "C / C++", level: "Intermediate" },
             ]
         },
     ]

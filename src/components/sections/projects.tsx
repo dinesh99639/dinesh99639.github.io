@@ -23,62 +23,66 @@ const projects = [
     {
         id: "gsecure",
         title: "GSecureLock",
-        icon: FileCode2,
+        icon: FileText,
         color: "text-blue-500",
         extension: ".md",
         category: "Cybersecurity",
         tagline: "Credential Management with Zero-Knowledge Encryption",
         description: "A secure credential management solution leveraging encrypted Google Drive storage. It reduces password recall errors by 70%, ensuring critical data is both accessible and protected via a Zero-Knowledge architecture.",
         tags: ["React", "Google Drive API", "AES-256", "OAuth 2.0"],
-        image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2670&auto=format&fit=crop",
-        link: "https://github.com/dinesh99639",
+        image: "https://raw.githubusercontent.com/dinesh99639/static-assets/refs/heads/main/portfolio/projects/GSecureLock/GSecureLock.cover.svg",
+        sourceLink: "https://github.com/dinesh99639/GSecureLock",
+        liveLink: "https://gsecurelock.onrender.com",
         year: "2023",
-        stats: "v2.4.0 • Built in 3 months"
+        stats: "v0.1.0 • Built in 3 months"
     },
     {
-        id: "talent",
-        title: "TalentOnCloud",
+        id: "securitypass",
+        title: "SecurityPass",
         icon: FileText,
         color: "text-purple-500",
         extension: ".md",
-        category: "Social Platform",
-        tagline: "Real-time Collaboration & Event Scheduling",
-        description: "A collaborative social media prototype featuring post management, live event scheduling, and real-time chat. Built to foster community engagement and real-time interaction.",
-        tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop",
-        link: "https://github.com/dinesh99639",
-        year: "2023",
-        stats: "v1.1.0 • 1k+ Real-time connections"
+        category: "Cybersecurity",
+        tagline: "Secure Password Entry System with Anti-Brute Force Protection",
+        description: "A secure authentication system that prevents password exposure during entry through randomized input options. Features IP tracking, account lockout after 5 failed attempts, and dynamic password entry interface that changes with each refresh, effectively preventing brute force attacks.",
+        tags: ["HTML", "CSS", "Bootstrap", "PHP", "MySQL"],
+        image: "https://raw.githubusercontent.com/dinesh99639/static-assets/refs/heads/main/portfolio/projects/SecurityPass/SecurityPass.cover.png",
+        sourceLink: "https://github.com/dinesh99639/securitypass",
+        liveLink: "http://securitypass.epizy.com/",
+        year: "2021",
+        stats: "v1.0.0 • Brute Force Protection"
     },
     {
-        id: "hack",
-        title: "HackTheQuarantine",
-        icon: FileJson,
+        id: "stockpriceprediction",
+        title: "Stock Price Prediction",
+        icon: FileText,
         color: "text-amber-500",
         extension: ".md",
-        category: "Event Tech",
-        tagline: "High-Traffic Hackathon Management System",
-        description: "A comprehensive hackathon management system handling registration and live leaderboards for 100+ concurrent users, ensuring smooth event operations during peak periods.",
-        tags: ["React", "Node.js", "Express", "Firebase"],
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2670&auto=format&fit=crop",
-        link: "https://github.com/dinesh99639",
-        year: "2022",
-        stats: "v1.0.0 • 100+ Live Users"
+        category: "Machine Learning",
+        tagline: "Time Series Forecasting using LSTM Neural Networks",
+        description: "A machine learning project that predicts stock prices using Long Short Term Memory (LSTM) algorithms. Implements time series analysis and forecasting techniques to model volatile stock market behavior. Published research in Mukt Shabd Journal demonstrating the effectiveness of LSTM in financial prediction.",
+        tags: ["Python", "LSTM", "TensorFlow", "Time Series", "Data Analysis"],
+        image: "https://raw.githubusercontent.com/dinesh99639/static-assets/refs/heads/main/portfolio/projects/StockPricePrediction/StockPricePrediction.cover.jpg",
+        sourceLink: "https://github.com/dinesh99639/Stock-Price-Prediction",
+        liveLink: "",
+        year: "2021",
+        stats: "v1.0.0 • Published Research"
     },
     {
-        id: "billing",
-        title: "BillingSystem",
-        icon: FileCode2,
+        id: "offpay",
+        title: "OffPay",
+        icon: FileText,
         color: "text-emerald-500",
         extension: ".md",
-        category: "FinTech",
-        tagline: "Automated Invoice Generation & Tracking",
-        description: "Automated invoice generation application decreasing manual documentation work by 80%. Streamlines financial workflows with precision and high auditability.",
-        tags: ["React", "Redux", "Material UI", "Spring Boot"],
-        image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2672&auto=format&fit=crop",
-        link: "https://github.com/dinesh99639",
-        year: "2022",
-        stats: "v3.2.1 • 80% Automation increase"
+        category: "Mobile App",
+        tagline: "Offline Payment Solution for Android Devices",
+        description: "A native Android payment application enabling secure transactions without internet connectivity. Built with Kotlin and modern Android architecture, OffPay allows users to make payments offline. Perfect for areas with limited connectivity or users who need reliable payment options on the go.",
+        tags: ["Kotlin", "Android", "Jetpack Compose", "Material Design", "Gradle"],
+        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2670&auto=format&fit=crop",
+        sourceLink: "https://github.com/dinesh99639/OffPay",
+        liveLink: "",
+        year: "2024",
+        stats: "v0.1.0 • Native Android"
     }
 ]
 
@@ -206,17 +210,19 @@ export function Projects() {
                                         <div className="lg:w-1/2 space-y-6">
                                             <div className="relative group rounded-2xl overflow-hidden border border-border/70 bg-secondary/30 shadow-xl">
                                                 <img
-                                                    src={`${activeProject.image}&w=1200&q=80`}
+                                                    src={`${activeProject.image}`}
                                                     alt={activeProject.title}
                                                     loading="lazy"
                                                     className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                                                    <Button asChild variant="secondary" size="sm" className="rounded-full gap-2">
-                                                        <a href={activeProject.link} target="_blank" rel="noreferrer">
-                                                            <ExternalLink size={14} /> Live Preview
-                                                        </a>
-                                                    </Button>
+                                                    {activeProject.liveLink && (
+                                                        <Button asChild variant="secondary" size="sm" className="rounded-full gap-2">
+                                                            <a href={activeProject.liveLink} target="_blank" rel="noreferrer">
+                                                                <ExternalLink size={14} /> Live Preview
+                                                            </a>
+                                                        </Button>
+                                                    )}
                                                 </div>
                                             </div>
 
@@ -237,10 +243,17 @@ export function Projects() {
 
                                             <div className="flex items-center gap-4">
                                                 <Button asChild size="lg" className="rounded-full gap-2 flex-1 md:flex-none px-8 shadow-xl shadow-primary/20">
-                                                    <a href={activeProject.link} target="_blank" rel="noreferrer">
+                                                    <a href={activeProject.sourceLink} target="_blank" rel="noreferrer">
                                                         <Github size={18} /> View Source
                                                     </a>
                                                 </Button>
+                                                {activeProject.liveLink && (
+                                                    <Button asChild variant="outline" size="lg" className="rounded-full gap-2 flex-1 md:flex-none px-8">
+                                                        <a href={activeProject.liveLink} target="_blank" rel="noreferrer">
+                                                            <ExternalLink size={18} /> Live Demo
+                                                        </a>
+                                                    </Button>
+                                                )}
                                             </div>
                                         </div>
 
