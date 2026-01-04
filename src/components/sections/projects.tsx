@@ -130,7 +130,7 @@ export function Projects() {
                         </div>
 
                         <div className="flex-1 overflow-y-auto py-2">
-                            <div className="px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground/60 mb-1">
+                            <div className="px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1">
                                 portfolios / dinesh / projects
                             </div>
                             {projects.map((project) => (
@@ -200,7 +200,7 @@ export function Projects() {
                                         <ChevronRight size={10} />
                                         <span className="hover:text-primary transition-colors cursor-pointer">components</span>
                                         <ChevronRight size={10} />
-                                        <span className="text-foreground">{activeProject.title}{activeProject.extension}</span>
+                                        <span className="text-foreground font-bold">{activeProject.title}{activeProject.extension}</span>
                                     </div>
 
                                     <div className="flex flex-col lg:flex-row gap-10">
@@ -210,7 +210,11 @@ export function Projects() {
                                                 <img
                                                     src={`${activeProject.image}`}
                                                     alt={activeProject.title}
-                                                    loading="lazy"
+                                                    loading="eager"
+                                                    decoding="async"
+                                                    width={800}
+                                                    height={600}
+                                                    fetchPriority="high"
                                                     className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">

@@ -10,11 +10,11 @@ export function Hero() {
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
                 <motion.div
                     animate={{
-                        scale: [1, 1.1, 1],
-                        opacity: [0.2, 0.3, 0.2]
+                        scale: [1, 1.05, 1],
+                        opacity: [0.15, 0.25, 0.15]
                     }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 opacity-20 blur-[100px]"
+                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 blur-[100px] will-change-transform"
                 />
             </div>
 

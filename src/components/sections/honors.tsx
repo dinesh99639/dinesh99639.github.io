@@ -119,10 +119,10 @@ export function Honors() {
 
                                     <div className="flex-1 min-w-0">
                                         <div className="flex items-center justify-between mb-2">
-                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground/80 bg-muted/50 px-2 py-0.5 rounded-md">
+                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground bg-muted/50 px-2 py-0.5 rounded-md">
                                                 {honor.date}
                                             </span>
-                                            <span className="text-[10px] font-bold text-primary/80 uppercase tracking-widest">
+                                            <span className="text-[10px] font-bold text-primary uppercase tracking-widest">
                                                 {honor.organization}
                                             </span>
                                         </div>
