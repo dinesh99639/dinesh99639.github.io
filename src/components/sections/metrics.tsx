@@ -69,6 +69,7 @@ export function Metrics() {
                         viewport={{ once: true }}
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-4"
                     >
+                        <TrendingUp size={14} />
                         Statistics
                     </motion.div>
                     <h2 className="text-4xl font-bold tracking-tight mb-4 text-foreground">
