@@ -117,20 +117,20 @@ export const Projects = memo(function Projects() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="bg-card border border-border/70 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[700px] max-h-[85vh] gpu"
+                    className="bg-card border border-border/70 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row md:h-[700px] md:max-h-[85vh] gpu"
                 >
-                    {/* Left Sidebar: Explorer */}
-                    <div className="w-full md:w-64 lg:w-72 bg-secondary/20 border-r border-border/70 flex flex-col">
+                    {/* Left Sidebar: Explorer - Stacked on mobile, Sidebar on desktop */}
+                    <div className="w-full md:w-64 lg:w-72 bg-secondary/20 border-b md:border-b-0 md:border-r border-border/70 flex flex-col shrink-0">
                         <div className="p-4 border-b border-border/70 bg-secondary/30 flex items-center justify-between">
-                            <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                            <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
                                 <FolderOpen size={14} className="text-primary" />
                                 explorer
                             </span>
                             <Search size={14} className="text-muted-foreground opacity-50" />
                         </div>
 
-                        <div className="flex-1 overflow-y-auto py-2">
-                            <div className="px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1">
+                        <div className="flex md:flex-col overflow-x-auto md:overflow-y-auto py-2 px-2 md:px-0 scrollbar-hide no-scrollbar">
+                            <div className="hidden md:block px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-1">
                                 portfolios / dinesh / projects
                             </div>
                             {projects.map((project) => (
@@ -139,18 +139,19 @@ export const Projects = memo(function Projects() {
                                     onClick={() => setActiveId(project.id)}
                                     aria-label={`View ${project.title} project details`}
                                     className={cn(
-                                        "w-full text-left px-4 py-2.5 flex items-center gap-3 group transition-shadow border-l-2",
+                                        "whitespace-nowrap md:whitespace-normal md:w-full text-left px-4 py-2.5 flex items-center gap-3 group transition-all border-b-2 md:border-b-0 md:border-l-2 shrink-0 md:shrink",
                                         activeId === project.id
                                             ? "bg-secondary border-primary"
                                             : "bg-transparent border-transparent hover:bg-secondary/40"
                                     )}
                                 >
                                     <project.icon size={16} className={cn(
+                                        "shrink-0",
                                         activeId === project.id ? project.color : "text-muted-foreground group-hover:text-foreground"
                                     )} />
                                     <div className="flex flex-col">
                                         <span className={cn(
-                                            "text-sm font-medium",
+                                            "text-xs md:text-sm font-medium",
                                             activeId === project.id ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
                                         )}>
                                             {project.title}{project.extension}
@@ -162,7 +163,7 @@ export const Projects = memo(function Projects() {
                     </div>
 
                     {/* Main Stage: Editor Content */}
-                    <div className="flex-1 flex flex-col bg-card/50">
+                    <div className="flex-1 flex flex-col bg-card/50 min-h-0">
                         {/* Editor Tabs (Mockup) */}
                         <div className="h-10 bg-secondary/30 border-b border-border/70 flex items-center overflow-x-auto">
                             <div className="flex h-full">
@@ -183,7 +184,7 @@ export const Projects = memo(function Projects() {
                         </div>
 
                         {/* Editor Body */}
-                        <div className="flex-1 overflow-y-auto relative">
+                        <div className="flex-1 md:overflow-y-auto relative min-h-0">
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={activeId}
@@ -191,10 +192,10 @@ export const Projects = memo(function Projects() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
                                     transition={{ duration: 0.2 }}
-                                    className="p-6 md:p-10"
+                                    className="p-4 md:p-10"
                                 >
                                     {/* Breadcrumbs */}
-                                    <div className="flex items-center gap-2 text-[11px] font-mono text-muted-foreground mb-8 pb-4 border-b border-border/30">
+                                    <div className="flex items-center gap-2 text-[10px] md:text-[11px] font-mono text-muted-foreground mb-6 md:mb-8 pb-4 border-b border-border/30">
                                         <span className="hover:text-primary cursor-pointer">src</span>
                                         <ChevronRight size={10} />
                                         <span className="hover:text-primary cursor-pointer">components</span>
@@ -267,8 +268,8 @@ export const Projects = memo(function Projects() {
                                                     </Badge>
                                                     <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">{activeProject.category}</span>
                                                 </div>
-                                                <h3 className="text-4xl font-bold tracking-tighter">{activeProject.title}</h3>
-                                                <p className="text-lg font-medium text-foreground opacity-80 leading-relaxed italic border-l-2 border-primary pl-4">
+                                                <h3 className="text-2xl md:text-4xl font-bold tracking-tighter">{activeProject.title}</h3>
+                                                <p className="text-base md:text-lg font-medium text-foreground opacity-80 leading-relaxed italic border-l-2 border-primary pl-4">
                                                     "{activeProject.tagline}"
                                                 </p>
                                             </div>

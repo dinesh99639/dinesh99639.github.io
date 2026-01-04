@@ -51,17 +51,16 @@ export const Hero = memo(function Hero() {
                     <div className="max-w-4xl mx-auto space-y-4">
                         <motion.span
                             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                            className="block text-xl sm:text-2xl md:text-3xl font-medium text-foreground"
+                            className="block text-lg sm:text-2xl md:text-3xl font-medium text-foreground tracking-tight"
                         >
                             Hi, I'm Dinesh Somaraju.
                         </motion.span>
                         <motion.h1
-                            initial={{ opacity: 1, y: 0 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl"
+                            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                            className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]"
                         >
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500 animate-gradient-x">
-                                Full Stack Developer.
+                                Full Stack <br className="sm:hidden" /> Developer.
                             </span>
                         </motion.h1>
                     </div>
@@ -69,7 +68,7 @@ export const Hero = memo(function Hero() {
                     {/* Bio */}
                     <motion.p
                         variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                        className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl leading-relaxed"
+                        className="mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed px-2"
                     >
                         Specialized in <span className="font-semibold text-foreground">React</span>, <span className="font-semibold text-foreground">Redux</span>, <span className="font-semibold text-foreground">Python</span>, and <span className="font-semibold text-foreground">AWS</span>.
                         I build scalable web and mobile applications that enhance performance and user experience.
@@ -100,7 +99,7 @@ export const Hero = memo(function Hero() {
                     {/* Social Links */}
                     <motion.div
                         variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-                        className="flex items-center justify-center gap-5 pt-8"
+                        className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 pt-4 md:pt-8"
                     >
                         {[
                             { icon: Github, href: "https://github.com/dinesh99639", label: "Github", color: "hover:text-white hover:bg-[#333] hover:border-[#333]" },
@@ -115,7 +114,7 @@ export const Hero = memo(function Hero() {
                                 rel="noreferrer"
                                 aria-label={`Visit my ${social.label}`}
                                 whileHover={{ y: -5, scale: 1.1 }}
-                                className={`group relative p-3 rounded-2xl bg-secondary/30 backdrop-blur-md border border-border/70 text-muted-foreground shadow-sm ${social.color}`}
+                                className={`group relative p-3 rounded-2xl bg-secondary/30 backdrop-blur-md border border-border/70 text-muted-foreground shadow-sm transition-all ${social.color}`}
                                 title={social.label}
                             >
                                 <social.icon className="h-5 w-5" />

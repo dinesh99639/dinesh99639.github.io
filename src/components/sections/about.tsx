@@ -66,15 +66,15 @@ export const About = memo(function About() {
                                 >
                                     <button
                                         onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
-                                        className="w-full flex items-center justify-between px-6 py-4 text-left"
+                                        className="w-full flex items-center justify-between px-4 md:px-6 py-4 text-left"
                                     >
                                         <div>
-                                            <h4 className="font-bold text-lg">{exp.role}</h4>
-                                            <p className="text-sm font-medium text-primary">{exp.company}</p>
+                                            <h4 className="font-bold text-base md:text-lg leading-tight mb-1">{exp.role}</h4>
+                                            <p className="text-xs md:text-sm font-semibold text-primary">{exp.company}</p>
                                         </div>
-                                        <div className="flex items-center gap-4">
-                                            <span className="text-xs text-muted-foreground hidden sm:inline-block bg-secondary px-2 py-1 rounded-full">{exp.period}</span>
-                                            <ChevronDown className={cn("h-5 w-5 text-muted-foreground transition-transform", expandedIndex === i && "rotate-180 text-primary")} />
+                                        <div className="flex items-center gap-2 md:gap-4 shrink-0 px-2 lg:px-0">
+                                            <span className="text-[10px] md:text-xs text-muted-foreground hidden sm:inline-block bg-secondary px-2 py-1 rounded-full">{exp.period}</span>
+                                            <ChevronDown className={cn("h-4 w-4 md:h-5 md:w-5 text-muted-foreground transition-transform shrink-0", expandedIndex === i && "rotate-180 text-primary")} />
                                         </div>
                                     </button>
                                     <AnimatePresence>
@@ -86,9 +86,9 @@ export const About = memo(function About() {
                                                 transition={{ duration: 0.2 }}
                                             >
                                                 <div className="border-t border-border/70 bg-muted/30">
-                                                    <div className="px-6 py-4">
-                                                        <div className="mt-1 text-sm sm:hidden text-muted-foreground mb-2">{exp.period}</div>
-                                                        <p className="text-muted-foreground leading-relaxed text-sm">
+                                                    <div className="px-5 md:px-6 py-5">
+                                                        <div className="mt-1 text-[10px] font-bold sm:hidden text-primary mb-3 uppercase tracking-wider">{exp.period}</div>
+                                                        <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                                                             {exp.description}
                                                         </p>
                                                     </div>
