@@ -104,7 +104,7 @@ export function Hero() {
                             { icon: Github, href: "https://github.com/dinesh99639", label: "Github", color: "hover:text-white hover:bg-[#333] hover:border-[#333]" },
                             { icon: Linkedin, href: "https://linkedin.com/in/dinesh-somaraju", label: "LinkedIn", color: "hover:text-white hover:bg-[#0077b5] hover:border-[#0077b5]" },
                             { icon: Mail, href: "mailto:dinesh99639@gmail.com", label: "Email", color: "hover:text-white hover:bg-primary hover:border-primary" },
-                            { icon: FileText, href: "https://dinesh-resume.vercel.app", label: "Resume", color: "hover:text-white hover:bg-emerald-600 hover:border-emerald-600" }
+                            { icon: FileText, href: "https://dinesh99639.github.io/static-assets/portfolio/resume/Dinesh%20Somaraju%20Resume.pdf", label: "Resume", color: "hover:text-white hover:bg-emerald-600 hover:border-emerald-600" }
                         ].map((social, i) => (
                             <motion.a
                                 key={i}
