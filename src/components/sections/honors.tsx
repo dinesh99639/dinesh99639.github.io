@@ -1,3 +1,4 @@
+import { memo } from "react"
 import { motion } from "framer-motion"
 import { Trophy, Star, Medal, Award as AwardIcon } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
@@ -60,7 +61,7 @@ const honors: Honor[] = [
     }
 ]
 
-export function Honors() {
+export const Honors = memo(function Honors() {
     return (
         <section className="py-24 bg-background relative overflow-hidden">
             {/* Background Glows */}
@@ -164,4 +165,4 @@ export function Honors() {
             </div>
         </section>
     )
-}
+})

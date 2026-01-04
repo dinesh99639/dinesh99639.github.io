@@ -1,9 +1,9 @@
-import { useState } from "react"
+import { useState, memo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Layout, Server, Database, Cloud, ChevronRight, Code2, Layers } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-export function TechStack() {
+export const TechStack = memo(function TechStack() {
     const [activeTab, setActiveTab] = useState("frontend")
 
     const categories = [
@@ -155,7 +155,7 @@ export function TechStack() {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -20 }}
                                 transition={{ duration: 0.3 }}
-                                className="bg-card border border-border/70 rounded-3xl p-8 md:p-10 shadow-sm relative overflow-hidden"
+                                className="bg-card border border-border/70 rounded-3xl p-8 md:p-10 shadow-sm relative overflow-hidden gpu"
                             >
                                 {/* Background Decoration */}
                                 <div className="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none">
@@ -195,4 +195,4 @@ export function TechStack() {
             </div>
         </section>
     )
-}
+})

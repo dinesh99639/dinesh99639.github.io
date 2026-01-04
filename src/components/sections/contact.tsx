@@ -1,3 +1,4 @@
+import { memo } from "react"
 import { motion } from "framer-motion"
 import { Mail, Linkedin, Phone, Radio, ShieldCheck, Zap, MapPin } from "lucide-react"
 
@@ -28,7 +29,7 @@ const relays = [
     }
 ]
 
-export function Contact() {
+export const Contact = memo(function Contact() {
     return (
         <section id="contact" className="py-24 bg-background relative overflow-hidden min-h-[800px] flex items-center">
             {/* Immersive Background */}
@@ -152,4 +153,4 @@ export function Contact() {
             </div>
         </section>
     )
-}
+})
