@@ -63,6 +63,7 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-display: swap;
     font-feature-settings: "rlig" 1, "calt" 1;
+    text-rendering: optimizeSpeed;
   }
 
   .bg-card,
@@ -70,21 +71,19 @@
   .bg-card\/20,
   .gpu {
     backface-visibility: hidden;
-    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
+    perspective: 1000;
     will-change: transform, opacity;
   }
 
   /* Performance: Rendering optimization for below-the-fold content */
-  #about,
-  #tech,
-  #projects,
   #metrics,
   #honors,
   #blog,
   #contact {
     content-visibility: auto;
-    contain-intrinsic-size: auto 800px;
-    contain: content;
+    contain-intrinsic-size: auto 500px;
+    contain: layout style paint;
   }
 
   /* Custom Scrollbar */

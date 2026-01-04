@@ -28,7 +28,7 @@ export const Hero = memo(function Hero() {
                         visible: {
                             opacity: 1,
                             transition: {
-                                staggerChildren: 0.1
+                                staggerChildren: 0.05
                             }
                         }
                     }}
@@ -56,7 +56,8 @@ export const Hero = memo(function Hero() {
                             Hi, I'm Dinesh Somaraju.
                         </motion.span>
                         <motion.h1
-                            variants={{ hidden: { opacity: 0.3, y: 10 }, visible: { opacity: 1, y: 0 } }}
+                            initial={{ opacity: 1, y: 0 }}
+                            animate={{ opacity: 1, y: 0 }}
                             className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl"
                         >
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500 animate-gradient-x">
