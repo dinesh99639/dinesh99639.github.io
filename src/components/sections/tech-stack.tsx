@@ -1,6 +1,6 @@
 import { useState, memo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Layout, Server, Database, Cloud, ChevronRight, Code2, Layers } from "lucide-react"
+import { Layout, Server, Database, Cloud, Code2, Layers } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 export const TechStack = memo(function TechStack() {
@@ -79,7 +79,7 @@ export const TechStack = memo(function TechStack() {
     const activeContent = categories.find(c => c.id === activeTab)
 
     return (
-        <section id="tech" className="py-24 bg-background border-t border-border/70">
+        <section id="tech" className="py-24 bg-background border-t border-border/70 overflow-hidden">
             <div className="container px-4 mx-auto max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -96,48 +96,46 @@ export const TechStack = memo(function TechStack() {
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-                    {/* Left Column: Navigation */}
+                <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12">
+                    {/* Navigation: Horizontal scroll on mobile, Vertical list on desktop */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="lg:col-span-4 space-y-2"
+                        className="lg:col-span-4"
                     >
-                        {categories.map((cat) => (
-                            <button
-                                key={cat.id}
-                                onClick={() => setActiveTab(cat.id)}
-                                aria-label={`View ${cat.title} skills`}
-                                className={cn(
-                                    "w-full text-left px-6 py-4 rounded-xl transition-shadow flex items-center justify-between group border",
-                                    activeTab === cat.id
-                                        ? "bg-secondary border-primary/20 shadow-sm"
-                                        : "bg-transparent border-transparent hover:bg-secondary/50 hover:border-border/70"
-                                )}
-                            >
-                                <div className="flex items-center gap-4">
+                        <div className="flex lg:flex-col gap-2 overflow-x-auto pb-4 lg:pb-0 scrollbar-hide no-scrollbar -mx-4 px-4 lg:mx-0 lg:px-0">
+                            {categories.map((cat) => (
+                                <button
+                                    key={cat.id}
+                                    onClick={() => setActiveTab(cat.id)}
+                                    aria-label={`View ${cat.title} skills`}
+                                    className={cn(
+                                        "whitespace-nowrap lg:whitespace-normal text-left px-5 py-3 lg:px-6 lg:py-4 rounded-xl transition-all flex items-center gap-3 group border shrink-0 lg:shrink",
+                                        activeTab === cat.id
+                                            ? "bg-secondary border-primary/30 shadow-sm"
+                                            : "bg-transparent border-transparent hover:bg-secondary/50 hover:border-border/70"
+                                    )}
+                                >
                                     <div className={cn(
-                                        "p-2 rounded-lg",
-                                        activeTab === cat.id ? "bg-background text-primary" : "bg-secondary/50 text-muted-foreground group-hover:text-foreground"
+                                        "p-1.5 lg:p-2 rounded-lg shrink-0",
+                                        activeTab === cat.id ? "bg-primary text-white" : "bg-secondary/80 text-foreground group-hover:text-primary transition-colors"
                                     )}>
-                                        <cat.icon size={20} />
+                                        <cat.icon size={18} />
                                     </div>
                                     <span className={cn(
-                                        "font-medium",
+                                        "font-bold text-sm lg:text-base tracking-tight",
                                         activeTab === cat.id ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
                                     )}>
-                                        {cat.title}
+                                        {cat.id === 'frontend' ? 'Frontend' :
+                                            cat.id === 'backend' ? 'Backend' :
+                                                cat.id === 'database' ? 'Database' :
+                                                    cat.id === 'devops' ? 'DevOps' : 'Core'}
                                     </span>
-                                </div>
-                                {activeTab === cat.id && (
-                                    <motion.div layoutId="arrow">
-                                        <ChevronRight size={16} className="text-primary" />
-                                    </motion.div>
-                                )}
-                            </button>
-                        ))}
+                                </button>
+                            ))}
+                        </div>
                     </motion.div>
 
                     {/* Right Column: Content */}
@@ -155,7 +153,7 @@ export const TechStack = memo(function TechStack() {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -20 }}
                                 transition={{ duration: 0.3 }}
-                                className="bg-card border border-border/70 rounded-3xl p-8 md:p-10 shadow-sm relative overflow-hidden gpu"
+                                className="bg-card border border-border/70 rounded-3xl p-6 md:p-10 shadow-sm relative overflow-hidden gpu"
                             >
                                 {/* Background Decoration */}
                                 <div className="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none">

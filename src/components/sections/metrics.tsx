@@ -103,13 +103,13 @@ export const Metrics = memo(function Metrics() {
                             </div>
 
                             <div className="space-y-1">
-                                <h3 className="text-4xl font-bold tracking-tight">
+                                <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
                                     {metric.value}
                                 </h3>
-                                <p className="text-sm font-bold uppercase tracking-wider text-foreground">
+                                <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-foreground">
                                     {metric.label}
                                 </p>
-                                <p className="text-xs text-muted-foreground leading-relaxed">
+                                <p className="text-[10px] md:text-xs text-muted-foreground font-medium leading-relaxed">
                                     {metric.description}
                                 </p>
                             </div>

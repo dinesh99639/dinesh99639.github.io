@@ -22,7 +22,7 @@ const SectionFallback = ({ id }: { id: string }) => (
 function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-      <div className="min-h-screen bg-background font-sans antialiased text-foreground flex flex-col">
+      <div className="min-h-screen bg-background font-sans antialiased text-foreground flex flex-col overflow-x-hidden">
         <Navbar />
         <main className="flex-grow">
           <Hero />
