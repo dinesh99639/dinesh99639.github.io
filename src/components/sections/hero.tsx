@@ -69,7 +69,7 @@ export function Hero() {
                         variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
                         className="mx-auto max-w-2xl text-lg text-muted-foreground sm:text-xl leading-relaxed"
                     >
-                        Specialized in <span className="font-semibold text-foreground">React</span>, <span className="font-semibold text-foreground">Angular</span>, <span className="font-semibold text-foreground">Spring Boot</span>, and <span className="font-semibold text-foreground">AWS</span>.
+                        Specialized in <span className="font-semibold text-foreground">React</span>, <span className="font-semibold text-foreground">Redux</span>, <span className="font-semibold text-foreground">Python</span>, and <span className="font-semibold text-foreground">AWS</span>.
                         I build scalable web and mobile applications that enhance performance and user experience.
                     </motion.p>
 

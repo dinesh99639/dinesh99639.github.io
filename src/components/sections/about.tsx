@@ -12,7 +12,7 @@ export function About() {
             role: "Consultant",
             company: "KPMG India",
             period: "Jan 2025 - Present",
-            description: "Designed and implemented an organizational hierarchy system impacting 1,500 employees. Improved workforce visibility by 40% and streamlined 15 administrative processes."
+            description: "Designed and implemented an organizational hierarchy system impacting 50,000+ employees. Improved workforce visibility by 40% and streamlined 15 administrative processes."
         },
         {
             role: "Specialist Programmer",
@@ -139,8 +139,8 @@ export function About() {
                                         "Infosys Certified Front End Web Developer",
                                         "Infosys Certified React Professional",
                                         "Infosys Certified NodeJS Professional",
-                                        "Associated Mongo Professional",
-                                        "Certified Python Programmer"
+                                        "Infosys Certified Mongo Developer",
+                                        "Infosys Certified Python Programmer"
                                     ].map((cert, i) => (
                                         <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
                                             <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
