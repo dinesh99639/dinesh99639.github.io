@@ -89,7 +89,7 @@ export function Blog() {
                         <button
                             onClick={() => window.open(featuredPost.link, "_blank")}
                             aria-label={`Read featured article: ${featuredPost.title}`}
-                            className="w-full text-left relative bg-card/40 border border-border/70 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 transition-colors duration-500 overflow-hidden flex flex-col min-h-[500px] justify-between group"
+                            className="w-full text-left relative bg-card/40 border border-border/70 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 overflow-hidden flex flex-col min-h-[500px] justify-between group"
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
@@ -104,7 +104,7 @@ export function Blog() {
                                     </span>
                                 </div>
 
-                                <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-[1.1] group-hover:text-primary transition-colors">
+                                <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-[1.1] group-hover:text-primary">
                                     {featuredPost.title}
                                 </h3>
 
@@ -137,7 +137,7 @@ export function Blog() {
                                 <button
                                     onClick={() => window.open(post.link, "_blank")}
                                     aria-label={`Read article: ${post.title}`}
-                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/70 hover:border-primary/40 rounded-3xl p-6 transition-colors duration-500 group"
+                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/70 hover:border-primary/40 rounded-3xl p-6 group"
                                 >
                                     <div className="flex items-start justify-between gap-4">
                                         <div className="flex-1">
@@ -149,15 +149,15 @@ export function Blog() {
                                                     {post.readTime}
                                                 </span>
                                             </div>
-                                            <h4 className="text-lg font-bold leading-snug transition-colors line-clamp-2 mb-2">
+                                            <h4 className="text-lg font-bold leading-snug line-clamp-2 mb-2">
                                                 {post.title}
                                             </h4>
-                                            <div className="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 duration-300">
+                                            <div className="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-[transform,opacity] translate-y-2 group-hover:translate-y-0 duration-300">
                                                 <span className="text-xs font-bold uppercase tracking-widest">Read Article</span>
                                                 <ArrowUpRight size={14} />
                                             </div>
                                         </div>
-                                        <div className="shrink-0 w-10 h-10 rounded-xl bg-secondary/50 flex items-center justify-center text-muted-foreground border border-border/70 group-hover:border-primary/30 group-hover:text-primary transition-colors">
+                                        <div className="shrink-0 w-10 h-10 rounded-xl bg-secondary/50 flex items-center justify-center text-muted-foreground border border-border/70 group-hover:border-primary/30 group-hover:text-primary">
                                             <ExternalLink size={18} />
                                         </div>
                                     </div>
@@ -176,7 +176,7 @@ export function Blog() {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                        className="px-6 py-3.5 rounded-full bg-secondary/80 border border-border/70 backdrop-blur-md text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2 hover:bg-primary/10 hover:border-primary/50 transition-colors duration-300"
+                        className="px-6 py-3.5 rounded-full bg-secondary/80 border border-border/70 backdrop-blur-md text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2 hover:bg-primary/10 hover:border-primary/50"
                     >
                         Explore Complete Archive
                         <ArrowUpRight size={18} />

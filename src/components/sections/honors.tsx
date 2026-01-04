@@ -106,14 +106,14 @@ export function Honors() {
                             {/* Card Background with inner glow */}
                             <div className={`absolute inset-0 bg-gradient-to-br ${honor.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl blur-xl`} />
 
-                            <div className="relative bg-card/50 backdrop-blur-xl border border-border/70 p-8 rounded-3xl overflow-hidden group-hover:border-primary/50 transition-colors duration-200">
+                            <div className="relative bg-card/50 backdrop-blur-xl border border-border/70 p-8 rounded-3xl overflow-hidden group-hover:border-primary/50 transition-shadow">
                                 {/* Spotlight effect */}
                                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
                                     <honor.icon size={120} className={honor.color} />
                                 </div>
 
                                 <div className="flex items-start gap-6">
-                                    <div className={`shrink-0 p-4 rounded-2xl bg-background/80 border border-border/70 ${honor.color} shadow-lg group-hover:scale-110 transition-transform duration-200`}>
+                                    <div className={`shrink-0 p-4 rounded-2xl bg-background/80 border border-border/70 ${honor.color} shadow-lg group-hover:scale-110 transition-transform`}>
                                         <honor.icon size={28} />
                                     </div>
 
@@ -127,7 +127,7 @@ export function Honors() {
                                             </span>
                                         </div>
 
-                                        <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                                        <h3 className="text-xl font-bold mb-3 group-hover:text-primary">
                                             {honor.title}
                                         </h3>
 
@@ -150,7 +150,7 @@ export function Honors() {
                             transition: { type: "spring", stiffness: 400, damping: 25, delay: 0 }
                         }}
                         transition={{ duration: 0.4, delay: 0.4 }}
-                        className="bg-primary/5 border border-dashed border-primary/30 rounded-3xl p-8 flex flex-col items-center justify-center text-center group hover:bg-primary/10 transition-colors"
+                        className="bg-primary/5 border border-dashed border-primary/30 rounded-3xl p-8 flex flex-col items-center justify-center text-center group hover:bg-primary/10 transition-shadow"
                     >
                         <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4 text-primary animate-pulse">
                             +

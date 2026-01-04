@@ -29,7 +29,7 @@ export function Navbar() {
         <nav
             aria-label="Main Navigation"
             className={cn(
-                "fixed top-0 z-50 w-full transition-all duration-300",
+                "fixed top-0 z-50 w-full",
                 scrolled
                     ? "bg-background/80 backdrop-blur-md border-b"
                     : "bg-transparent"
@@ -49,7 +49,7 @@ export function Navbar() {
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="px-3 py-2 rounded-md text-sm font-medium hover:text-primary transition-colors text-muted-foreground"
+                                    className="px-3 py-2 rounded-md text-sm font-medium hover:text-primary text-muted-foreground"
                                     aria-label={`Navigate to ${link.name} section`}
                                 >
                                     {link.name}
@@ -57,7 +57,7 @@ export function Navbar() {
                             ))}
                             <button
                                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                                className="p-2 rounded-full hover:bg-accent transition-colors"
+                                className="p-2 rounded-full hover:bg-accent"
                                 aria-label="Toggle dark mode"
                             >
                                 {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -69,14 +69,14 @@ export function Navbar() {
                     <div className="md:hidden flex items-center gap-4">
                         <button
                             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                            className="p-2 rounded-full hover:bg-accent transition-colors"
+                            className="p-2 rounded-full hover:bg-accent"
                             aria-label="Toggle dark mode"
                         >
                             {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
                         </button>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="p-2 rounded-md hover:bg-accent transition-colors"
+                            className="p-2 rounded-md hover:bg-accent"
                             aria-label="Toggle mobile menu"
                         >
                             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -100,7 +100,7 @@ export function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="block px-3 py-2 rounded-md text-base font-medium hover:bg-accent transition-colors text-foreground"
+                                    className="block px-3 py-2 rounded-md text-base font-medium hover:bg-accent text-foreground"
                                 >
                                     {link.name}
                                 </a>

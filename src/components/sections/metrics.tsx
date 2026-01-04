@@ -90,13 +90,13 @@ export function Metrics() {
                             whileInView="animate"
                             whileHover="hover"
                             viewport={{ once: true }}
-                            className="bg-card/40 backdrop-blur-md border border-border/70 rounded-2xl p-6 hover:border-primary/50 transition-colors duration-700 ease-in-out group"
+                            className="bg-card/40 backdrop-blur-md border border-border/70 rounded-2xl p-6 hover:border-primary/50 group"
                         >
                             <div className="flex items-start justify-between mb-4">
-                                <div className={`p-3 rounded-xl bg-background/80 border border-border/70 ${metric.color} shadow-sm group-hover:scale-110 transition-all duration-400`}>
+                                <div className={`p-3 rounded-xl bg-background/80 border border-border/70 ${metric.color} shadow-sm group-hover:scale-110 transition-transform`}>
                                     <metric.icon size={24} />
                                 </div>
-                                <div className="text-secondary-foreground/20 group-hover:text-primary/20 transition-colors">
+                                <div className="text-secondary-foreground/20 group-hover:text-primary/20">
                                     <TrendingUp size={40} />
                                 </div>
                             </div>

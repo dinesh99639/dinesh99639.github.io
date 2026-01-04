@@ -60,7 +60,7 @@ export function About() {
                                 <div
                                     key={i}
                                     className={cn(
-                                        "group bg-card border rounded-2xl overflow-hidden transition-all duration-300",
+                                        "group bg-card border rounded-2xl overflow-hidden transition-shadow",
                                         expandedIndex === i ? "ring-2 ring-primary/20 shadow-lg" : "hover:border-primary/50"
                                     )}
                                 >
@@ -74,7 +74,7 @@ export function About() {
                                         </div>
                                         <div className="flex items-center gap-4">
                                             <span className="text-xs text-muted-foreground hidden sm:inline-block bg-secondary px-2 py-1 rounded-full">{exp.period}</span>
-                                            <ChevronDown className={cn("h-5 w-5 text-muted-foreground transition-transform duration-300", expandedIndex === i && "rotate-180 text-primary")} />
+                                            <ChevronDown className={cn("h-5 w-5 text-muted-foreground transition-transform", expandedIndex === i && "rotate-180 text-primary")} />
                                         </div>
                                     </button>
                                     <AnimatePresence>
