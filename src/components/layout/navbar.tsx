@@ -60,7 +60,7 @@ export function Navbar() {
         <nav
             aria-label="Main Navigation"
             className={cn(
-                "fixed top-0 z-50 w-full transition-all duration-300",
+                "fixed top-0 z-50 w-full",
                 scrolled
                     ? "bg-background/80 backdrop-blur-md border-b py-2"
                     : "bg-transparent py-4"
