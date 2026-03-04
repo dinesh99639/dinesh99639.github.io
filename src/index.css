@@ -69,23 +69,20 @@
 
 
 
-  .bg-card,
-  .bg-card\/40,
-  .bg-card\/20,
   .gpu {
     backface-visibility: hidden;
-    transform: translate3d(0, 0, 0);
+    transform: translateZ(0);
     perspective: 1000;
     will-change: transform, opacity;
+    -webkit-font-smoothing: subpixel-antialiased;
   }
 
   /* Performance: Rendering optimization for below-the-fold content */
   #metrics,
   #honors,
-  #blog,
-  #contact {
+  #blog {
     content-visibility: auto;
-    contain-intrinsic-size: auto 500px;
+    contain-intrinsic-size: auto 600px;
     contain: layout style paint;
   }
 
