@@ -15,8 +15,8 @@ const Blog = lazy(() => import("@/components/sections/blog").then(m => ({ defaul
 const Contact = lazy(() => import("@/components/sections/contact").then(m => ({ default: m.Contact })))
 
 const SectionFallback = ({ id }: { id: string }) => (
-  <section id={id} className="py-24 animate-pulse flex items-center justify-center min-h-[400px]">
-    <div className="w-12 h-12 rounded-full border-4 border-primary/20 border-t-primary animate-spin" />
+  <section id={id} className="py-24 flex items-center justify-center min-h-[400px] gpu">
+    <div className="w-10 h-10 rounded-full border-2 border-primary/10 border-t-primary animate-spin-slow gpu" />
   </section>
 )
 

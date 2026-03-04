@@ -7,15 +7,10 @@ export const Hero = memo(function Hero() {
     return (
         <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-16">
             {/* Background Grid & Effects */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 select-none pointer-events-none">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-                <motion.div
-                    animate={{
-                        scale: [1, 1.05, 1],
-                        opacity: [0.15, 0.25, 0.15]
-                    }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 blur-[100px] will-change-transform"
+                <div
+                    className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 blur-[100px] animate-pulse-slow gpu will-change-transform"
                 />
             </div>
 
@@ -23,19 +18,21 @@ export const Hero = memo(function Hero() {
                 <motion.div
                     initial="hidden"
                     animate="visible"
+                    viewport={{ once: true }}
                     variants={{
                         hidden: { opacity: 0 },
                         visible: {
                             opacity: 1,
                             transition: {
-                                staggerChildren: 0.05
+                                staggerChildren: 0.1,
+                                delayChildren: 0.2
                             }
                         }
                     }}
                     className="space-y-8"
                 >
                     {/* Status Badge */}
-                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+                    <motion.div variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
                         <div className="inline-block rounded-full bg-secondary/50 backdrop-blur-sm border border-secondary px-4 py-1.5 text-sm font-medium text-secondary-foreground shadow-sm">
                             <span className="flex items-center gap-2">
                                 <span className="relative flex h-2 w-2">
@@ -50,16 +47,16 @@ export const Hero = memo(function Hero() {
                     {/* Main Headline */}
                     <div className="max-w-4xl mx-auto space-y-4">
                         <motion.span
-                            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                            variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
                             className="block text-lg sm:text-2xl md:text-3xl font-medium text-foreground tracking-tight"
                         >
                             Hi, I'm Dinesh Somaraju.
                         </motion.span>
                         <motion.h1
-                            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                            className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]"
+                            variants={{ hidden: { opacity: 0, scale: 0.95, y: 15 }, visible: { opacity: 1, scale: 1, y: 0 } }}
+                            className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] transform-gpu"
                         >
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500 animate-gradient-x">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500 animate-gradient-x will-change-[background-position]">
                                 Full Stack <br className="sm:hidden" /> Developer.
                             </span>
                         </motion.h1>
@@ -67,7 +64,7 @@ export const Hero = memo(function Hero() {
 
                     {/* Bio */}
                     <motion.p
-                        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                        variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
                         className="mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed px-2"
                     >
                         Specialized in <span className="font-semibold text-foreground">React</span>, <span className="font-semibold text-foreground">Redux</span>, <span className="font-semibold text-foreground">Python</span>, and <span className="font-semibold text-foreground">AWS</span>.
@@ -76,12 +73,12 @@ export const Hero = memo(function Hero() {
 
                     {/* CTA Buttons */}
                     <motion.div
-                        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                        variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
                         className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6"
                     >
                         <Button
                             size="lg"
-                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm font-semibold bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 group"
+                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm font-semibold bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 active:scale-95 transition-all group gpu"
                             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                         >
                             View Work <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -89,7 +86,7 @@ export const Hero = memo(function Hero() {
                         <Button
                             variant="outline"
                             size="lg"
-                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm border-2 border-primary/20 bg-background/50 backdrop-blur-sm hover:bg-primary/10 hover:border-primary/50 hover:scale-105"
+                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm border-2 border-primary/20 bg-background/50 backdrop-blur-sm hover:bg-primary/10 hover:border-primary/50 hover:scale-105 active:scale-95 transition-all gpu"
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                         >
                             Contact Me
@@ -114,7 +111,8 @@ export const Hero = memo(function Hero() {
                                 rel="noreferrer"
                                 aria-label={`Visit my ${social.label}`}
                                 whileHover={{ y: -5, scale: 1.1 }}
-                                className={`group relative p-3 rounded-2xl bg-secondary/30 backdrop-blur-md border border-border/70 text-muted-foreground shadow-sm transition-all ${social.color}`}
+                                whileTap={{ scale: 0.95 }}
+                                className={`group relative p-3 rounded-2xl bg-secondary/30 backdrop-blur-md border border-border/70 text-muted-foreground shadow-sm transition-all gpu ${social.color}`}
                                 title={social.label}
                             >
                                 <social.icon className="h-5 w-5" />
