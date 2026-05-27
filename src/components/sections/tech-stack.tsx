@@ -184,7 +184,7 @@ export const TechStack = memo(function TechStack() {
                                                 initial={{ opacity: 0, y: 10 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ delay: i * 0.05 }}
-                                                className="flex items-center justify-between p-4 bg-background/50 border border-border/70 rounded-xl hover:border-primary/30 hover:bg-background transition-all hover:shadow-md cursor-pointer group/item"
+                                                className="flex items-center justify-between p-4 bg-background/50 border border-border/70 rounded-xl hover:border-primary/30 hover:bg-background transition-[background-color,border-color,box-shadow] duration-200 hover:shadow-md cursor-pointer group/item"
                                             >
                                                 <div className="flex items-center gap-3">
                                                     <div 
