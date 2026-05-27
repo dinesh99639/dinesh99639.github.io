@@ -113,7 +113,7 @@ export const Contact = memo(function Contact() {
                                     </p>
 
                                     <div className="mt-8 flex items-center justify-center h-10 overflow-hidden transform-gpu">
-                                        <div className="px-5 py-2.5 rounded-full bg-primary text-[10px] font-black uppercase tracking-widest text-white transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-[transform,opacity] duration-500 ease-out gpu">
+                                        <div className="px-5 py-2.5 rounded-full bg-primary text-[10px] font-black uppercase tracking-widest text-white translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-150 ease-in group-hover:duration-150 group-hover:ease-out gpu">
                                             Establish Link
                                         </div>
                                     </div>
