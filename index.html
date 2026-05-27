@@ -4,16 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <!-- Critical resource hints — must be first -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://raw.githubusercontent.com">
-  <link rel="dns-prefetch" href="https://raw.githubusercontent.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=block"
-    rel="stylesheet">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <!-- Non-blocking font load: display=swap lets system font render immediately -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=block"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet">
   </noscript>
+
+  <link rel="preconnect" href="https://raw.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://raw.githubusercontent.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO Meta Tags -->
@@ -107,11 +115,11 @@
       z-index: -1;
     }
   </style>
-  <script type="module" crossorigin src="/assets/index-C6pXhPnZ.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/vendor-icons-EOt8KDb3.js">
-  <link rel="modulepreload" crossorigin href="/assets/vendor-motion-woIZ3mc8.js">
-  <link rel="modulepreload" crossorigin href="/assets/vendor-react-q9TzQD1F.js">
-  <link rel="stylesheet" crossorigin href="/assets/index-BIJOTEtP.css">
+  <script type="module" crossorigin src="/assets/index-CnsG3aw5.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-Cyuzqnbw.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-motion-D_5qMPsz.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-react-CXH4cX0q.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-Bg5vf_eo.css">
 </head>
 
 <body>
