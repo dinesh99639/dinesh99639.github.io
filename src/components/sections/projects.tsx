@@ -139,7 +139,7 @@ export const Projects = memo(function Projects() {
                                     onClick={() => setActiveId(project.id)}
                                     aria-label={`View ${project.title} project details`}
                                     className={cn(
-                                        "whitespace-nowrap md:whitespace-normal md:w-full text-left px-4 py-2.5 flex items-center gap-3 group border-b-2 md:border-b-0 md:border-l-2 shrink-0 md:shrink",
+                                        "whitespace-nowrap md:whitespace-normal md:w-full text-left px-4 py-2.5 flex items-center gap-3 group border-b-2 md:border-b-0 md:border-l-2 shrink-0 md:shrink cursor-pointer",
                                         activeId === project.id
                                             ? "bg-secondary border-primary"
                                             : "bg-transparent border-transparent hover:bg-secondary/40 transition-colors"
@@ -244,13 +244,13 @@ export const Projects = memo(function Projects() {
                                             </div>
 
                                             <div className="flex items-center gap-4">
-                                                <Button asChild size="lg" className="rounded-full gap-2 flex-1 md:flex-none px-8 shadow-xl shadow-primary/20">
+                                                <Button asChild size="lg" className="rounded-full gap-2 flex-1 md:flex-none px-8 shadow-xl shadow-primary/20 cursor-pointer">
                                                     <a href={activeProject.sourceLink} target="_blank" rel="noreferrer">
                                                         <Github size={18} /> View Source
                                                     </a>
                                                 </Button>
                                                 {activeProject.liveLink && (
-                                                    <Button asChild variant="outline" size="lg" className="rounded-full gap-2 flex-1 md:flex-none px-8">
+                                                    <Button asChild variant="outline" size="lg" className="rounded-full gap-2 flex-1 md:flex-none px-8 cursor-pointer">
                                                         <a href={activeProject.liveLink} target="_blank" rel="noreferrer">
                                                             <ExternalLink size={18} /> Live Demo
                                                         </a>

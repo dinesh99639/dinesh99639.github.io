@@ -90,7 +90,7 @@ export const Blog = memo(function Blog() {
                         <button
                             onClick={() => window.open(featuredPost.link, "_blank")}
                             aria-label={`Read featured article: ${featuredPost.title}`}
-                            className="w-full text-left relative bg-card/40 border border-border/70 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 overflow-hidden flex flex-col min-h-[500px] justify-between transition-colors duration-200 ease-out group"
+                            className="w-full text-left relative bg-card/40 border border-border/70 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 overflow-hidden flex flex-col min-h-[500px] justify-between transition-colors duration-200 ease-out cursor-pointer group"
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
@@ -138,7 +138,7 @@ export const Blog = memo(function Blog() {
                                 <button
                                     onClick={() => window.open(post.link, "_blank")}
                                     aria-label={`Read article: ${post.title}`}
-                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/70 hover:border-primary/40 rounded-3xl p-6 transition-colors duration-200 ease-out group"
+                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/70 hover:border-primary/40 rounded-3xl p-6 transition-colors duration-200 ease-out cursor-pointer group"
                                 >
                                     <div className="flex items-start justify-between gap-4">
                                         <div className="flex-1">
@@ -177,7 +177,7 @@ export const Blog = memo(function Blog() {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                        className="px-6 py-3.5 rounded-full bg-secondary/80 border border-border/70 backdrop-blur-md text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2 hover:bg-primary/10 hover:border-primary/50"
+                        className="px-6 py-3.5 rounded-full bg-secondary/80 border border-border/70 backdrop-blur-md text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2 cursor-pointer hover:bg-primary/10 hover:border-primary/50"
                     >
                         Explore Complete Archive
                         <ArrowUpRight size={18} />

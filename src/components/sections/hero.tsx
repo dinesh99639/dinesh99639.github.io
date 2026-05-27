@@ -126,7 +126,7 @@ export const Hero = memo(function Hero() {
                     >
                         <Button
                             size="lg"
-                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm font-semibold bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 active:scale-95 transition-[color,background-color,border-color,box-shadow,transform] duration-200 group gpu"
+                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm font-semibold bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 active:scale-95 transition-[color,background-color,border-color,box-shadow,transform] duration-200 cursor-pointer group gpu"
                             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                         >
                             View Work <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -134,7 +134,7 @@ export const Hero = memo(function Hero() {
                         <Button
                             variant="outline"
                             size="lg"
-                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm border-2 border-primary/20 bg-background/90 hover:bg-primary/10 hover:border-primary/50 hover:scale-105 active:scale-95 transition-[color,background-color,border-color,box-shadow,transform] duration-200 gpu"
+                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm border-2 border-primary/20 bg-background/90 hover:bg-primary/10 hover:border-primary/50 hover:scale-105 active:scale-95 transition-[color,background-color,border-color,box-shadow,transform] duration-200 cursor-pointer gpu"
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                         >
                             Contact Me

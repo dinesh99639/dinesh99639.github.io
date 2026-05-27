@@ -112,7 +112,7 @@ export const TechStack = memo(function TechStack() {
                                     onClick={() => setActiveTab(cat.id)}
                                     aria-label={`View ${cat.title} skills`}
                                     className={cn(
-                                        "whitespace-nowrap lg:whitespace-normal text-left px-5 py-3 lg:px-6 lg:py-4 rounded-xl flex items-center gap-3 group border shrink-0 lg:shrink",
+                                        "whitespace-nowrap lg:whitespace-normal text-left px-5 py-3 lg:px-6 lg:py-4 rounded-xl flex items-center gap-3 group border shrink-0 lg:shrink cursor-pointer",
                                         activeTab === cat.id
                                             ? "bg-secondary border-primary/30 shadow-sm"
                                             : "bg-transparent border-transparent hover:bg-secondary/50 hover:border-border/70 transition-colors"

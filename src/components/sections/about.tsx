@@ -66,7 +66,7 @@ export const About = memo(function About() {
                                 >
                                     <button
                                         onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
-                                        className="w-full flex items-center justify-between px-4 md:px-6 py-4 text-left"
+                                        className="w-full flex items-center justify-between px-4 md:px-6 py-4 text-left cursor-pointer"
                                     >
                                         <div>
                                             <h4 className="font-bold text-base md:text-lg leading-tight mb-1">{exp.role}</h4>

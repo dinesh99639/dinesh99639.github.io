@@ -94,7 +94,7 @@ export const Contact = memo(function Contact() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ delay: 0.2 + index * 0.1, duration: 0.4 }}
-                                className="group relative gpu"
+                                className="group relative cursor-pointer gpu"
                             >
                                 <div className="absolute inset-0 bg-glow-radial-strong opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full gpu" />
 
