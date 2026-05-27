@@ -1,5 +1,5 @@
 import { useState, memo } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { Briefcase, GraduationCap, Award, ChevronDown } from "lucide-react"
 import { cn, getYearsOfExperience } from "@/lib/utils"
 
@@ -52,6 +52,7 @@ export const About = memo(function About() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
+                        className="gpu will-change-transform"
                     >
                         <h3 className="text-2xl font-bold flex items-center gap-3 mb-8">
                             <Briefcase className="h-6 w-6 text-primary" /> Experience
@@ -59,9 +60,9 @@ export const About = memo(function About() {
                         <div className="space-y-4">
                             {experiences.map((exp, i) => (
                                 <div
-                                    key={i}
+                                    key={`${exp.company}-${exp.role}`}
                                     className={cn(
-                                        "group bg-card border rounded-2xl overflow-hidden transition-shadow",
+                                        "group bg-card border rounded-2xl overflow-hidden transition-shadow gpu",
                                         expandedIndex === i ? "ring-2 ring-primary/20 shadow-lg" : "hover:border-primary/50"
                                     )}
                                 >
@@ -78,25 +79,23 @@ export const About = memo(function About() {
                                             <ChevronDown className={cn("h-4 w-4 md:h-5 md:w-5 text-muted-foreground transition-transform shrink-0", expandedIndex === i && "rotate-180 text-primary")} />
                                         </div>
                                     </button>
-                                    <AnimatePresence>
-                                        {expandedIndex === i && (
-                                            <motion.div
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: "auto", opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.2 }}
-                                            >
-                                                <div className="border-t border-border/70 bg-muted/30">
-                                                    <div className="px-5 md:px-6 py-5">
-                                                        <div className="mt-1 text-[10px] font-bold sm:hidden text-primary mb-3 uppercase tracking-wider">{exp.period}</div>
-                                                        <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-                                                            {exp.description}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </motion.div>
+                                    <div
+                                        className={cn(
+                                            "grid transition-[grid-template-rows,opacity] duration-300 ease-out overflow-hidden",
+                                            expandedIndex === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                                         )}
-                                    </AnimatePresence>
+                                    >
+                                        <div className="min-h-0">
+                                            <div className="border-t border-border/70 bg-muted/30">
+                                                <div className="px-5 md:px-6 py-5">
+                                                    <div className="mt-1 text-[10px] font-bold sm:hidden text-primary mb-3 uppercase tracking-wider">{exp.period}</div>
+                                                    <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                                                        {exp.description}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -108,14 +107,14 @@ export const About = memo(function About() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
-                        className="space-y-6"
+                        className="space-y-6 gpu will-change-transform"
                     >
                         {/* Education */}
                         <section>
                             <h3 className="text-2xl font-bold flex items-center gap-3 mb-8">
                                 <GraduationCap className="h-6 w-6 text-primary" /> Education
                             </h3>
-                            <div className="bg-card border rounded-2xl p-6 hover:shadow-md transition-shadow">
+                            <div className="bg-card border rounded-2xl p-6 hover:shadow-md transition-shadow gpu">
                                 <div className="flex items-start justify-between mb-4">
                                     <div>
                                         <h4 className="font-bold text-lg">B.Tech - Computer Science</h4>
@@ -134,7 +133,7 @@ export const About = memo(function About() {
                             <h3 className="text-2xl font-bold flex items-center gap-3 mb-4">
                                 <Award className="h-6 w-6 text-primary" /> Certifications
                             </h3>
-                            <div className="bg-secondary/20 rounded-2xl p-6 border border-border/70">
+                            <div className="bg-secondary/20 rounded-2xl p-6 border border-border/70 gpu">
                                 <ul className="space-y-3">
                                     {[
                                         "Infosys Certified Front End Web Developer",
@@ -142,8 +141,8 @@ export const About = memo(function About() {
                                         "Infosys Certified NodeJS Professional",
                                         "Infosys Certified Mongo Developer",
                                         "Infosys Certified Python Programmer"
-                                    ].map((cert, i) => (
-                                        <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
+                                    ].map((cert) => (
+                                        <li key={cert} className="flex items-start gap-2 text-sm text-foreground/80">
                                             <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                                             {cert}
                                         </li>

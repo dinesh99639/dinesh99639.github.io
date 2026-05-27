@@ -86,28 +86,24 @@ export const Honors = memo(function Honors() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 gpu">
                     {honors.map((honor, index) => (
                         <motion.div
-                            key={index}
+                            key={honor.title}
                             initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            whileHover={{
-                                scale: 1.02,
-                                transition: { type: "spring", stiffness: 400, damping: 25, delay: 0 }
-                            }}
                             transition={{
                                 duration: 0.4,
                                 delay: index * 0.1,
                                 ease: "easeOut"
                             }}
-                            className="group relative"
+                            className="group relative gpu will-change-transform transition-transform duration-300 ease-out hover:scale-[1.02]"
                         >
                             {/* Card Background with inner glow */}
-                            <div className={`absolute inset-0 bg-gradient-to-br ${honor.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl blur-xl`} />
+                            <div className={`absolute inset-0 bg-gradient-to-br ${honor.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl blur-xl gpu`} />
 
-                            <div className="relative bg-card/50 backdrop-blur-md border border-border/70 p-8 rounded-3xl overflow-hidden group-hover:border-primary/50 transition-shadow">
+                            <div className="relative bg-card/90 border border-border/70 p-8 rounded-3xl overflow-hidden group-hover:border-primary/50 transition-shadow shadow-sm gpu">
                                 {/* Spotlight effect */}
                                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
                                     <honor.icon size={120} className={honor.color} />
@@ -146,12 +142,8 @@ export const Honors = memo(function Honors() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        whileHover={{
-                            scale: 1.02,
-                            transition: { type: "spring", stiffness: 400, damping: 25, delay: 0 }
-                        }}
                         transition={{ duration: 0.4, delay: 0.4 }}
-                        className="bg-primary/5 border border-dashed border-primary/30 rounded-3xl p-8 flex flex-col items-center justify-center text-center group hover:bg-primary/10 transition-shadow"
+                        className="bg-primary/5 border border-dashed border-primary/30 rounded-3xl p-8 flex flex-col items-center justify-center text-center group hover:bg-primary/10 transition-[transform,background-color,box-shadow] duration-300 ease-out hover:scale-[1.02] shadow-sm gpu"
                     >
                         <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4 text-primary animate-pulse">
                             +

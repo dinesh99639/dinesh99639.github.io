@@ -1,24 +1,16 @@
-import { lazy, Suspense, useEffect } from "react"
+import { useEffect } from "react"
 import Lenis from "lenis"
 import { ThemeProvider } from "@/components/theme/theme-provider"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { Hero } from "@/components/sections/hero"
-
-// Lazy load sections
-const About = lazy(() => import("@/components/sections/about").then(m => ({ default: m.About })))
-const TechStack = lazy(() => import("@/components/sections/tech-stack").then(m => ({ default: m.TechStack })))
-const Projects = lazy(() => import("@/components/sections/projects").then(m => ({ default: m.Projects })))
-const Metrics = lazy(() => import("@/components/sections/metrics").then(m => ({ default: m.Metrics })))
-const Honors = lazy(() => import("@/components/sections/honors").then(m => ({ default: m.Honors })))
-const Blog = lazy(() => import("@/components/sections/blog").then(m => ({ default: m.Blog })))
-const Contact = lazy(() => import("@/components/sections/contact").then(m => ({ default: m.Contact })))
-
-const SectionFallback = ({ id }: { id: string }) => (
-  <section id={id} className="py-24 flex items-center justify-center min-h-[400px] gpu">
-    <div className="w-10 h-10 rounded-full border-2 border-primary/10 border-t-primary animate-spin-slow gpu" />
-  </section>
-)
+import { About } from "@/components/sections/about"
+import { TechStack } from "@/components/sections/tech-stack"
+import { Projects } from "@/components/sections/projects"
+import { Metrics } from "@/components/sections/metrics"
+import { Honors } from "@/components/sections/honors"
+import { Blog } from "@/components/sections/blog"
+import { Contact } from "@/components/sections/contact"
 
 function App() {
   useEffect(() => {
@@ -52,27 +44,13 @@ function App() {
         <Navbar />
         <main className="flex-grow">
           <Hero />
-          <Suspense fallback={<SectionFallback id="about" />}>
-            <About />
-          </Suspense>
-          <Suspense fallback={<SectionFallback id="tech" />}>
-            <TechStack />
-          </Suspense>
-          <Suspense fallback={<SectionFallback id="projects" />}>
-            <Projects />
-          </Suspense>
-          <Suspense fallback={<SectionFallback id="metrics" />}>
-            <Metrics />
-          </Suspense>
-          <Suspense fallback={<SectionFallback id="honors" />}>
-            <Honors />
-          </Suspense>
-          <Suspense fallback={<SectionFallback id="blog" />}>
-            <Blog />
-          </Suspense>
-          <Suspense fallback={<SectionFallback id="contact" />}>
-            <Contact />
-          </Suspense>
+          <About />
+          <TechStack />
+          <Projects />
+          <Metrics />
+          <Honors />
+          <Blog />
+          <Contact />
         </main>
         <Footer />
       </div>

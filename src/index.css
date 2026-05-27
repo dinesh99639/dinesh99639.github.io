@@ -99,9 +99,7 @@
 
   /* Performance: Rendering optimization for below-the-fold content */
   #metrics,
-  #honors,
-  #blog,
-  #contact {
+  #blog {
     content-visibility: auto;
     contain-intrinsic-size: auto 600px;
     contain: layout style paint;

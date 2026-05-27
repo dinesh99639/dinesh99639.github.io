@@ -220,7 +220,7 @@ export const Projects = memo(function Projects() {
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                                                     {activeProject.liveLink && (
                                                         <Button asChild variant="secondary" size="sm" className="rounded-full gap-2">
-                                                            <a href={activeProject.liveLink} target="_blank" rel="noreferrer">
+                                                            <a href={activeProject.liveLink} target="_blank" rel="noopener noreferrer">
                                                                 <ExternalLink size={14} /> Live Preview
                                                             </a>
                                                         </Button>
@@ -245,13 +245,13 @@ export const Projects = memo(function Projects() {
 
                                             <div className="flex items-center gap-4">
                                                 <Button asChild size="lg" className="rounded-full gap-2 flex-1 md:flex-none px-8 shadow-xl shadow-primary/20 cursor-pointer">
-                                                    <a href={activeProject.sourceLink} target="_blank" rel="noreferrer">
+                                                    <a href={activeProject.sourceLink} target="_blank" rel="noopener noreferrer">
                                                         <Github size={18} /> View Source
                                                     </a>
                                                 </Button>
                                                 {activeProject.liveLink && (
                                                     <Button asChild variant="outline" size="lg" className="rounded-full gap-2 flex-1 md:flex-none px-8 cursor-pointer">
-                                                        <a href={activeProject.liveLink} target="_blank" rel="noreferrer">
+                                                        <a href={activeProject.liveLink} target="_blank" rel="noopener noreferrer">
                                                             <ExternalLink size={18} /> Live Demo
                                                         </a>
                                                     </Button>

@@ -84,10 +84,10 @@ export const Metrics = memo(function Metrics() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 gpu">
                     {metricsList.map((metric, index) => (
                         <motion.div
-                            key={index}
+                            key={metric.label}
                             custom={index}
                             variants={cardVariants}
                             initial="initial"

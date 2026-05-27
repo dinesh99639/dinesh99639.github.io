@@ -46,7 +46,7 @@ export const Contact = memo(function Contact() {
                         initial={{ opacity: 0, scale: 0.95, y: 10 }}
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        className="flex items-center gap-3 px-4 py-2 rounded-full bg-card/60 border border-border/70 mb-12 shadow-2xl backdrop-blur-md gpu"
+                        className="flex items-center gap-3 px-4 py-2 rounded-full bg-card/90 border border-border/70 mb-12 shadow-2xl gpu"
                     >
                         <div className="relative flex items-center justify-center">
                             <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping absolute" />
@@ -86,7 +86,7 @@ export const Contact = memo(function Contact() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                         {relays.map((relay, index) => (
                             <motion.a
-                                key={index}
+                                key={relay.label}
                                 href={relay.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -98,7 +98,7 @@ export const Contact = memo(function Contact() {
                             >
                                 <div className="absolute inset-0 bg-glow-radial-strong opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full gpu" />
 
-                                <div className="relative bg-card/40 backdrop-blur-md border border-border/70 hover:border-primary/50 p-8 rounded-[2rem] flex flex-col items-center group overflow-hidden gpu">
+                                <div className="relative bg-card/90 border border-border/70 hover:border-primary/50 p-8 rounded-[2rem] flex flex-col items-center group overflow-hidden shadow-sm gpu">
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity gpu" />
 
                                     <div className={`p-4 rounded-2xl bg-background/80 border border-border/70 ${relay.color} mb-6 group-hover:scale-110 group-hover:rotate-12 transition-transform shadow-xl ${relay.glow} gpu`}>
@@ -135,8 +135,8 @@ export const Contact = memo(function Contact() {
                             { label: "Location", value: "India, Remote", icon: MapPin },
                             { label: "Availability", value: "High Priority", icon: Zap },
                             { label: "Frequency", value: "2.4 GHz Sync", icon: Radio }
-                        ].map((item, i) => (
-                            <div key={i} className="flex flex-col items-center gpu transition-transform hover:scale-105 duration-300">
+                        ].map((item) => (
+                            <div key={item.label} className="flex flex-col items-center gpu transition-transform hover:scale-105 duration-300">
                                 <item.icon size={16} className="text-muted-foreground/50 mb-3" />
                                 <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-1">{item.label}</p>
                                 <p className="text-xs font-bold">{item.value}</p>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { Menu, X, Code2, Moon, Sun } from "lucide-react"
-import { AnimatePresence, motion } from "framer-motion"
 import { useTheme } from "@/components/theme/theme-provider"
 import { cn } from "@/lib/utils"
 import { Button } from "../ui/button"
@@ -122,30 +121,22 @@ export function Navbar() {
             </div>
 
             {/* Mobile Menu */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="md:hidden bg-background/95 backdrop-blur-lg border-b overflow-hidden"
-                    >
-                        <div className="px-4 pt-2 pb-6 space-y-1">
-                            {navLinks.map((link) => (
-                                <Button
-                                    key={link.name}
-                                    variant="ghost"
-                                    className="w-full justify-start px-4 py-3 text-base font-medium text-foreground hover:bg-primary/10 hover:text-primary rounded-xl transition-all h-auto"
-                                    onClick={() => handleNavigation(link.id)}
-                                >
-                                    {link.name}
-                                </Button>
-                            ))}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {isOpen && (
+                <div className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border/70 w-full z-50">
+                    <div className="px-4 pt-2 pb-6 space-y-1">
+                        {navLinks.map((link) => (
+                            <Button
+                                key={link.name}
+                                variant="ghost"
+                                className="w-full justify-start px-4 py-3 text-base font-medium text-foreground hover:bg-primary/10 hover:text-primary rounded-xl transition-all h-auto"
+                                onClick={() => handleNavigation(link.id)}
+                            >
+                                {link.name}
+                            </Button>
+                        ))}
+                    </div>
+                </div>
+            )}
         </nav>
     )
 }
