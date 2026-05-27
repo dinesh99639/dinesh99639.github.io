@@ -1,88 +1,109 @@
 import { useState, memo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Layout, Server, Database, Cloud, Code2, Layers, ArrowUpRight } from "lucide-react"
+import { Layout, Server, Database, Cloud, Code2, Layers, ArrowUpRight, Brain } from "lucide-react"
 import { 
     SiReact, SiAngular, SiBootstrap, SiMui, SiRedux,
     SiNodedotjs, SiExpress, SiSpringboot, SiPostman, SiGraphql,
     SiPostgresql, SiMongodb, SiRedis, SiMysql,
     SiDocker, SiKubernetes, SiGit,
-    SiJavascript, SiTypescript, SiPython, SiPhp, SiCplusplus, SiRust
+    SiJavascript, SiTypescript, SiPython, SiPhp, SiCplusplus, SiRust,
+    SiOpenai, SiLangchain, SiHuggingface, SiOllama
 } from "react-icons/si"
-import { FaJava, FaNetworkWired, FaAws } from "react-icons/fa"
+import { FaJava, FaNetworkWired, FaAws, FaRobot } from "react-icons/fa"
 import { cn } from "@/lib/utils"
 
-export const TechStack = memo(function TechStack() {
-    const [activeTab, setActiveTab] = useState("frontend")
+const categories = [
+    {
+        id: "frontend",
+        name: "Frontend",
+        title: "Frontend Engineering",
+        icon: Layout,
+        description: "I build accessible, pixel-perfect web experiences.",
+        skills: [
+            { name: "React.js", level: "Expert", icon: SiReact, color: "#61DAFB", link: "https://react.dev" },
+            { name: "Angular", level: "Intermediate", icon: SiAngular, color: "#DD0031", link: "https://angular.dev" },
+            { name: "Bootstrap", level: "Expert", icon: SiBootstrap, color: "#7952B3", link: "https://getbootstrap.com" },
+            { name: "Material UI", level: "Expert", icon: SiMui, color: "#007FFF", link: "https://mui.com" },
+            { name: "Redux", level: "Advanced", icon: SiRedux, color: "#764ABC", link: "https://redux.js.org" },
+            { name: "React Native", level: "Beginner", icon: SiReact, color: "#61DAFB", link: "https://reactnative.dev" },
+        ]
+    },
+    {
+        id: "backend",
+        name: "Backend",
+        title: "Backend Development",
+        icon: Server,
+        description: "Scalable server-side architectures and APIs.",
+        skills: [
+            { name: "Node.js", level: "Advanced", icon: SiNodedotjs, color: "#339933", link: "https://nodejs.org" },
+            { name: "Express.js", level: "Advanced", icon: SiExpress, color: "#828282", link: "https://expressjs.com" },
+            { name: "Spring Boot", level: "Proficient", icon: SiSpringboot, color: "#6DB33F", link: "https://spring.io/projects/spring-boot" },
+            { name: "REST APIs", level: "Expert", icon: SiPostman, color: "#FF6C37", link: "https://www.restapitutorial.com" },
+            { name: "Microservices", level: "Intermediate", icon: FaNetworkWired, color: "#008080", link: "https://microservices.io" },
+            { name: "GraphQL", level: "Intermediate", icon: SiGraphql, color: "#E10098", link: "https://graphql.org" }
+        ]
+    },
+    {
+        id: "database",
+        name: "Database",
+        title: "Database & Storage",
+        icon: Database,
+        description: "Optimized data persistence and schema design.",
+        skills: [
+            { name: "PostgreSQL", level: "Advanced", icon: SiPostgresql, color: "#4169E1", link: "https://www.postgresql.org" },
+            { name: "MongoDB", level: "Advanced", icon: SiMongodb, color: "#47A248", link: "https://www.mongodb.com" },
+            { name: "Redis", level: "Intermediate", icon: SiRedis, color: "#DC382D", link: "https://redis.io" },
+            { name: "MySQL", level: "Advanced", icon: SiMysql, color: "#4479A1", link: "https://www.mysql.com" },
+        ]
+    },
+    {
+        id: "devops",
+        name: "DevOps",
+        title: "Cloud & DevOps",
+        icon: Cloud,
+        description: "Deployment, CI/CD, and infrastructure management.",
+        skills: [
+            { name: "AWS", level: "Intermediate", icon: FaAws, color: "#FF9900", link: "https://aws.amazon.com" },
+            { name: "Docker", level: "Advanced", icon: SiDocker, color: "#2496ED", link: "https://www.docker.com" },
+            { name: "Kubernetes", level: "Intermediate", icon: SiKubernetes, color: "#326CE5", link: "https://kubernetes.io" },
+            { name: "Git & GitHub", level: "Expert", icon: SiGit, color: "#F05032", link: "https://github.com" },
+        ]
+    },
+    {
+        id: "core",
+        name: "Core",
+        title: "Core Technologies",
+        icon: Code2,
+        description: "The fundamental languages and concepts that power my work.",
+        skills: [
+            { name: "JavaScript (ES6+)", level: "Expert", icon: SiJavascript, color: "#F7DF1E", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+            { name: "TypeScript", level: "Expert", icon: SiTypescript, color: "#3178C6", link: "https://www.typescriptlang.org" },
+            { name: "Rust", level: "Intermediate", icon: SiRust, color: "#CE412B", link: "https://www.rust-lang.org" },
+            { name: "Java", level: "Proficient", icon: FaJava, color: "#007396", link: "https://www.oracle.com/java/" },
+            { name: "Python", level: "Intermediate", icon: SiPython, color: "#3776AB", link: "https://www.python.org" },
+            { name: "php", level: "Advanced", icon: SiPhp, color: "#777BB4", link: "https://www.php.net" },
+            { name: "C / C++", level: "Intermediate", icon: SiCplusplus, color: "#00599C", link: "https://isocpp.org" },
+        ]
+    },
+    {
+        id: "ai",
+        name: "Artificial Intelligence",
+        title: "AI & Generative Engineering",
+        icon: Brain,
+        description: "I build autonomous agents, cognitive workflows, and production-grade GenAI pipelines.",
+        skills: [
+            { name: "LangGraph", level: "Advanced", icon: SiLangchain, color: "#00A3A0", link: "https://www.langchain.com/langgraph" },
+            { name: "Agentic AI", level: "Intermediate", icon: FaRobot, color: "#FF5722", link: "https://www.activeloop.ai/resources/agentic-ai-harnessing-the-power-of-ai-agents/" },
+            { name: "LLM & GenAI", level: "Intermediate", icon: SiOpenai, color: "#10A37F", link: "https://openai.com" },
+            { name: "LangChain", level: "Intermediate", icon: SiLangchain, color: "#1C3C3A", link: "https://www.langchain.com" },
+            { name: "Ollama", level: "Advanced", icon: SiOllama, color: "#1F2937", link: "https://ollama.com" },
+            { name: "Hugging Face", level: "Advanced", icon: SiHuggingface, color: "#FFD21E", link: "https://huggingface.co" },
+        ]
+    },
+];
 
-    const categories = [
-        {
-            id: "frontend",
-            title: "Frontend Engineering",
-            icon: Layout,
-            description: "I build accessible, pixel-perfect web experiences.",
-            skills: [
-                { name: "React.js", level: "Expert", icon: SiReact, color: "#61DAFB", link: "https://react.dev" },
-                { name: "Angular", level: "Intermediate", icon: SiAngular, color: "#DD0031", link: "https://angular.dev" },
-                { name: "Bootstrap", level: "Expert", icon: SiBootstrap, color: "#7952B3", link: "https://getbootstrap.com" },
-                { name: "Material UI", level: "Expert", icon: SiMui, color: "#007FFF", link: "https://mui.com" },
-                { name: "Redux", level: "Advanced", icon: SiRedux, color: "#764ABC", link: "https://redux.js.org" },
-                { name: "React Native", level: "Beginner", icon: SiReact, color: "#61DAFB", link: "https://reactnative.dev" },
-            ]
-        },
-        {
-            id: "backend",
-            title: "Backend Development",
-            icon: Server,
-            description: "Scalable server-side architectures and APIs.",
-            skills: [
-                { name: "Node.js", level: "Advanced", icon: SiNodedotjs, color: "#339933", link: "https://nodejs.org" },
-                { name: "Express.js", level: "Advanced", icon: SiExpress, color: "#828282", link: "https://expressjs.com" },
-                { name: "Spring Boot", level: "Proficient", icon: SiSpringboot, color: "#6DB33F", link: "https://spring.io/projects/spring-boot" },
-                { name: "REST APIs", level: "Expert", icon: SiPostman, color: "#FF6C37", link: "https://www.restapitutorial.com" },
-                { name: "Microservices", level: "Intermediate", icon: FaNetworkWired, color: "#008080", link: "https://microservices.io" },
-                { name: "GraphQL", level: "Intermediate", icon: SiGraphql, color: "#E10098", link: "https://graphql.org" }
-            ]
-        },
-        {
-            id: "database",
-            title: "Database & Storage",
-            icon: Database,
-            description: "Optimized data persistence and schema design.",
-            skills: [
-                { name: "PostgreSQL", level: "Advanced", icon: SiPostgresql, color: "#4169E1", link: "https://www.postgresql.org" },
-                { name: "MongoDB", level: "Advanced", icon: SiMongodb, color: "#47A248", link: "https://www.mongodb.com" },
-                { name: "Redis", level: "Intermediate", icon: SiRedis, color: "#DC382D", link: "https://redis.io" },
-                { name: "MySQL", level: "Advanced", icon: SiMysql, color: "#4479A1", link: "https://www.mysql.com" },
-            ]
-        },
-        {
-            id: "devops",
-            title: "Cloud & DevOps",
-            icon: Cloud,
-            description: "Deployment, CI/CD, and infrastructure management.",
-            skills: [
-                { name: "AWS", level: "Intermediate", icon: FaAws, color: "#FF9900", link: "https://aws.amazon.com" },
-                { name: "Docker", level: "Advanced", icon: SiDocker, color: "#2496ED", link: "https://www.docker.com" },
-                { name: "Kubernetes", level: "Intermediate", icon: SiKubernetes, color: "#326CE5", link: "https://kubernetes.io" },
-                { name: "Git & GitHub", level: "Expert", icon: SiGit, color: "#F05032", link: "https://github.com" },
-            ]
-        },
-        {
-            id: "core",
-            title: "Core Technologies",
-            icon: Code2,
-            description: "The fundamental languages and concepts that power my work.",
-            skills: [
-                { name: "JavaScript (ES6+)", level: "Expert", icon: SiJavascript, color: "#F7DF1E", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-                { name: "TypeScript", level: "Expert", icon: SiTypescript, color: "#3178C6", link: "https://www.typescriptlang.org" },
-                { name: "Rust", level: "Intermediate", icon: SiRust, color: "#CE412B", link: "https://www.rust-lang.org" },
-                { name: "Java", level: "Proficient", icon: FaJava, color: "#007396", link: "https://www.oracle.com/java/" },
-                { name: "Python", level: "Intermediate", icon: SiPython, color: "#3776AB", link: "https://www.python.org" },
-                { name: "php", level: "Advanced", icon: SiPhp, color: "#777BB4", link: "https://www.php.net" },
-                { name: "C / C++", level: "Intermediate", icon: SiCplusplus, color: "#00599C", link: "https://isocpp.org" },
-            ]
-        },
-    ]
+export const TechStack = memo(function TechStack() {
+    const [activeTab, setActiveTab] = useState(categories[0].id)
 
     const activeContent = categories.find(c => c.id === activeTab)
 
@@ -136,10 +157,7 @@ export const TechStack = memo(function TechStack() {
                                         "font-bold text-sm lg:text-base tracking-tight",
                                         activeTab === cat.id ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
                                     )}>
-                                        {cat.id === 'frontend' ? 'Frontend' :
-                                            cat.id === 'backend' ? 'Backend' :
-                                                cat.id === 'database' ? 'Database' :
-                                                    cat.id === 'devops' ? 'DevOps' : 'Core'}
+                                        {cat.name}
                                     </span>
                                 </button>
                             ))}
