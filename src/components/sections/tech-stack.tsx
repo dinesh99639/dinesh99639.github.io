@@ -1,6 +1,14 @@
 import { useState, memo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Layout, Server, Database, Cloud, Code2, Layers } from "lucide-react"
+import { 
+    SiReact, SiAngular, SiBootstrap, SiMui, SiRedux,
+    SiNodedotjs, SiExpress, SiSpringboot, SiPostman, SiGraphql,
+    SiPostgresql, SiMongodb, SiRedis, SiMysql,
+    SiDocker, SiKubernetes, SiGit,
+    SiJavascript, SiTypescript, SiPython, SiPhp, SiCplusplus
+} from "react-icons/si"
+import { FaJava, FaNetworkWired, FaAws } from "react-icons/fa"
 import { cn } from "@/lib/utils"
 
 export const TechStack = memo(function TechStack() {
@@ -13,13 +21,12 @@ export const TechStack = memo(function TechStack() {
             icon: Layout,
             description: "I build accessible, pixel-perfect web experiences.",
             skills: [
-                { name: "React.js", level: "Expert" },
-                { name: "Angular", level: "Intermediate" },
-                { name: "Bootstrap", level: "Expert" },
-                { name: "Material UI", level: "Expert" },
-                { name: "Redux", level: "Advanced" },
-                // { name: "HTML5 & CSS3", level: "Expert" },
-                { name: "React Native", level: "Beginner" },
+                { name: "React.js", level: "Expert", icon: SiReact, color: "#61DAFB" },
+                { name: "Angular", level: "Intermediate", icon: SiAngular, color: "#DD0031" },
+                { name: "Bootstrap", level: "Expert", icon: SiBootstrap, color: "#7952B3" },
+                { name: "Material UI", level: "Expert", icon: SiMui, color: "#007FFF" },
+                { name: "Redux", level: "Advanced", icon: SiRedux, color: "#764ABC" },
+                { name: "React Native", level: "Beginner", icon: SiReact, color: "#61DAFB" },
             ]
         },
         {
@@ -28,12 +35,12 @@ export const TechStack = memo(function TechStack() {
             icon: Server,
             description: "Scalable server-side architectures and APIs.",
             skills: [
-                { name: "Node.js", level: "Advanced" },
-                { name: "Express.js", level: "Advanced" },
-                { name: "Spring Boot", level: "Proficient" },
-                { name: "REST APIs", level: "Expert" },
-                { name: "Microservices", level: "Intermediate" },
-                { name: "GraphQL", level: "Intermediate" }
+                { name: "Node.js", level: "Advanced", icon: SiNodedotjs, color: "#339933" },
+                { name: "Express.js", level: "Advanced", icon: SiExpress, color: "#828282" },
+                { name: "Spring Boot", level: "Proficient", icon: SiSpringboot, color: "#6DB33F" },
+                { name: "REST APIs", level: "Expert", icon: SiPostman, color: "#FF6C37" },
+                { name: "Microservices", level: "Intermediate", icon: FaNetworkWired, color: "#008080" },
+                { name: "GraphQL", level: "Intermediate", icon: SiGraphql, color: "#E10098" }
             ]
         },
         {
@@ -42,10 +49,10 @@ export const TechStack = memo(function TechStack() {
             icon: Database,
             description: "Optimized data persistence and schema design.",
             skills: [
-                { name: "PostgreSQL", level: "Advanced" },
-                { name: "MongoDB", level: "Advanced" },
-                { name: "Redis", level: "Intermediate" },
-                { name: "MySQL", level: "Advanced" },
+                { name: "PostgreSQL", level: "Advanced", icon: SiPostgresql, color: "#4169E1" },
+                { name: "MongoDB", level: "Advanced", icon: SiMongodb, color: "#47A248" },
+                { name: "Redis", level: "Intermediate", icon: SiRedis, color: "#DC382D" },
+                { name: "MySQL", level: "Advanced", icon: SiMysql, color: "#4479A1" },
             ]
         },
         {
@@ -54,10 +61,10 @@ export const TechStack = memo(function TechStack() {
             icon: Cloud,
             description: "Deployment, CI/CD, and infrastructure management.",
             skills: [
-                { name: "AWS", level: "Intermediate" },
-                { name: "Docker", level: "Advanced" },
-                { name: "Kubernetes", level: "Intermediate" },
-                { name: "Git & GitHub", level: "Expert" },
+                { name: "AWS", level: "Intermediate", icon: FaAws, color: "#FF9900" },
+                { name: "Docker", level: "Advanced", icon: SiDocker, color: "#2496ED" },
+                { name: "Kubernetes", level: "Intermediate", icon: SiKubernetes, color: "#326CE5" },
+                { name: "Git & GitHub", level: "Expert", icon: SiGit, color: "#F05032" },
             ]
         },
         {
@@ -66,12 +73,12 @@ export const TechStack = memo(function TechStack() {
             icon: Code2,
             description: "The fundamental languages and concepts that power my work.",
             skills: [
-                { name: "JavaScript (ES6+)", level: "Expert" },
-                { name: "TypeScript", level: "Expert" },
-                { name: "Java", level: "Proficient" },
-                { name: "Python", level: "Intermediate" },
-                { name: "php", level: "Advanced" },
-                { name: "C / C++", level: "Intermediate" },
+                { name: "JavaScript (ES6+)", level: "Expert", icon: SiJavascript, color: "#F7DF1E" },
+                { name: "TypeScript", level: "Expert", icon: SiTypescript, color: "#3178C6" },
+                { name: "Java", level: "Proficient", icon: FaJava, color: "#007396" },
+                { name: "Python", level: "Intermediate", icon: SiPython, color: "#3776AB" },
+                { name: "php", level: "Advanced", icon: SiPhp, color: "#777BB4" },
+                { name: "C / C++", level: "Intermediate", icon: SiCplusplus, color: "#00599C" },
             ]
         },
     ]
@@ -173,11 +180,20 @@ export const TechStack = memo(function TechStack() {
                                                 initial={{ opacity: 0, y: 10 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ delay: i * 0.05 }}
-                                                className="flex items-center justify-between p-4 bg-background/50 border border-border/70 rounded-xl hover:border-primary/30 hover:bg-background transition-shadow"
+                                                className="flex items-center justify-between p-4 bg-background/50 border border-border/70 rounded-xl hover:border-primary/30 hover:bg-background transition-shadow group/item"
                                             >
                                                 <div className="flex items-center gap-3">
-                                                    <div className="w-2 h-2 rounded-full bg-primary/50" />
-                                                    <span className="font-semibold">{skill.name}</span>
+                                                    <div 
+                                                        className="p-2 rounded-lg bg-secondary/80 text-muted-foreground group-hover/item:bg-primary/10 transition-colors shrink-0 flex items-center justify-center"
+                                                        style={{ "--brand-color": skill.color } as React.CSSProperties}
+                                                    >
+                                                        <skill.icon 
+                                                            size={18} 
+                                                            style={{ color: skill.color }} 
+                                                            className="transition-transform duration-300 group-hover/item:scale-110"
+                                                        />
+                                                    </div>
+                                                    <span className="font-semibold text-sm sm:text-base">{skill.name}</span>
                                                 </div>
                                                 <span className="text-xs font-medium text-muted-foreground bg-secondary px-2 py-1 rounded-md">
                                                     {skill.level}
