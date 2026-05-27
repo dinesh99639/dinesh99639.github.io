@@ -1,6 +1,6 @@
 import { useState, memo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Layout, Server, Database, Cloud, Code2, Layers } from "lucide-react"
+import { Layout, Server, Database, Cloud, Code2, Layers, ArrowUpRight } from "lucide-react"
 import { 
     SiReact, SiAngular, SiBootstrap, SiMui, SiRedux,
     SiNodedotjs, SiExpress, SiSpringboot, SiPostman, SiGraphql,
@@ -21,12 +21,12 @@ export const TechStack = memo(function TechStack() {
             icon: Layout,
             description: "I build accessible, pixel-perfect web experiences.",
             skills: [
-                { name: "React.js", level: "Expert", icon: SiReact, color: "#61DAFB" },
-                { name: "Angular", level: "Intermediate", icon: SiAngular, color: "#DD0031" },
-                { name: "Bootstrap", level: "Expert", icon: SiBootstrap, color: "#7952B3" },
-                { name: "Material UI", level: "Expert", icon: SiMui, color: "#007FFF" },
-                { name: "Redux", level: "Advanced", icon: SiRedux, color: "#764ABC" },
-                { name: "React Native", level: "Beginner", icon: SiReact, color: "#61DAFB" },
+                { name: "React.js", level: "Expert", icon: SiReact, color: "#61DAFB", link: "https://react.dev" },
+                { name: "Angular", level: "Intermediate", icon: SiAngular, color: "#DD0031", link: "https://angular.dev" },
+                { name: "Bootstrap", level: "Expert", icon: SiBootstrap, color: "#7952B3", link: "https://getbootstrap.com" },
+                { name: "Material UI", level: "Expert", icon: SiMui, color: "#007FFF", link: "https://mui.com" },
+                { name: "Redux", level: "Advanced", icon: SiRedux, color: "#764ABC", link: "https://redux.js.org" },
+                { name: "React Native", level: "Beginner", icon: SiReact, color: "#61DAFB", link: "https://reactnative.dev" },
             ]
         },
         {
@@ -35,12 +35,12 @@ export const TechStack = memo(function TechStack() {
             icon: Server,
             description: "Scalable server-side architectures and APIs.",
             skills: [
-                { name: "Node.js", level: "Advanced", icon: SiNodedotjs, color: "#339933" },
-                { name: "Express.js", level: "Advanced", icon: SiExpress, color: "#828282" },
-                { name: "Spring Boot", level: "Proficient", icon: SiSpringboot, color: "#6DB33F" },
-                { name: "REST APIs", level: "Expert", icon: SiPostman, color: "#FF6C37" },
-                { name: "Microservices", level: "Intermediate", icon: FaNetworkWired, color: "#008080" },
-                { name: "GraphQL", level: "Intermediate", icon: SiGraphql, color: "#E10098" }
+                { name: "Node.js", level: "Advanced", icon: SiNodedotjs, color: "#339933", link: "https://nodejs.org" },
+                { name: "Express.js", level: "Advanced", icon: SiExpress, color: "#828282", link: "https://expressjs.com" },
+                { name: "Spring Boot", level: "Proficient", icon: SiSpringboot, color: "#6DB33F", link: "https://spring.io/projects/spring-boot" },
+                { name: "REST APIs", level: "Expert", icon: SiPostman, color: "#FF6C37", link: "https://www.restapitutorial.com" },
+                { name: "Microservices", level: "Intermediate", icon: FaNetworkWired, color: "#008080", link: "https://microservices.io" },
+                { name: "GraphQL", level: "Intermediate", icon: SiGraphql, color: "#E10098", link: "https://graphql.org" }
             ]
         },
         {
@@ -49,10 +49,10 @@ export const TechStack = memo(function TechStack() {
             icon: Database,
             description: "Optimized data persistence and schema design.",
             skills: [
-                { name: "PostgreSQL", level: "Advanced", icon: SiPostgresql, color: "#4169E1" },
-                { name: "MongoDB", level: "Advanced", icon: SiMongodb, color: "#47A248" },
-                { name: "Redis", level: "Intermediate", icon: SiRedis, color: "#DC382D" },
-                { name: "MySQL", level: "Advanced", icon: SiMysql, color: "#4479A1" },
+                { name: "PostgreSQL", level: "Advanced", icon: SiPostgresql, color: "#4169E1", link: "https://www.postgresql.org" },
+                { name: "MongoDB", level: "Advanced", icon: SiMongodb, color: "#47A248", link: "https://www.mongodb.com" },
+                { name: "Redis", level: "Intermediate", icon: SiRedis, color: "#DC382D", link: "https://redis.io" },
+                { name: "MySQL", level: "Advanced", icon: SiMysql, color: "#4479A1", link: "https://www.mysql.com" },
             ]
         },
         {
@@ -61,10 +61,10 @@ export const TechStack = memo(function TechStack() {
             icon: Cloud,
             description: "Deployment, CI/CD, and infrastructure management.",
             skills: [
-                { name: "AWS", level: "Intermediate", icon: FaAws, color: "#FF9900" },
-                { name: "Docker", level: "Advanced", icon: SiDocker, color: "#2496ED" },
-                { name: "Kubernetes", level: "Intermediate", icon: SiKubernetes, color: "#326CE5" },
-                { name: "Git & GitHub", level: "Expert", icon: SiGit, color: "#F05032" },
+                { name: "AWS", level: "Intermediate", icon: FaAws, color: "#FF9900", link: "https://aws.amazon.com" },
+                { name: "Docker", level: "Advanced", icon: SiDocker, color: "#2496ED", link: "https://www.docker.com" },
+                { name: "Kubernetes", level: "Intermediate", icon: SiKubernetes, color: "#326CE5", link: "https://kubernetes.io" },
+                { name: "Git & GitHub", level: "Expert", icon: SiGit, color: "#F05032", link: "https://github.com" },
             ]
         },
         {
@@ -73,13 +73,13 @@ export const TechStack = memo(function TechStack() {
             icon: Code2,
             description: "The fundamental languages and concepts that power my work.",
             skills: [
-                { name: "JavaScript (ES6+)", level: "Expert", icon: SiJavascript, color: "#F7DF1E" },
-                { name: "TypeScript", level: "Expert", icon: SiTypescript, color: "#3178C6" },
-                { name: "Rust", level: "Intermediate", icon: SiRust, color: "#CE412B" },
-                { name: "Java", level: "Proficient", icon: FaJava, color: "#007396" },
-                { name: "Python", level: "Intermediate", icon: SiPython, color: "#3776AB" },
-                { name: "php", level: "Advanced", icon: SiPhp, color: "#777BB4" },
-                { name: "C / C++", level: "Intermediate", icon: SiCplusplus, color: "#00599C" },
+                { name: "JavaScript (ES6+)", level: "Expert", icon: SiJavascript, color: "#F7DF1E", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+                { name: "TypeScript", level: "Expert", icon: SiTypescript, color: "#3178C6", link: "https://www.typescriptlang.org" },
+                { name: "Rust", level: "Intermediate", icon: SiRust, color: "#CE412B", link: "https://www.rust-lang.org" },
+                { name: "Java", level: "Proficient", icon: FaJava, color: "#007396", link: "https://www.oracle.com/java/" },
+                { name: "Python", level: "Intermediate", icon: SiPython, color: "#3776AB", link: "https://www.python.org" },
+                { name: "php", level: "Advanced", icon: SiPhp, color: "#777BB4", link: "https://www.php.net" },
+                { name: "C / C++", level: "Intermediate", icon: SiCplusplus, color: "#00599C", link: "https://isocpp.org" },
             ]
         },
     ]
@@ -176,12 +176,15 @@ export const TechStack = memo(function TechStack() {
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         {activeContent?.skills.map((skill, i) => (
-                                            <motion.div
+                                            <motion.a
                                                 key={skill.name}
+                                                href={skill.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 initial={{ opacity: 0, y: 10 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ delay: i * 0.05 }}
-                                                className="flex items-center justify-between p-4 bg-background/50 border border-border/70 rounded-xl hover:border-primary/30 hover:bg-background transition-shadow group/item"
+                                                className="flex items-center justify-between p-4 bg-background/50 border border-border/70 rounded-xl hover:border-primary/30 hover:bg-background transition-all hover:shadow-md cursor-pointer group/item"
                                             >
                                                 <div className="flex items-center gap-3">
                                                     <div 
@@ -196,10 +199,16 @@ export const TechStack = memo(function TechStack() {
                                                     </div>
                                                     <span className="font-semibold text-sm sm:text-base">{skill.name}</span>
                                                 </div>
-                                                <span className="text-xs font-medium text-muted-foreground bg-secondary px-2 py-1 rounded-md">
-                                                    {skill.level}
-                                                </span>
-                                            </motion.div>
+                                                
+                                                <div className="relative flex items-center justify-end h-6 min-w-[80px]">
+                                                    <span className="text-[10px] md:text-xs font-medium text-muted-foreground bg-secondary px-2 py-1 rounded-md transition-all duration-300 transform group-hover/item:-translate-x-5 group-hover/item:text-primary">
+                                                        {skill.level}
+                                                    </span>
+                                                    <div className="absolute right-0 text-muted-foreground group-hover/item:text-primary opacity-0 group-hover/item:opacity-100 transition-all duration-300 transform translate-x-2 group-hover/item:translate-x-0 flex items-center justify-center shrink-0">
+                                                        <ArrowUpRight size={14} />
+                                                    </div>
+                                                </div>
+                                            </motion.a>
                                         ))}
                                     </div>
                                 </div>
