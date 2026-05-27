@@ -91,7 +91,7 @@ export const Metrics = memo(function Metrics() {
                             whileInView="animate"
                             whileHover="hover"
                             viewport={{ once: true }}
-                            className="bg-card/40 backdrop-blur-md border border-border/70 rounded-2xl p-6 hover:border-primary/50 group"
+                            className="bg-card/85 border border-border/70 rounded-2xl p-6 hover:border-primary/50 group gpu will-change-transform"
                         >
                             <div className="flex items-start justify-between mb-4">
                                 <div className={`p-3 rounded-xl bg-background/80 border border-border/70 ${metric.color} shadow-sm group-hover:scale-110 transition-transform`}>
@@ -117,15 +117,16 @@ export const Metrics = memo(function Metrics() {
                             {/* Decorative Line */}
                             <div className="mt-6 h-1 w-full bg-secondary/50 rounded-full overflow-hidden">
                                 <motion.div
-                                    initial={{ width: 0 }}
-                                    whileInView={{ width: "100%" }}
+                                    initial={{ scaleX: 0 }}
+                                    whileInView={{ scaleX: 1 }}
                                     viewport={{ once: true }}
+                                    style={{ transformOrigin: "left" }}
                                     transition={{ duration: 1, delay: 0.5 + (index * 0.1) }}
-                                    className={`h-full bg-gradient-to-r ${index === 0 ? "from-blue-500 to-blue-300" :
+                                    className={`h-full w-full bg-gradient-to-r ${index === 0 ? "from-blue-500 to-blue-300" :
                                         index === 1 ? "from-amber-500 to-amber-300" :
                                             index === 2 ? "from-emerald-500 to-emerald-300" :
                                                 "from-purple-500 to-purple-300"
-                                        }`}
+                                        } gpu will-change-transform`}
                                 />
                             </div>
                         </motion.div>
