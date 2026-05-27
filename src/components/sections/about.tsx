@@ -1,32 +1,33 @@
 import { useState, memo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Briefcase, GraduationCap, Award, ChevronDown } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn, getYearsOfExperience } from "@/lib/utils"
 
+const experiences = [
+    {
+        role: "Consultant",
+        company: "KPMG India",
+        period: "Jan 2025 - Present",
+        description: "Designed and implemented an organizational hierarchy system impacting 50,000+ employees. Improved workforce visibility by 40% and streamlined 15 administrative processes."
+    },
+    {
+        role: "Specialist Programmer",
+        company: "Infosys",
+        period: "May 2024 - Dec 2024",
+        description: "Led a cross-functional team of 4 developers. Engineered strict real-time chat solutions boosting engagement by 30%. Architected Spring Boot & Angular ticketing platform."
+    },
+    {
+        role: "Digital Specialist Engineer",
+        company: "Infosys",
+        period: "Aug 2021 - Apr 2024",
+        description: "Enhanced React app performance by 40%. Developed Python automation framework reducing manual setup by 90%. Optimized AWS Lambda functions."
+    }
+];
 
 export const About = memo(function About() {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(0)
 
-    const experiences = [
-        {
-            role: "Consultant",
-            company: "KPMG India",
-            period: "Jan 2025 - Present",
-            description: "Designed and implemented an organizational hierarchy system impacting 50,000+ employees. Improved workforce visibility by 40% and streamlined 15 administrative processes."
-        },
-        {
-            role: "Specialist Programmer",
-            company: "Infosys",
-            period: "May 2024 - Dec 2024",
-            description: "Led a cross-functional team of 4 developers. Engineered strict real-time chat solutions boosting engagement by 30%. Architected Spring Boot & Angular ticketing platform."
-        },
-        {
-            role: "Digital Specialist Engineer",
-            company: "Infosys",
-            period: "Aug 2021 - Apr 2024",
-            description: "Enhanced React app performance by 40%. Developed Python automation framework reducing manual setup by 90%. Optimized AWS Lambda functions."
-        }
-    ]
+    const expString = `${getYearsOfExperience()}+`;
 
     return (
         <section id="about" className="py-20 bg-background">
@@ -40,7 +41,7 @@ export const About = memo(function About() {
                 >
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">About Me</h2>
                     <p className="text-muted-foreground max-w-3xl mx-auto">
-                        Full Stack Developer with 4+ years of experience designing, developing, and deploying scalable web and mobile applications.
+                        Full Stack Developer with {expString} years of experience designing, developing, and deploying scalable web and mobile applications.
                     </p>
                 </motion.div>
 

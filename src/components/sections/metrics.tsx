@@ -2,10 +2,33 @@ import { memo } from "react"
 import { motion } from "framer-motion"
 import type { Variants } from "framer-motion"
 import { Zap, Shield, Award, History, TrendingUp } from "lucide-react"
+import { getYearsOfExperience } from "@/lib/utils"
 
-const metrics = [
+const cardVariants: Variants = {
+    initial: { opacity: 0, scale: 0.9 },
+    animate: (i: number) => ({
+        opacity: 1,
+        scale: 1,
+        transition: {
+            duration: 0.5,
+            delay: i * 0.1,
+            ease: "easeOut"
+        }
+    }),
+    hover: {
+        y: -6,
+        scale: 1.01,
+        transition: {
+            type: "spring",
+            stiffness: 100,
+            damping: 15
+        }
+    }
+}
+
+const metricsList = [
     {
-        value: "4+",
+        value: `${getYearsOfExperience()}+`,
         label: "Years Experience",
         icon: History,
         color: "text-blue-500",
@@ -34,29 +57,9 @@ const metrics = [
     },
 ]
 
-const cardVariants: Variants = {
-    initial: { opacity: 0, scale: 0.9 },
-    animate: (i: number) => ({
-        opacity: 1,
-        scale: 1,
-        transition: {
-            duration: 0.5,
-            delay: i * 0.1,
-            ease: "easeOut"
-        }
-    }),
-    hover: {
-        y: -6,
-        scale: 1.01,
-        transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 15
-        }
-    }
-}
-
 export const Metrics = memo(function Metrics() {
+    
+
     return (
         <section className="py-24 bg-background relative overflow-hidden">
             {/* Background Decor */}
@@ -82,7 +85,7 @@ export const Metrics = memo(function Metrics() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {metrics.map((metric, index) => (
+                    {metricsList.map((metric, index) => (
                         <motion.div
                             key={index}
                             custom={index}
