@@ -6,7 +6,7 @@ import {
     SiNodedotjs, SiExpress, SiSpringboot, SiPostman, SiGraphql,
     SiPostgresql, SiMongodb, SiRedis, SiMysql,
     SiDocker, SiKubernetes, SiGit,
-    SiJavascript, SiTypescript, SiPython, SiPhp, SiCplusplus
+    SiJavascript, SiTypescript, SiPython, SiPhp, SiCplusplus, SiRust
 } from "react-icons/si"
 import { FaJava, FaNetworkWired, FaAws } from "react-icons/fa"
 import { cn } from "@/lib/utils"
@@ -75,6 +75,7 @@ export const TechStack = memo(function TechStack() {
             skills: [
                 { name: "JavaScript (ES6+)", level: "Expert", icon: SiJavascript, color: "#F7DF1E" },
                 { name: "TypeScript", level: "Expert", icon: SiTypescript, color: "#3178C6" },
+                { name: "Rust", level: "Intermediate", icon: SiRust, color: "#CE412B" },
                 { name: "Java", level: "Proficient", icon: FaJava, color: "#007396" },
                 { name: "Python", level: "Intermediate", icon: SiPython, color: "#3776AB" },
                 { name: "php", level: "Advanced", icon: SiPhp, color: "#777BB4" },
