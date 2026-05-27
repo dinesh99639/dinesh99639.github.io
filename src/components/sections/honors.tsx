@@ -65,7 +65,7 @@ export const Honors = memo(function Honors() {
     return (
         <section className="py-24 bg-background relative overflow-hidden">
             {/* Background Glows */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-glow-radial rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2" />
 
             <div className="container px-4 mx-auto max-w-6xl relative z-10">
                 <div className="text-center mb-16">
@@ -107,7 +107,7 @@ export const Honors = memo(function Honors() {
                             {/* Card Background with inner glow */}
                             <div className={`absolute inset-0 bg-gradient-to-br ${honor.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl blur-xl`} />
 
-                            <div className="relative bg-card/50 backdrop-blur-xl border border-border/70 p-8 rounded-3xl overflow-hidden group-hover:border-primary/50 transition-shadow">
+                            <div className="relative bg-card/50 backdrop-blur-md border border-border/70 p-8 rounded-3xl overflow-hidden group-hover:border-primary/50 transition-shadow">
                                 {/* Spotlight effect */}
                                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity">
                                     <honor.icon size={120} className={honor.color} />

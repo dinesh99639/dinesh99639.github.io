@@ -10,7 +10,7 @@ export const Hero = memo(function Hero() {
             <div className="absolute inset-0 z-0 select-none pointer-events-none">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
                 <div
-                    className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 blur-[100px] animate-pulse-slow gpu will-change-transform"
+                    className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-glow-radial-strong animate-pulse-slow gpu will-change-transform"
                 />
             </div>
 
@@ -56,7 +56,7 @@ export const Hero = memo(function Hero() {
                             variants={{ hidden: { opacity: 0, scale: 0.95, y: 15 }, visible: { opacity: 1, scale: 1, y: 0 } }}
                             className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] transform-gpu"
                         >
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500 animate-gradient-x will-change-[background-position]">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500">
                                 Full Stack <br className="sm:hidden" /> Developer.
                             </span>
                         </motion.h1>

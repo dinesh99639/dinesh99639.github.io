@@ -60,7 +60,7 @@ export const Metrics = memo(function Metrics() {
     return (
         <section className="py-24 bg-background relative overflow-hidden">
             {/* Background Decor */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-glow-radial rounded-full pointer-events-none" />
 
             <div className="container px-4 mx-auto max-w-6xl relative z-10">
                 <div className="text-center mb-16">

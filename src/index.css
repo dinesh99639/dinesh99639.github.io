@@ -58,6 +58,27 @@
     scroll-behavior: smooth;
   }
 
+  /* Lenis smooth scrolling compatibility */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
   body {
 
     @apply bg-background text-foreground antialiased;
@@ -80,7 +101,8 @@
   /* Performance: Rendering optimization for below-the-fold content */
   #metrics,
   #honors,
-  #blog {
+  #blog,
+  #contact {
     content-visibility: auto;
     contain-intrinsic-size: auto 600px;
     contain: layout style paint;
@@ -107,5 +129,13 @@
 
   .bg-gradient-primary {
     @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
+  }
+
+  .bg-glow-radial {
+    background: radial-gradient(circle, hsla(var(--primary) / 0.05) 0%, transparent 70%);
+  }
+
+  .bg-glow-radial-strong {
+    background: radial-gradient(circle, hsla(var(--primary) / 0.15) 0%, transparent 70%);
   }
 }

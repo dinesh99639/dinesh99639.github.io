@@ -57,8 +57,8 @@ export const Blog = memo(function Blog() {
     return (
         <section id="blog" className="py-24 bg-background relative overflow-hidden">
             {/* Background Accents */}
-            <div className="absolute top-1/4 -left-24 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/4 -left-24 w-96 h-96 bg-glow-radial rounded-full pointer-events-none" />
+            <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-glow-radial rounded-full pointer-events-none" />
 
             <div className="container px-4 mx-auto max-w-6xl relative z-10">
                 <div className="text-center mb-16">
