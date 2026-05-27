@@ -90,7 +90,7 @@ export const Blog = memo(function Blog() {
                         <button
                             onClick={() => window.open(featuredPost.link, "_blank")}
                             aria-label={`Read featured article: ${featuredPost.title}`}
-                            className="w-full text-left relative bg-card/40 border border-border/70 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 overflow-hidden flex flex-col min-h-[500px] justify-between group"
+                            className="w-full text-left relative bg-card/40 border border-border/70 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 overflow-hidden flex flex-col min-h-[500px] justify-between transition-colors duration-200 ease-out group"
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
@@ -105,7 +105,7 @@ export const Blog = memo(function Blog() {
                                     </span>
                                 </div>
 
-                                <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-[1.1] group-hover:text-primary">
+                                <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-[1.1] group-hover:text-primary transition-colors duration-200">
                                     {featuredPost.title}
                                 </h3>
 
@@ -138,7 +138,7 @@ export const Blog = memo(function Blog() {
                                 <button
                                     onClick={() => window.open(post.link, "_blank")}
                                     aria-label={`Read article: ${post.title}`}
-                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/70 hover:border-primary/40 rounded-3xl p-6 group"
+                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/70 hover:border-primary/40 rounded-3xl p-6 transition-colors duration-200 ease-out group"
                                 >
                                     <div className="flex items-start justify-between gap-4">
                                         <div className="flex-1">
@@ -150,15 +150,15 @@ export const Blog = memo(function Blog() {
                                                     {post.readTime}
                                                 </span>
                                             </div>
-                                            <h4 className="text-lg font-bold leading-snug line-clamp-2 mb-2">
+                                            <h4 className="text-lg font-bold leading-snug line-clamp-2 mb-2 group-hover:text-primary transition-colors duration-200">
                                                 {post.title}
                                             </h4>
-                                            <div className="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-[transform,opacity] translate-y-2 group-hover:translate-y-0 duration-300">
+                                            <div className="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in-out">
                                                 <span className="text-xs font-bold uppercase tracking-widest">Read Article</span>
                                                 <ArrowUpRight size={14} />
                                             </div>
                                         </div>
-                                        <div className="shrink-0 w-10 h-10 rounded-xl bg-secondary/50 flex items-center justify-center text-muted-foreground border border-border/70 group-hover:border-primary/30 group-hover:text-primary">
+                                        <div className="shrink-0 w-10 h-10 rounded-xl bg-secondary/50 flex items-center justify-center text-muted-foreground border border-border/70 transition-colors duration-200 group-hover:border-primary/30 group-hover:text-primary">
                                             <ExternalLink size={18} />
                                         </div>
                                     </div>
