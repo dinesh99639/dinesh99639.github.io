@@ -83,7 +83,7 @@ export function Navbar() {
                                     variant="ghost"
                                     size="sm"
                                     onClick={() => handleNavigation(link.id)}
-                                    className="text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all font-medium rounded-full px-4"
+                                    className="text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all font-medium rounded-full px-4 cursor-pointer"
                                     aria-label={`Navigate to ${link.name} section`}
                                 >
                                     {link.name}
@@ -92,7 +92,7 @@ export function Navbar() {
                             <div className="w-px h-6 bg-border/50 mx-2" />
                             <button
                                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                                className="p-2.5 rounded-full hover:bg-accent text-muted-foreground hover:text-foreground transition-all"
+                                className="p-2.5 rounded-full hover:bg-accent text-muted-foreground hover:text-foreground transition-all cursor-pointer"
                                 aria-label="Toggle dark mode"
                             >
                                 {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -104,14 +104,14 @@ export function Navbar() {
                     <div className="md:hidden flex items-center gap-2">
                         <button
                             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                            className="p-2.5 rounded-full hover:bg-accent text-muted-foreground"
+                            className="p-2.5 rounded-full hover:bg-accent text-muted-foreground cursor-pointer"
                             aria-label="Toggle dark mode"
                         >
                             {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
                         </button>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="p-2.5 rounded-xl hover:bg-accent text-muted-foreground"
+                            className="p-2.5 rounded-xl hover:bg-accent text-muted-foreground cursor-pointer"
                             aria-label="Toggle mobile menu"
                         >
                             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -128,7 +128,7 @@ export function Navbar() {
                             <Button
                                 key={link.name}
                                 variant="ghost"
-                                className="w-full justify-start px-4 py-3 text-base font-medium text-foreground hover:bg-primary/10 hover:text-primary rounded-xl transition-all h-auto"
+                                className="w-full justify-start px-4 py-3 text-base font-medium text-foreground hover:bg-primary/10 hover:text-primary rounded-xl transition-all h-auto cursor-pointer"
                                 onClick={() => handleNavigation(link.id)}
                             >
                                 {link.name}
