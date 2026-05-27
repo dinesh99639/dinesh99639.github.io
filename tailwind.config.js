@@ -84,12 +84,23 @@ export default {
                         transform: "translateY(200%) translateZ(0)",
                     },
                 },
+                "fadeUp": {
+                    "from": {
+                        opacity: "0",
+                        transform: "translateY(12px)",
+                    },
+                    "to": {
+                        opacity: "1",
+                        transform: "translateY(0)",
+                    },
+                },
             },
             animation: {
                 "gradient-x": "gradient-x 15s ease infinite",
                 "pulse-slow": "pulse-slow 8s ease-in-out infinite",
                 "float": "float 6s ease-in-out infinite",
                 "scan": "scan 12s linear infinite",
+                "fadeUp": "fadeUp 0.5s ease-out both",
             },
         },
     },
