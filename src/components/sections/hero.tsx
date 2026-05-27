@@ -4,6 +4,53 @@ import { ArrowRight, Mail, FileText } from "lucide-react"
 import { Github, Linkedin } from "@/components/ui/brand-icons"
 import { Button } from "@/components/ui/button"
 
+// Premium ease-out expo curve for ultra-smooth & snappy transitions
+const entranceTransition = {
+    duration: 0.5,
+    ease: [0.16, 1, 0.3, 1] as any
+}
+
+// Snappy GPU-composited slide variants for all children
+const childVariants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: entranceTransition
+    }
+}
+
+// Subtly translated slide variant for title to avoid text-clipping mask scale rendering overhead
+const titleVariants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: entranceTransition
+    }
+}
+
+const socialContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.04,
+            delayChildren: 0.08
+        }
+    }
+}
+
+const socialItemVariants = {
+    hidden: { opacity: 0, scale: 0.9, y: 8 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: entranceTransition
+    }
+}
+
 export const Hero = memo(function Hero() {
     return (
         <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-16">
@@ -25,16 +72,16 @@ export const Hero = memo(function Hero() {
                         visible: {
                             opacity: 1,
                             transition: {
-                                staggerChildren: 0.1,
-                                delayChildren: 0.2
+                                staggerChildren: 0.06,
+                                delayChildren: 0.05
                             }
                         }
                     }}
-                    className="space-y-8"
+                    className="space-y-8 gpu will-change-transform"
                 >
                     {/* Status Badge */}
-                    <motion.div variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}>
-                        <div className="inline-block rounded-full bg-secondary/50 backdrop-blur-sm border border-secondary px-4 py-1.5 text-sm font-medium text-secondary-foreground shadow-sm">
+                    <motion.div variants={childVariants}>
+                        <div className="inline-block rounded-full bg-secondary/85 border border-secondary/40 px-4 py-1.5 text-sm font-medium text-secondary-foreground shadow-sm gpu">
                             <span className="flex items-center gap-2">
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
@@ -48,14 +95,14 @@ export const Hero = memo(function Hero() {
                     {/* Main Headline */}
                     <div className="max-w-4xl mx-auto space-y-4">
                         <motion.span
-                            variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
+                            variants={childVariants}
                             className="block text-lg sm:text-2xl md:text-3xl font-medium text-foreground tracking-tight"
                         >
                             Hi, I'm Dinesh Somaraju.
                         </motion.span>
                         <motion.h1
-                            variants={{ hidden: { opacity: 0, scale: 0.95, y: 15 }, visible: { opacity: 1, scale: 1, y: 0 } }}
-                            className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] transform-gpu"
+                            variants={titleVariants}
+                            className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] transform-gpu gpu will-change-transform"
                         >
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500">
                                 Full Stack <br className="sm:hidden" /> Developer.
@@ -65,7 +112,7 @@ export const Hero = memo(function Hero() {
 
                     {/* Bio */}
                     <motion.p
-                        variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
+                        variants={childVariants}
                         className="mx-auto max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed px-2"
                     >
                         Specialized in <span className="font-semibold text-foreground">React</span>, <span className="font-semibold text-foreground">Redux</span>, <span className="font-semibold text-foreground">Python</span>, and <span className="font-semibold text-foreground">AWS</span>.
@@ -74,7 +121,7 @@ export const Hero = memo(function Hero() {
 
                     {/* CTA Buttons */}
                     <motion.div
-                        variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
+                        variants={childVariants}
                         className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6"
                     >
                         <Button
@@ -87,7 +134,7 @@ export const Hero = memo(function Hero() {
                         <Button
                             variant="outline"
                             size="lg"
-                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm border-2 border-primary/20 bg-background/50 backdrop-blur-sm hover:bg-primary/10 hover:border-primary/50 hover:scale-105 active:scale-95 transition-all gpu"
+                            className="w-full sm:w-auto h-11 px-6 rounded-full text-sm border-2 border-primary/20 bg-background/90 hover:bg-primary/10 hover:border-primary/50 hover:scale-105 active:scale-95 transition-all gpu"
                             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                         >
                             Contact Me
@@ -96,7 +143,7 @@ export const Hero = memo(function Hero() {
 
                     {/* Social Links */}
                     <motion.div
-                        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+                        variants={socialContainerVariants}
                         className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 pt-4 md:pt-8"
                     >
                         {[
@@ -111,9 +158,10 @@ export const Hero = memo(function Hero() {
                                 target="_blank"
                                 rel="noreferrer"
                                 aria-label={`Visit my ${social.label}`}
+                                variants={socialItemVariants}
                                 whileHover={{ y: -5, scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
-                                className={`group relative p-3 rounded-2xl bg-secondary/30 backdrop-blur-md border border-border/70 text-muted-foreground shadow-sm transition-all gpu ${social.color}`}
+                                className={`group relative p-3 rounded-2xl bg-secondary/80 border border-border/70 text-muted-foreground shadow-sm transition-all gpu ${social.color}`}
                                 title={social.label}
                             >
                                 <social.icon className="h-5 w-5" />
