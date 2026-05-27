@@ -2,10 +2,33 @@ import { memo } from "react"
 import { motion } from "framer-motion"
 import type { Variants } from "framer-motion"
 import { Zap, Shield, Award, History, TrendingUp } from "lucide-react"
+import { getYearsOfExperience } from "@/lib/utils"
 
-const metrics = [
+const cardVariants: Variants = {
+    initial: { opacity: 0, scale: 0.9 },
+    animate: (i: number) => ({
+        opacity: 1,
+        scale: 1,
+        transition: {
+            duration: 0.5,
+            delay: i * 0.1,
+            ease: "easeOut"
+        }
+    }),
+    hover: {
+        y: -6,
+        scale: 1.01,
+        transition: {
+            type: "spring",
+            stiffness: 100,
+            damping: 15
+        }
+    }
+}
+
+const metricsList = [
     {
-        value: "4+",
+        value: `${getYearsOfExperience()}+`,
         label: "Years Experience",
         icon: History,
         color: "text-blue-500",
@@ -34,33 +57,13 @@ const metrics = [
     },
 ]
 
-const cardVariants: Variants = {
-    initial: { opacity: 0, scale: 0.9 },
-    animate: (i: number) => ({
-        opacity: 1,
-        scale: 1,
-        transition: {
-            duration: 0.5,
-            delay: i * 0.1,
-            ease: "easeOut"
-        }
-    }),
-    hover: {
-        y: -6,
-        scale: 1.01,
-        transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 15
-        }
-    }
-}
-
 export const Metrics = memo(function Metrics() {
+    
+
     return (
         <section className="py-24 bg-background relative overflow-hidden">
             {/* Background Decor */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-glow-radial rounded-full pointer-events-none" />
 
             <div className="container px-4 mx-auto max-w-6xl relative z-10">
                 <div className="text-center mb-16">
@@ -81,17 +84,17 @@ export const Metrics = memo(function Metrics() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {metrics.map((metric, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 gpu">
+                    {metricsList.map((metric, index) => (
                         <motion.div
-                            key={index}
+                            key={metric.label}
                             custom={index}
                             variants={cardVariants}
                             initial="initial"
                             whileInView="animate"
                             whileHover="hover"
                             viewport={{ once: true }}
-                            className="bg-card/40 backdrop-blur-md border border-border/70 rounded-2xl p-6 hover:border-primary/50 group"
+                            className="bg-card/85 border border-border/70 rounded-2xl p-6 hover:border-primary/50 group gpu will-change-transform"
                         >
                             <div className="flex items-start justify-between mb-4">
                                 <div className={`p-3 rounded-xl bg-background/80 border border-border/70 ${metric.color} shadow-sm group-hover:scale-110 transition-transform`}>
@@ -117,15 +120,16 @@ export const Metrics = memo(function Metrics() {
                             {/* Decorative Line */}
                             <div className="mt-6 h-1 w-full bg-secondary/50 rounded-full overflow-hidden">
                                 <motion.div
-                                    initial={{ width: 0 }}
-                                    whileInView={{ width: "100%" }}
+                                    initial={{ scaleX: 0 }}
+                                    whileInView={{ scaleX: 1 }}
                                     viewport={{ once: true }}
+                                    style={{ transformOrigin: "left" }}
                                     transition={{ duration: 1, delay: 0.5 + (index * 0.1) }}
-                                    className={`h-full bg-gradient-to-r ${index === 0 ? "from-blue-500 to-blue-300" :
+                                    className={`h-full w-full bg-gradient-to-r ${index === 0 ? "from-blue-500 to-blue-300" :
                                         index === 1 ? "from-amber-500 to-amber-300" :
                                             index === 2 ? "from-emerald-500 to-emerald-300" :
                                                 "from-purple-500 to-purple-300"
-                                        }`}
+                                        } gpu will-change-transform`}
                                 />
                             </div>
                         </motion.div>

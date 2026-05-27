@@ -57,8 +57,8 @@ export const Blog = memo(function Blog() {
     return (
         <section id="blog" className="py-24 bg-background relative overflow-hidden">
             {/* Background Accents */}
-            <div className="absolute top-1/4 -left-24 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/4 -left-24 w-96 h-96 bg-glow-radial rounded-full pointer-events-none" />
+            <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-glow-radial rounded-full pointer-events-none" />
 
             <div className="container px-4 mx-auto max-w-6xl relative z-10">
                 <div className="text-center mb-16">
@@ -85,14 +85,14 @@ export const Blog = memo(function Blog() {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="lg:col-span-7 group"
+                        className="lg:col-span-7 group gpu will-change-transform"
                     >
                         <button
-                            onClick={() => window.open(featuredPost.link, "_blank")}
+                            onClick={() => window.open(featuredPost.link, "_blank", "noopener,noreferrer")}
                             aria-label={`Read featured article: ${featuredPost.title}`}
-                            className="w-full text-left relative bg-card/40 border border-border/70 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 overflow-hidden flex flex-col min-h-[500px] justify-between group"
+                            className="w-full text-left relative bg-card/40 border border-border/70 hover:border-primary/50 rounded-[2.5rem] p-8 md:p-12 overflow-hidden flex flex-col min-h-[500px] justify-between transition-colors duration-200 ease-out cursor-pointer group gpu"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 gpu" />
 
                             <div className="relative">
                                 <div className="flex items-center gap-4 mb-8">
@@ -105,7 +105,7 @@ export const Blog = memo(function Blog() {
                                     </span>
                                 </div>
 
-                                <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-[1.1] group-hover:text-primary">
+                                <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-[1.1] group-hover:text-primary transition-colors duration-200">
                                     {featuredPost.title}
                                 </h3>
 
@@ -118,7 +118,7 @@ export const Blog = memo(function Blog() {
                                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">
                                     Published on <span className="text-foreground">{featuredPost.platform}</span>
                                 </div>
-                                <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition duration-300">
+                                <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition duration-300 gpu">
                                     <ExternalLink size={24} />
                                 </div>
                             </div>
@@ -126,7 +126,7 @@ export const Blog = memo(function Blog() {
                     </motion.div>
 
                     {/* Secondary Articles List */}
-                    <div className="lg:col-span-5 space-y-4">
+                    <div className="lg:col-span-5 space-y-4 gpu">
                         {otherPosts.map((post, index) => (
                             <motion.div
                                 key={post.id}
@@ -134,11 +134,12 @@ export const Blog = memo(function Blog() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="gpu will-change-transform"
                             >
                                 <button
-                                    onClick={() => window.open(post.link, "_blank")}
+                                    onClick={() => window.open(post.link, "_blank", "noopener,noreferrer")}
                                     aria-label={`Read article: ${post.title}`}
-                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/70 hover:border-primary/40 rounded-3xl p-6 group"
+                                    className="w-full text-left relative bg-card/20 hover:bg-card/60 border border-border/70 hover:border-primary/40 rounded-3xl p-6 transition-colors duration-200 ease-out cursor-pointer group gpu"
                                 >
                                     <div className="flex items-start justify-between gap-4">
                                         <div className="flex-1">
@@ -150,15 +151,15 @@ export const Blog = memo(function Blog() {
                                                     {post.readTime}
                                                 </span>
                                             </div>
-                                            <h4 className="text-lg font-bold leading-snug line-clamp-2 mb-2">
+                                            <h4 className="text-lg font-bold leading-snug line-clamp-2 mb-2 group-hover:text-primary transition-colors duration-200">
                                                 {post.title}
                                             </h4>
-                                            <div className="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-[transform,opacity] translate-y-2 group-hover:translate-y-0 duration-300">
+                                            <div className="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in-out">
                                                 <span className="text-xs font-bold uppercase tracking-widest">Read Article</span>
                                                 <ArrowUpRight size={14} />
                                             </div>
                                         </div>
-                                        <div className="shrink-0 w-10 h-10 rounded-xl bg-secondary/50 flex items-center justify-center text-muted-foreground border border-border/70 group-hover:border-primary/30 group-hover:text-primary">
+                                        <div className="shrink-0 w-10 h-10 rounded-xl bg-secondary/50 flex items-center justify-center text-muted-foreground border border-border/70 transition-colors duration-200 group-hover:border-primary/30 group-hover:text-primary gpu">
                                             <ExternalLink size={18} />
                                         </div>
                                     </div>
@@ -170,18 +171,15 @@ export const Blog = memo(function Blog() {
 
                 {/* Footer Link */}
                 <div className="mt-20 flex flex-col items-center">
-                    <motion.a
+                    <a
                         href="https://dev.to/dinesh_somaraju"
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                        className="px-6 py-3.5 rounded-full bg-secondary/80 border border-border/70 backdrop-blur-md text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2 hover:bg-primary/10 hover:border-primary/50"
+                        className="px-6 py-3.5 rounded-full bg-secondary border border-border/70 text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2 cursor-pointer hover:bg-primary/10 hover:border-primary/50 transition-transform duration-300 ease-out hover:scale-[1.02] active:scale-[0.98] gpu"
                     >
                         Explore Complete Archive
                         <ArrowUpRight size={18} />
-                    </motion.a>
+                    </a>
                     <p className="mt-6 text-[10px] font-bold text-muted-foreground/50 uppercase tracking-[0.4em]">
                         Documenting the Future of Web
                     </p>

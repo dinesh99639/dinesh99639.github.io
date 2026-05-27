@@ -1,6 +1,7 @@
 import { memo } from "react"
 import { motion } from "framer-motion"
-import { Mail, Linkedin, Phone, Radio, ShieldCheck, Zap, MapPin } from "lucide-react"
+import { Mail, Phone, Radio, ShieldCheck, Zap, MapPin } from "lucide-react"
+import { Linkedin } from "@/components/ui/brand-icons"
 
 const relays = [
     {
@@ -34,7 +35,7 @@ export const Contact = memo(function Contact() {
         <section id="contact" className="py-24 bg-background relative overflow-hidden min-h-[800px] flex items-center transform-gpu">
             {/* Immersive Background */}
             <div className="absolute inset-0 z-0 pointer-events-none select-none">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] bg-primary/5 blur-[120px] rounded-full gpu will-change-[transform,opacity]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] bg-glow-radial rounded-full gpu will-change-[transform,opacity]" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] gpu" />
             </div>
 
@@ -45,7 +46,7 @@ export const Contact = memo(function Contact() {
                         initial={{ opacity: 0, scale: 0.95, y: 10 }}
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        className="flex items-center gap-3 px-4 py-2 rounded-full bg-card/60 border border-border/70 mb-12 shadow-2xl backdrop-blur-xl gpu"
+                        className="flex items-center gap-3 px-4 py-2 rounded-full bg-card/90 border border-border/70 mb-12 shadow-2xl gpu"
                     >
                         <div className="relative flex items-center justify-center">
                             <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping absolute" />
@@ -68,7 +69,7 @@ export const Contact = memo(function Contact() {
                             viewport={{ once: true, margin: "-50px" }}
                             className="text-4xl font-bold tracking-tight mb-4 text-foreground gpu"
                         >
-                            Initiate <span className="text-gradient animate-gradient-x will-change-[background-position]">Communication</span>
+                            Initiate <span className="text-gradient">Communication</span>
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 10 }}
@@ -85,7 +86,7 @@ export const Contact = memo(function Contact() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                         {relays.map((relay, index) => (
                             <motion.a
-                                key={index}
+                                key={relay.label}
                                 href={relay.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -93,11 +94,11 @@ export const Contact = memo(function Contact() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ delay: 0.2 + index * 0.1, duration: 0.4 }}
-                                className="group relative gpu"
+                                className="group relative cursor-pointer gpu"
                             >
-                                <div className="absolute inset-0 bg-primary/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full gpu" />
+                                <div className="absolute inset-0 bg-glow-radial-strong opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full gpu" />
 
-                                <div className="relative bg-card/40 backdrop-blur-2xl border border-border/70 hover:border-primary/50 p-8 rounded-[2rem] flex flex-col items-center group overflow-hidden gpu">
+                                <div className="relative bg-card/90 border border-border/70 hover:border-primary/50 p-8 rounded-[2rem] flex flex-col items-center group overflow-hidden shadow-sm gpu">
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity gpu" />
 
                                     <div className={`p-4 rounded-2xl bg-background/80 border border-border/70 ${relay.color} mb-6 group-hover:scale-110 group-hover:rotate-12 transition-transform shadow-xl ${relay.glow} gpu`}>
@@ -112,7 +113,7 @@ export const Contact = memo(function Contact() {
                                     </p>
 
                                     <div className="mt-8 flex items-center justify-center h-10 overflow-hidden transform-gpu">
-                                        <div className="px-5 py-2.5 rounded-full bg-primary text-[10px] font-black uppercase tracking-widest text-white transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-[transform,opacity] duration-500 ease-out gpu">
+                                        <div className="px-5 py-2.5 rounded-full bg-primary text-[10px] font-black uppercase tracking-widest text-white translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-150 ease-in group-hover:duration-150 group-hover:ease-out gpu">
                                             Establish Link
                                         </div>
                                     </div>
@@ -134,8 +135,8 @@ export const Contact = memo(function Contact() {
                             { label: "Location", value: "India, Remote", icon: MapPin },
                             { label: "Availability", value: "High Priority", icon: Zap },
                             { label: "Frequency", value: "2.4 GHz Sync", icon: Radio }
-                        ].map((item, i) => (
-                            <div key={i} className="flex flex-col items-center gpu transition-transform hover:scale-105 duration-300">
+                        ].map((item) => (
+                            <div key={item.label} className="flex flex-col items-center gpu transition-transform hover:scale-105 duration-300">
                                 <item.icon size={16} className="text-muted-foreground/50 mb-3" />
                                 <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-1">{item.label}</p>
                                 <p className="text-xs font-bold">{item.value}</p>
