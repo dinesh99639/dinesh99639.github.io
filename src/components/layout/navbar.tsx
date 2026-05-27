@@ -43,14 +43,22 @@ export function Navbar() {
         setTimeout(() => {
             const element = document.getElementById(id)
             if (element) {
-                const offset = 80 // Offset for fixed navbar
-                const elementPosition = element.getBoundingClientRect().top
-                const offsetPosition = elementPosition + window.pageYOffset - offset
+                const lenis = (window as any).lenis
+                if (lenis) {
+                    lenis.scrollTo(element, {
+                        offset: -80,
+                        duration: 1.2
+                    })
+                } else {
+                    const offset = 80 // Offset for fixed navbar
+                    const elementPosition = element.getBoundingClientRect().top
+                    const offsetPosition = elementPosition + window.pageYOffset - offset
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                })
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    })
+                }
             }
         }, 100)
     }

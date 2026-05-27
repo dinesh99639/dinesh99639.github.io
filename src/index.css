@@ -97,13 +97,7 @@
     -webkit-font-smoothing: subpixel-antialiased;
   }
 
-  /* Performance: Rendering optimization for below-the-fold content */
-  #metrics,
-  #blog {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 600px;
-    contain: layout style paint;
-  }
+
 
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
