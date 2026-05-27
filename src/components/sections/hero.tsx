@@ -1,6 +1,7 @@
 import { memo } from "react"
 import { motion } from "framer-motion"
-import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react"
+import { ArrowRight, Mail, FileText } from "lucide-react"
+import { Github, Linkedin } from "@/components/ui/brand-icons"
 import { Button } from "@/components/ui/button"
 
 export const Hero = memo(function Hero() {
